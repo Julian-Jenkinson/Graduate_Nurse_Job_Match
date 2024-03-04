@@ -5,7 +5,7 @@
     </p>
 </footer>
 
-<script src="/jobmatch/js/map_script.js"></script>
+<!-- <script  src="/jobmatch/js/map_script.js"></script> -->
 
 
 </body>
