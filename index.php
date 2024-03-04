@@ -2,10 +2,6 @@
 <!DOCTYPE html>
 <html>
 
-<!-- move head here?-->
-<?php include 'js/script.php'; ?>
-
-
 
 
   <body>

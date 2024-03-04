@@ -1,0 +1,21 @@
+/* font */
+body{
+    font-family: "helvetica", "Tahoma", sans-serif;
+    }
+
+/* neccessary for map */
+/* Always set the map height explicitly to define the size of the div 
+element that contains the map. */
+#map {
+    height: 50%;
+    width: 50%;
+    }
+/* neccessary for map */
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 1;
+    padding: 0;
+    }
+     
+    
