@@ -2,22 +2,15 @@
 
 <!-- i usedjora employer site for design -->
 
-<h3>Employer log in</h3>
-
+<h3>Employer sign up</h3>
 <br>
 <label>Email:</label><br>
 <input type="text" >
-<br>
-<br>
+<br><br>
 <label>Password:</label><br>
 <input type="password" >
-<!-- forgot password button? -->
 <br><br>
-
-<input type="submit" value="Log in as Employer">
-<br><br>
-
-<p>Dont have an employer account yet? <a href="employer_signup.php">Sign up</a></p>
+<input type="submit" value="Sign up as Employer">
 <br><br>
 
 <p>Are you looking for jobs?</p>

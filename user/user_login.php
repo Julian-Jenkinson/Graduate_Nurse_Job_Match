@@ -21,7 +21,7 @@
 <input type="submit" value="Log in">
 <br><br>
 
-<p>Dont have an account yet? <a href="../signup">Sign up</a></p>
+<p>Dont have an account yet? <a href="user_signup.php">Sign up</a></p>
 <br><br>
 
 <?php include '../view/footer.php'; ?>
