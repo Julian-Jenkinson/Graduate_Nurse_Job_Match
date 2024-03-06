@@ -7,7 +7,7 @@ USE job_match;
 CREATE TABLE users (
     userID int NOT NULL AUTO_INCREMENT,
     userName varchar(20) NOT NULL,
-    password varchar(20) NOT NULL,
+    userPassword varchar(20) NOT NULL,
     PRIMARY KEY (userID)
 );
 
@@ -19,8 +19,8 @@ INSERT INTO users VALUES
 
 CREATE TABLE employers (
     empID int NOT NULL AUTO_INCREMENT,
-    email varchar(50) NOT NULL UNIQUE,
-    password varchar(20) NOT NULL,
+    empEmail varchar(50) NOT NULL UNIQUE,
+    empPassword varchar(20) NOT NULL,
     PRIMARY KEY (empID)
 );
 

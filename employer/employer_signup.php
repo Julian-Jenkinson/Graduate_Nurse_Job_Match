@@ -1,4 +1,4 @@
-<?php include '../view/header.php'; ?>
+<?php include '../view/employer_header.php'; ?>
 
 <!-- i usedjora employer site for design -->
 
@@ -11,6 +11,10 @@
 <input type="password" >
 <br><br>
 <input type="submit" value="Sign up as Employer">
+<br><br>
+
+<p>Already have an employer account?</p>
+<p><a href="employer_login.php"> Employer log in</a></p>
 <br><br>
 
 <p>Are you looking for jobs?</p>

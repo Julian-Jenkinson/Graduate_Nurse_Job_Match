@@ -5,8 +5,13 @@
 <h3>Jobs Search</h3>
 <table>
     <tr>
-        <td><input type="text" placeholder="Keyword"></td>
-        <td><input type="text" placeholder="City, State, Postcode"></td>
+        <td>Keyword</td>
+        <td>Location</td>
+        
+    </tr>
+    <tr>
+        <td><input type="text" placeholder="Registered Nurse"></td>
+        <td><input type="text" placeholder="Brisbane"></td>
         <td><input type="submit" value="Search jobs"></td>
     </tr>
 </table>

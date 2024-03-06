@@ -20,4 +20,7 @@
 <input type="submit" value="Sign up">
 <br><br>
 
+<p>Allready have an account? <a href="user_login.php">login</a></p>
+<br><br>
+
 <?php include '../view/footer.php'; ?>
