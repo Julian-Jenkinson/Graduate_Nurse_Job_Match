@@ -1,3 +1,8 @@
-This web applciation uses the Model View Controller (MVC) architecture.
+For local development, install XAMPP and phpmyadmin(included in XAMPP installation) to 
+host and connect the web application.
+https://www.geeksforgeeks.org/how-to-set-php-development-environment-in-windows/
 
-Accompnied is a database script file to initialise a SQL database.
+This web application uses the Model View Controller (MVC) architecture.
+
+Accompanied is a database script file to initialise a SQL database.
+
