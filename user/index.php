@@ -16,7 +16,7 @@ $action = filter_input(INPUT_POST, 'action');
 if ($action === NULL) {
     $action = filter_input(INPUT_GET, 'action');
     //is session set then skip login
-    if (isset($_SESSION['email'])) {
+    if (isset($_SESSION['user'])) {
         //echo $_SESSION['email'];
         
         $action = 'get_user';
@@ -37,9 +37,9 @@ if ($action == 'user_login') {
 }
 else if ($action == 'get_user') {
     //if session is set
-    if (isset($_SESSION['email'])) {
-        $email = $_SESSION['email'];        
-        $password = $_SESSION['password'];
+    if (isset($_SESSION['user'])) {
+        $email = $_SESSION['userEmail'];        
+        $password = $_SESSION['userPassword'];
         $user = get_user_by_email($email);
         
     } 
@@ -64,8 +64,8 @@ else if ($action == 'get_user') {
     else if ($user){
         //store user and password in session
         $_SESSION['user'] = $user; 
-        $_SESSION['email'] = $email;        
-        $_SESSION['password'] = $password;
+        $_SESSION['userEmail'] = $email;        
+        $_SESSION['userPassword'] = $password;
         include('user_profile.php'); 
     }
 }// else if ($action == 'register_product') {
@@ -83,9 +83,11 @@ else if ($action == 'get_user') {
 else if ($action == 'logout') {
     //if user logs out
     //remove session variables
-    session_unset();
+    unset($_SESSION['user']);
+    unset($_SESSION['userEmail']);
+    unset($_SESSION['userPassword']);
     //destroy session
-    session_destroy();
+    //session_destroy();
     include('user_login.php');
 }
 

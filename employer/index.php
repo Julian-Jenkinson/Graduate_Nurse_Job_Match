@@ -16,7 +16,7 @@ $action = filter_input(INPUT_POST, 'action');
 if ($action === NULL) {
     $action = filter_input(INPUT_GET, 'action');
     //is session set then skip login
-    if (isset($_SESSION['email'])) {
+    if (isset($_SESSION['employer'])) {
        //echo $_SESSION['email'];
         
         $action = 'get_employer';
@@ -37,9 +37,9 @@ if ($action == 'employer_login') {
 }
 else if ($action == 'get_employer') {
     //if session is set
-    if (isset($_SESSION['email'])) {
-        $email = $_SESSION['email'];        
-        $password = $_SESSION['password'];
+    if (isset($_SESSION['employer'])) {
+        $email = $_SESSION['empEmail'];        
+        $password = $_SESSION['empPassword'];
         $employer = get_employer_by_email($email);
         
     } 
@@ -64,8 +64,8 @@ else if ($action == 'get_employer') {
     else if ($employer){
         //store user and password in session
         $_SESSION['employer'] = $employer; 
-        $_SESSION['email'] = $email;        
-        $_SESSION['password'] = $password;
+        $_SESSION['empEmail'] = $email;        
+        $_SESSION['empPassword'] = $password;
         include('employer_my_jobs.php'); 
     }
 }// else if ($action == 'register_product') {
@@ -84,8 +84,11 @@ else if ($action == 'logout') {
     //if customer logs out
     //remove session variables
     session_unset();
+    unset($_SESSION['employer']);
+    unset($_SESSION['empEmail']);
+    unset($_SESSION['empPassword']);
     //destroy session
-    session_destroy();
+    //session_destroy();
     include('employer_login.php');
 }
 

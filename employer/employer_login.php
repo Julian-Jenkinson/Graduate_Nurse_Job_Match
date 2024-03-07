@@ -22,7 +22,7 @@
 <br><br>
 
 <p>Are you looking for jobs?</p>
-<p><a href="../user/user_login.php">Log in</a> or <a href="../user/user_signup.php">sign up</a> as a job seeker</p>
+<p><a href="../user/">Log in</a> or <a href="../user/user_signup.php">sign up</a> as a job seeker</p>
 <br><br>
 
 
