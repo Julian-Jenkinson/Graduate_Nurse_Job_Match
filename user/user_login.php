@@ -1,25 +1,23 @@
-<?php require('../model/database.php');?>
-<?php require('../model/users_db.php');?>
-
-
 <?php include '../view/header.php'; ?>
 
-<!-- i usedjora employer site for design -->
-
 <h3>User log in</h3>
+<br>
 
-<br>
-<label>Email:</label><br>
-<input type="text" >
-<br>
-<br>
-<label>Password:</label><br>
-<input type="password" >
-<!-- forgot password button? -->
-<br><br>
+<form action="." method="post" id="aligned">
+    <label>Email:</label><br>
+    <input type="text", name="email" >
+    <br><br>
+    
+    <label>Password:</label><br>
+    <input type="password" name="password">
+    <!-- forgot password button? -->
+    <br><br>
 
-<input type="submit" value="Log in">
-<br><br>
+    <input type="submit" value="Log in">
+    <input type="hidden" name="action" value="get_user">
+    <br><br>
+</form>
+
 
 <p>Dont have an account yet? <a href="user_signup.php">Sign up</a></p>
 <br><br>

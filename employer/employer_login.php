@@ -1,7 +1,5 @@
 <?php include '../view/employer_header.php'; ?>
 
-<!-- i usedjora employer site for design -->
-
 <h3>Employer log in</h3>
 <br>
 

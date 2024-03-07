@@ -6,15 +6,16 @@ USE job_match;
 
 CREATE TABLE users (
     userID int NOT NULL AUTO_INCREMENT,
+    userEmail varchar(50) NOT NULL UNIQUE,
     userName varchar(20) NOT NULL,
     userPassword varchar(20) NOT NULL,
     PRIMARY KEY (userID)
 );
 
 INSERT INTO users VALUES 
-(1002, 'julian', 'password'),
-(1003, 'kevin86', 'password'),
-(1004, 'GMJ21', 'password');
+(1002, 'j@j.com.au','julian', 'password'),
+(1003, 'kev@hotmail.com','kevin86', 'password'),
+(1004, 'GMJ@gmail.com','GMJ21', 'password');
 
 
 CREATE TABLE employers (
