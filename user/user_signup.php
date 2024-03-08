@@ -4,21 +4,24 @@
 
 <?php include '../view/header.php'; ?>
 
-<!-- i usedjora employer site for design -->
-
 <h3>User sign up</h3>
 
 <br>
-<label>Email:</label><br>
-<input type="text" >
-<br>
-<br>
-<label>Password:</label><br>
-<input type="password" >
-<br><br>
+<form action="." method="post" id="aligned">
+    <label>Email:</label><br>
+    <input type="text" name="email">
+    <br><br>
+    <label>Password:</label><br>
+    <input type="password" name="password1">
+    <br><br>
+    <label>Confirm Password:</label><br>
+    <input type="password" name="password2">
+    <br><br>
 
-<input type="submit" value="Sign up">
-<br><br>
+    <input type="submit" value="Sign up">
+    <input type="hidden" name="action" value="add_user">
+    <br><br>
+</form>
 
 <p>Allready have an account? <a href="user_login.php">login</a></p>
 <br><br>

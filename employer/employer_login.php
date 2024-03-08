@@ -7,12 +7,10 @@
     <label>Email:</label><br>
     <input type="text", name="email">
     <br><br>
-    
     <label>Password:</label><br>
     <input type="password", name="password" >
     <!-- forgot password button? -->
     <br><br>
-
     <input type="submit" value="Log in as Employer">
     <input type="hidden" name="action" value="get_employer">
     <br><br>

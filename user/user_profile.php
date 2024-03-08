@@ -3,7 +3,7 @@
 
 
 <h3>user profile</h3>
-<p>you are looged in as <?php echo $user['userEmail']; ?></p>
+<p>you are logged in as <?php echo $user['userEmail']; ?></p>
 
 <p>create profile</p>
 

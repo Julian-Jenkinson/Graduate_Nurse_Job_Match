@@ -54,7 +54,7 @@ else if ($action == 'get_employer') {
 
     //check for incorrect credentials
     //security issue here - should validate hashed passwords
-    if ($employer == NULL || $password != $employer['empPassword']) {
+    if ($employer == NULL || !password_verify($password, $employer['empPassword'])) {
         $error = "Incorrect email or password.";
         include('../error/employer_error.php');
         //echo "<script>console.log('{$employer}' );</script>";
@@ -68,18 +68,47 @@ else if ($action == 'get_employer') {
         $_SESSION['empPassword'] = $password;
         include('employer_my_jobs.php'); 
     }
-}// else if ($action == 'register_product') {
-    //get session customer data
- //   $session_customer = $_SESSION['customer'];    
-  //  $product_code = filter_input(INPUT_POST, 'productCode');
-    //removed this functionality
-    //$customer_id = filter_input(INPUT_POST, 'customerID');
-    //$product_name = filter_input(INPUT_POST, 'prods');
-    //takes customer id from session customer instead of form
-   // add_registration($session_customer[0], $product_code);
-    //$message = "Product ($product_name) was registered successfully.";
-    
-    //include('product_register.php');
+}
+else if ($action == 'add_employer') {        
+    //get values from user sign in form
+    $email = filter_input(INPUT_POST, 'email');
+    $password1 = filter_input(INPUT_POST, 'password1');
+    $password2 = filter_input(INPUT_POST, 'password2');
+    //validate inputs
+    if ($email == NULL || $password1 == NULL || $password2 == NULL) {
+        $error = "The email or password is invalid. Please try again";
+        include('../error/employer_error.php');
+    }
+    else if ($password1 != $password2) {
+        $error = "The passwords you entered do not match. Please try again.";
+        include('../error/employer_error.php');
+    }
+    else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "The email must be a valid address. Please try again";
+        include('../error/employer_error.php');
+    }
+    else if (strlen($password1) < 8) {
+        $error = "The password must be at least 8 characters. Please try again";
+        include('../error/employer_error.php');
+    }
+    else if(employerExists($email)) {
+        $error = "This email address is already taken.";
+        include('../error/employer_error.php');
+    }
+    else {
+        //hash password
+        $password1 = password_hash($password1, PASSWORD_DEFAULT);
+        //add user to database
+        add_employer($email, $password1);
+        $employer = get_employer_by_email($email);
+        //store user and password in session
+        $_SESSION['employer'] = $employer; 
+        $_SESSION['empEmail'] = $email;        
+        $_SESSION['empPassword'] = $password1;
+        
+        include('employer_my_jobs.php');
+    }
+}
 else if ($action == 'logout') {
     //if customer logs out
     //remove session variables

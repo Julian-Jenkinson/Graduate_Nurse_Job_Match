@@ -7,27 +7,27 @@ USE job_match;
 CREATE TABLE users (
     userID int NOT NULL AUTO_INCREMENT,
     userEmail varchar(50) NOT NULL UNIQUE,
-    userName varchar(20) NOT NULL,
-    userPassword varchar(20) NOT NULL,
+    userName varchar(20),
+    userPassword varchar(255) NOT NULL,
     PRIMARY KEY (userID)
 );
 
 INSERT INTO users VALUES 
-(1002, 'j@j.com.au','julian', 'password'),
-(1003, 'kev@hotmail.com','kevin86', 'password'),
-(1004, 'GMJ@gmail.com','GMJ21', 'password');
+(1002, 'j@j.com.au','', '$2y$10$gCfUgkSZnonu5DfSjC386OBbMTve6muuPOE2quYcjL0G.p7xLpB3q'),
+(1003, 'kev@hotmail.com','kevin86', '$2y$10$gCfUgkSZnonu5DfSjC386OBbMTve6muuPOE2quYcjL0G.p7xLpB3q'),
+(1004, 'GMJ@gmail.com','GMJ21', '$2y$10$a9vxN/RHUENS0AcmfkafBuzpDZSkeY//kB26biAC/Q9RnvoZIZkaC');
 
 
 CREATE TABLE employers (
     empID int NOT NULL AUTO_INCREMENT,
     empEmail varchar(50) NOT NULL UNIQUE,
-    empPassword varchar(20) NOT NULL,
+    empPassword varchar(255) NOT NULL,
     PRIMARY KEY (empID)
 );
 
 INSERT INTO employers VALUES 
-(1002, 'zuki@cat.com.au', 'password'),
-(1003, 'employer@employer.net.au', 'password');
+(1002, 'zuki@cat.com.au', '$2y$10$a9vxN/RHUENS0AcmfkafBuzpDZSkeY//kB26biAC/Q9RnvoZIZkaC'),
+(1003, 'employer@employer.net.au', '$2y$10$a9vxN/RHUENS0AcmfkafBuzpDZSkeY//kB26biAC/Q9RnvoZIZkaC');
 
 
 CREATE TABLE jobs (

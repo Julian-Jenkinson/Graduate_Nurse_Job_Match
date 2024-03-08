@@ -7,11 +7,9 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-
 require('../model/database.php');
 require('../model/users_db.php');
 
- 
 $action = filter_input(INPUT_POST, 'action');
 if ($action === NULL) {
     $action = filter_input(INPUT_GET, 'action');
@@ -27,9 +25,6 @@ if ($action === NULL) {
     }
 }
 $email = '';
-
-//$t = get_user_by_email('j@j.com.au');
-//echo $t['userPassword'];
 
 if ($action == 'user_login') {
     // Display the employer login page
@@ -48,13 +43,13 @@ else if ($action == 'get_user') {
         $email = filter_input(INPUT_POST, 'email');
         $password = filter_input(INPUT_POST, 'password');
         $user = get_user_by_email($email);
-        echo "<script>console.log('{$user['userPassword']}' );</script>";
+        //echo "<script>console.log('{$user['userPassword']}' );</script>";
         //echo $employer;
     } 
 
     //check for incorrect credentials
-    //security issue here - should validate hashed passwords
-    if ($user == NULL || $password != $user['userPassword']) {
+    //verify hashed password
+    if ($user == NULL || !password_verify($password, $user['userPassword'])) {
         $error = "Incorrect email or password.";
         include('../error/user_error.php');
         //echo "<script>console.log('{$employer}' );</script>";
@@ -63,23 +58,53 @@ else if ($action == 'get_user') {
     }
     else if ($user){
         //store user and password in session
+        //security issue here - storing unhashed passwords in program
         $_SESSION['user'] = $user; 
         $_SESSION['userEmail'] = $email;        
         $_SESSION['userPassword'] = $password;
         include('user_profile.php'); 
     }
-}// else if ($action == 'register_product') {
-    //get session customer data
- //   $session_customer = $_SESSION['customer'];    
-  //  $product_code = filter_input(INPUT_POST, 'productCode');
-    //removed this functionality
-    //$customer_id = filter_input(INPUT_POST, 'customerID');
-    //$product_name = filter_input(INPUT_POST, 'prods');
-    //takes customer id from session customer instead of form
-   // add_registration($session_customer[0], $product_code);
-    //$message = "Product ($product_name) was registered successfully.";
-    
-    //include('product_register.php');
+}
+else if ($action == 'add_user') {        
+    //get values from user sign in form
+    $email = filter_input(INPUT_POST, 'email');
+    $password1 = filter_input(INPUT_POST, 'password1');
+    $password2 = filter_input(INPUT_POST, 'password2');
+    //validate inputs
+    if ($email == NULL || $password1 == NULL || $password2 == NULL) {
+        $error = "The email or password is invalid. Please try again";
+        include('../error/user_error.php');
+    }
+    else if ($password1 != $password2) {
+        $error = "The passwords you entered do not match. Please try again.";
+        include('../error/user_error.php');
+    }
+    else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "The email must be a valid address. Please try again";
+        include('../error/user_error.php');
+    }
+    else if (strlen($password1) < 8) {
+        $error = "The password must be at least 8 characters. Please try again";
+        include('../error/user_error.php');
+    }
+    else if(userExists($email)) {
+        $error = "This email address is already taken.";
+        include('../error/user_error.php');
+    }
+    else {
+        //hash password
+        $password1 = password_hash($password1, PASSWORD_DEFAULT);
+        //add user to database
+        add_user($email, $password1);
+        $user = get_user_by_email($email);
+        //store user and password in session
+        $_SESSION['user'] = $user; 
+        $_SESSION['userEmail'] = $email;        
+        $_SESSION['userPassword'] = $password1;
+        
+        include('user_profile.php');
+    }
+}
 else if ($action == 'logout') {
     //if user logs out
     //remove session variables
@@ -93,11 +118,5 @@ else if ($action == 'logout') {
 
 
 
-
-
-if ($action == 'user_signup') {        
-    // Display the employer signup page
-    include('user_signup.php');
-}
 
 ?>
