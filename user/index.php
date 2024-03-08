@@ -15,8 +15,6 @@ if ($action === NULL) {
     $action = filter_input(INPUT_GET, 'action');
     //is session set then skip login
     if (isset($_SESSION['user'])) {
-        //echo $_SESSION['email'];
-        
         $action = 'get_user';
     }
     //go to login
@@ -36,29 +34,21 @@ else if ($action == 'get_user') {
         $email = $_SESSION['userEmail'];        
         $password = $_SESSION['userPassword'];
         $user = get_user_by_email($email);
-        
     } 
     //if no session set
     else {
         $email = filter_input(INPUT_POST, 'email');
         $password = filter_input(INPUT_POST, 'password');
         $user = get_user_by_email($email);
-        //echo "<script>console.log('{$user['userPassword']}' );</script>";
-        //echo $employer;
     } 
-
     //check for incorrect credentials
     //verify hashed password
     if ($user == NULL || !password_verify($password, $user['userPassword'])) {
         $error = "Incorrect email or password.";
         include('../error/user_error.php');
-        //echo "<script>console.log('{$employer}' );</script>";
-        //echo $employer;
-        
     }
     else if ($user){
         //store user and password in session
-        //security issue here - storing unhashed passwords in program
         $_SESSION['user'] = $user; 
         $_SESSION['userEmail'] = $email;        
         $_SESSION['userPassword'] = $password;
@@ -93,15 +83,14 @@ else if ($action == 'add_user') {
     }
     else {
         //hash password
-        $password1 = password_hash($password1, PASSWORD_DEFAULT);
+        $password2 = password_hash($password1, PASSWORD_DEFAULT);
         //add user to database
-        add_user($email, $password1);
+        add_user($email, $password2);
         $user = get_user_by_email($email);
         //store user and password in session
         $_SESSION['user'] = $user; 
         $_SESSION['userEmail'] = $email;        
         $_SESSION['userPassword'] = $password1;
-        
         include('user_profile.php');
     }
 }
@@ -111,7 +100,7 @@ else if ($action == 'logout') {
     unset($_SESSION['user']);
     unset($_SESSION['userEmail']);
     unset($_SESSION['userPassword']);
-    //destroy session
+    //destroy session - not required
     //session_destroy();
     include('user_login.php');
 }

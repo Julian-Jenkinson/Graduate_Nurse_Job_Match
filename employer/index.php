@@ -7,18 +7,14 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-
 require('../model/database.php');
 require('../model/employers_db.php');
-
  
 $action = filter_input(INPUT_POST, 'action');
 if ($action === NULL) {
     $action = filter_input(INPUT_GET, 'action');
     //is session set then skip login
     if (isset($_SESSION['employer'])) {
-       //echo $_SESSION['email'];
-        
         $action = 'get_employer';
     }
     //go to login
@@ -27,9 +23,6 @@ if ($action === NULL) {
     }
 }
 $email = '';
-
-//$t = get_employer_by_email('zuki@cat.com.au');
-//echo $t['empPassword'];
 
 if ($action == 'employer_login') {
     // Display the employer login page
@@ -41,25 +34,18 @@ else if ($action == 'get_employer') {
         $email = $_SESSION['empEmail'];        
         $password = $_SESSION['empPassword'];
         $employer = get_employer_by_email($email);
-        
     } 
     //if no session set
     else {
         $email = filter_input(INPUT_POST, 'email');
         $password = filter_input(INPUT_POST, 'password');
         $employer = get_employer_by_email($email);
-        //echo "<script>console.log('{$employer['empPassword']}' );</script>";
-        //echo $employer;
     } 
-
     //check for incorrect credentials
-    //security issue here - should validate hashed passwords
+    //validating hashed passwords here
     if ($employer == NULL || !password_verify($password, $employer['empPassword'])) {
         $error = "Incorrect email or password.";
         include('../error/employer_error.php');
-        //echo "<script>console.log('{$employer}' );</script>";
-        //echo $employer;
-        
     }
     else if ($employer){
         //store user and password in session
@@ -97,15 +83,14 @@ else if ($action == 'add_employer') {
     }
     else {
         //hash password
-        $password1 = password_hash($password1, PASSWORD_DEFAULT);
+        $password2 = password_hash($password1, PASSWORD_DEFAULT);
         //add user to database
-        add_employer($email, $password1);
+        add_employer($email, $password2);
         $employer = get_employer_by_email($email);
         //store user and password in session
         $_SESSION['employer'] = $employer; 
         $_SESSION['empEmail'] = $email;        
         $_SESSION['empPassword'] = $password1;
-        
         include('employer_my_jobs.php');
     }
 }
@@ -116,18 +101,9 @@ else if ($action == 'logout') {
     unset($_SESSION['employer']);
     unset($_SESSION['empEmail']);
     unset($_SESSION['empPassword']);
-    //destroy session
+    //destroy session - not required
     //session_destroy();
     include('employer_login.php');
-}
-
-
-
-
-
-if ($action == 'employer_signup') {        
-    // Display the employer signup page
-    include('employer_signup.php');
 }
 
 ?>

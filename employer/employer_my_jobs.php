@@ -1,9 +1,8 @@
 <?php include '../view/employer_header.php'; ?>
 
-<!-- i usedjora employer site for design -->
-
 <h3>Employer My Jobs</h3>
-<p>you are looged in as <?php echo $employer['empEmail']; ?></p>
+
+<p>you are logged in as <?php echo $employer['empEmail']; ?></p>
 
 <p>view my job listings</p>
 
