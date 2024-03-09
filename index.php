@@ -6,7 +6,7 @@
         <li><a href="jobs">Show Jobs</a></li>
         <li><a href="employer">Employer site</a></li>
       </ul>
-      <?php include 'map.php'; ?>
+      
       
 <?php include 'view/footer.php'; ?>
 

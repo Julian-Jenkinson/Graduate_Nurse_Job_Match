@@ -94,6 +94,58 @@ else if ($action == 'add_user') {
         include('user_profile.php');
     }
 }
+else if ($action == 'create_profile_button') {
+    //display the create/edit profile page
+    $user = get_user_by_email($_SESSION['user']['userEmail']);
+    include('user_edit_profile.php');
+}
+else if ($action == 'edit_profile') {
+    //display the create/edit profile page
+    //echo $_SESSION['user']['userEmail'];
+    $user = get_user_by_email($_SESSION['user']['userEmail']);
+    include('user_edit_profile.php');
+}
+else if ($action == 'save_profile') {
+
+    $user = get_user_by_email($_SESSION['user']['userEmail']);
+    
+    //get data from form
+    $user_id = filter_input(INPUT_POST, 'user_id');
+    $first_name = filter_input(INPUT_POST, 'userFName');
+    $last_name = filter_input(INPUT_POST, 'userLName');
+    $phone = filter_input(INPUT_POST, 'userPhone');
+    $address = filter_input(INPUT_POST, 'userAddress');
+    $qualifications = filter_input(INPUT_POST, 'userQualifications');
+    $experience = filter_input(INPUT_POST, 'userExperience');
+    $skills = filter_input(INPUT_POST, 'userSkills');
+    $interests = filter_input(INPUT_POST, 'userInterests');
+
+    $mm1 = filter_input(INPUT_POST, 'mm1');
+    $mm2 = filter_input(INPUT_POST, 'mm2');
+    $mm3 = filter_input(INPUT_POST, 'mm3');
+    $mm4 = filter_input(INPUT_POST, 'mm4');
+    $mm5 = filter_input(INPUT_POST, 'mm5');
+    $mm6 = filter_input(INPUT_POST, 'mm6');
+    $mm7 = filter_input(INPUT_POST, 'mm7');
+    
+    //update user function
+    update_user($user_id, $first_name, $last_name, $phone, 
+                $address, $qualifications, $experience, $skills, 
+                $interests, $mm1, $mm2, $mm3, $mm4, $mm5, $mm6, $mm7);
+    
+    //return to user profile page with updated user data
+    $email = filter_input(INPUT_POST, 'email');
+    $user = get_user_by_email($_SESSION['user']['userEmail']);
+    include('user_profile.php');
+}
+
+
+
+
+
+
+
+
 else if ($action == 'logout') {
     //if user logs out
     //remove session variables
@@ -104,8 +156,4 @@ else if ($action == 'logout') {
     //session_destroy();
     include('user_login.php');
 }
-
-
-
-
 ?>

@@ -7,15 +7,41 @@ USE job_match;
 CREATE TABLE users (
     userID int NOT NULL AUTO_INCREMENT,
     userEmail varchar(50) NOT NULL UNIQUE,
-    userName varchar(20),
     userPassword varchar(255) NOT NULL,
+
+    userFName varchar(20),
+    userLName varchar(20),
+    userPhone varchar(20),
+    
+    userAddress varchar(150),
+    userAddressNumber varchar(4),
+    userStreet varchar(20),
+    userStPrefix varchar(10),
+    userCity varchar(20),
+    userState varchar(3),
+    userPostcode varchar(40),
+
+    userQualifications varchar(50),
+    userExperience text,
+    userSkills text,
+    userInterests text,
+    
+    userMM1 varchar(1),
+    userMM2 varchar(1),
+    userMM3 varchar(1),
+    userMM4 varchar(1),
+    userMM5 varchar(1),
+    userMM6 varchar(1),
+    userMM7 varchar(1),
+    
     PRIMARY KEY (userID)
 );
 
-INSERT INTO users VALUES 
-(1002, 'j@j.com.au','', '$2y$10$gCfUgkSZnonu5DfSjC386OBbMTve6muuPOE2quYcjL0G.p7xLpB3q'),
-(1003, 'kev@hotmail.com','kevin86', '$2y$10$gCfUgkSZnonu5DfSjC386OBbMTve6muuPOE2quYcjL0G.p7xLpB3q'),
-(1004, 'GMJ@gmail.com','GMJ21', '$2y$10$a9vxN/RHUENS0AcmfkafBuzpDZSkeY//kB26biAC/Q9RnvoZIZkaC');
+INSERT INTO users (userID, userEmail, userPassword)
+VALUES 
+(1002, 'j@j.com.au', '$2y$10$gCfUgkSZnonu5DfSjC386OBbMTve6muuPOE2quYcjL0G.p7xLpB3q'),
+(1003, 'kev@hotmail.com', '$2y$10$gCfUgkSZnonu5DfSjC386OBbMTve6muuPOE2quYcjL0G.p7xLpB3q'),
+(1004, 'GMJ@gmail.com', '$2y$10$a9vxN/RHUENS0AcmfkafBuzpDZSkeY//kB26biAC/Q9RnvoZIZkaC');
 
 
 CREATE TABLE employers (
