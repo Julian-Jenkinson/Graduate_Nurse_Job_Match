@@ -24,6 +24,7 @@ function add_employer($email, $password) {
     $statement->closeCursor();
 }
 
+
 function employerExists($email){
     global $db;
     $query = "SELECT COUNT(*) FROM employers WHERE empEmail = :email";

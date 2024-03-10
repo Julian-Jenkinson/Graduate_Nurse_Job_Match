@@ -10,7 +10,7 @@
     </form>
 </span><br>
 
-<h3>Your Profile</h3>
+<h3>User Dashboard</h3>
 
 <!-- create profile button -->
 <?php if(!isset($user['userFName'])): ?>
@@ -23,7 +23,9 @@
 <?php endif; ?>
 
 <!-- display user profile -->
+
 <?php if(isset($user['userFName'])): ?>
+    <h4>Your Profile</h4>
 
     <div>Name:</div><div><?php echo $user['userFName'] . ' ' . $user['userLName']; ?></div><br>
     <div>Email:</div><div><?php echo $user['userEmail']; ?></div><br>

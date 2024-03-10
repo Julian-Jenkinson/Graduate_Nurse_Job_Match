@@ -9,6 +9,7 @@ ini_set('display_errors', 1);
 
 require('../model/database.php');
 require('../model/employers_db.php');
+require('../model/jobs_db.php');
  
 $action = filter_input(INPUT_POST, 'action');
 if ($action === NULL) {
@@ -52,8 +53,15 @@ else if ($action == 'get_employer') {
         $_SESSION['employer'] = $employer; 
         $_SESSION['empEmail'] = $email;        
         $_SESSION['empPassword'] = $password;
+        
+        
+        $empID = $employer['empID'];
+        $my_jobs = get_jobs_by_empID($empID);
+        $job_count = count($my_jobs);
+       
         include('employer_my_jobs.php'); 
     }
+    
 }
 else if ($action == 'add_employer') {        
     //get values from user sign in form
@@ -93,6 +101,70 @@ else if ($action == 'add_employer') {
         $_SESSION['empPassword'] = $password1;
         include('employer_my_jobs.php');
     }
+}
+else if ($action == 'delete_listing'){
+    $job_ID = filter_input(INPUT_POST, 'jobID');
+    delete_employers_job($job_ID);
+    
+    $employer = $_SESSION['employer'];
+    $empID = $employer['empID'];
+    $my_jobs = get_jobs_by_empID($empID);
+    $job_count = count($my_jobs);
+
+    include('employer_my_jobs.php'); 
+}
+else if ($action == 'edit_listing'){
+    //working
+    $job_ID = filter_input(INPUT_POST, 'jobID');
+
+    $job = get_job_by_jobID($job_ID);
+
+    //$employer = $_SESSION['employer'];
+    //$empID = $employer['empID'];
+    //$my_jobs = get_jobs_by_empID($empID);
+    //$job_count = count($my_jobs);
+    include('employer_edit_listing.php'); 
+}
+else if ($action == 'save_changes'){
+    //should work
+    $job_ID = filter_input(INPUT_POST, 'jobID');
+    $jobName = filter_input(INPUT_POST, 'jobName');
+    $jobSalary = filter_input(INPUT_POST, 'jobSalary');
+    $jobAddress = filter_input(INPUT_POST, 'jobAddress');
+   
+    update_job($job_ID, $jobName, $jobAddress, $jobSalary);
+    
+    $employer = $_SESSION['employer'];
+    $empID = $employer['empID'];
+    $my_jobs = get_jobs_by_empID($empID);
+    $job_count = count($my_jobs);
+    include('employer_my_jobs.php'); 
+}
+else if ($action == 'create_job'){
+    //
+    //
+    //
+    //
+    //send to create job page
+    //these here so myjobs page can be refreshed
+    $employer = $_SESSION['employer'];
+    $empID = $employer['empID'];
+    $my_jobs = get_jobs_by_empID($empID);
+    $job_count = count($my_jobs);
+    include('employer_my_jobs.php'); 
+}
+else if ($action == 'view_listing'){
+    //
+    //
+    //
+    //
+    //send to view listing page
+    //these here so myjobs page can be refreshed
+    $employer = $_SESSION['employer'];
+    $empID = $employer['empID'];
+    $my_jobs = get_jobs_by_empID($empID);
+    $job_count = count($my_jobs);
+    include('employer_my_jobs.php'); 
 }
 else if ($action == 'logout') {
     //if customer logs out

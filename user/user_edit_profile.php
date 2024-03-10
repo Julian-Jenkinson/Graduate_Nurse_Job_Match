@@ -25,6 +25,7 @@
 
     <label for="userQualifications">Qualifications:</label><br>
     <select name="userQualifications">
+        <option value="" disabled selected>Select your qualification</option>
         <option value="Bachelor of Midwifery" <?php echo isset($user['userQualifications']) && $user['userQualifications'] == 'Bachelor of Midwifery' ? 'selected' : ''; ?>>Bachelor of Midwifery</option>    
         <option value="Diploma of Nursing" <?php echo isset($user['userQualifications']) && $user['userQualifications'] == 'Diploma of Nursing' ? 'selected' : ''; ?>>Diploma of Nursing</option>
         <option value="Bachelor of Nursing" <?php echo isset($user['userQualifications']) && $user['userQualifications'] == 'Bachelor of Nursing' ? 'selected' : ''; ?>>Bachelor of Nursing</option>
@@ -72,7 +73,6 @@
 
     <label for="mm7">Very remote communities</label>
     <input type="checkbox" name="mm7" value="Y" <?php echo $user['userMM7'] == 'Y' ? 'checked' : ''; ?>><br>
-
 
     <br>
     <input type="submit" value="Save Profile">
