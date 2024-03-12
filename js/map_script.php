@@ -75,8 +75,14 @@ function buildContent(job) {
             <div class="price">${job.jobName}</div>
             <div class="price">${job.jobPlace}</div>
             <div class="price">$${job.jobSalary}</div>
-            <div class="address">${job.jobAddress}</div>
-            <div class="address">link to job description here</div>
+            <div class="address">${job.jobCity}, ${job.jobState}</div>
+       
+            <form action="." method="post">
+                <input type="submit" value="View Listing">
+                <input type="hidden" name="action" value="view_listing">
+                <input type="hidden" name="jobID" value="${job.jobID}"> 
+            </form>
+        
         </div>
         `;
     return content;

@@ -2,7 +2,7 @@
 function get_jobs() {
     global $db;
     $query = 'SELECT * FROM jobs
-              ORDER BY jobName';
+              ORDER BY jobListingDate DESC';
     $statement = $db->prepare($query);
     $statement->execute();
     $jobs = $statement->fetchAll();
@@ -33,13 +33,16 @@ function delete_employers_job($jobID) {
 }
 
 //fill in more values of job
-function add_job($jobName, $jobSalary){
+function add_job($empID, $jobName,$jobPlace, $jobSalary, $jobAddress){
     global $db;
-    $query = 'INSERT INTO jobs (jobName, jobSalary)
-              VALUES (:jobName, :jobSalary)';
+    $query = 'INSERT INTO jobs (jobName, jobPlace, jobSalary, empID, jobAddress)
+              VALUES (:jobName, :jobPlace, :jobSalary, :empID, :jobAddress)';
     $statement = $db->prepare($query);
     $statement->bindValue(':jobName', $jobName);
+    $statement->bindValue(':jobPlace', $jobPlace);
     $statement->bindValue(':jobSalary', $jobSalary);
+    $statement->bindValue(':empID', $empID);
+    $statement->bindValue(':jobAddress', $jobAddress);
     $statement->execute();
     $statement->closeCursor();
 }
@@ -48,7 +51,7 @@ function get_jobs_by_empID($empID){
     global $db;
     $query = 'SELECT * FROM jobs
               where empID = :empID
-              ORDER BY jobName';
+              ORDER BY jobListingDate DESC';
     $statement = $db->prepare($query);
     $statement->bindValue(':empID', $empID);
     $statement->execute();
@@ -72,6 +75,9 @@ function update_job($jobID, $jobName, $jobAddress, $jobSalary){
               $statement->bindValue(':jobID', $jobID);
               $statement->execute();
               $statement->closeCursor();
+}
+function count_jobs(){
+    
 }
 
 ?>

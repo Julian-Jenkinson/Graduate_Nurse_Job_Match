@@ -99,6 +99,12 @@ else if ($action == 'add_employer') {
         $_SESSION['employer'] = $employer; 
         $_SESSION['empEmail'] = $email;        
         $_SESSION['empPassword'] = $password1;
+        //just added this to fix bug    
+        $empID = $employer['empID'];
+        $my_jobs = get_jobs_by_empID($empID);
+        $job_count = count($my_jobs);
+
+
         include('employer_my_jobs.php');
     }
 }
@@ -140,31 +146,41 @@ else if ($action == 'save_changes'){
     $job_count = count($my_jobs);
     include('employer_my_jobs.php'); 
 }
+
+
+
 else if ($action == 'create_job'){
-    //
-    //
-    //
-    //
-    //send to create job page
-    //these here so myjobs page can be refreshed
+    //should be good
     $employer = $_SESSION['employer'];
-    $empID = $employer['empID'];
+    include('employer_create_listing.php'); 
+}
+else if ($action == 'add_job'){
+    //get form data
+    
+    $empID = filter_input(INPUT_POST, 'empID');
+    $jobName = filter_input(INPUT_POST, 'jobName');
+    $jobPlace = filter_input(INPUT_POST, 'jobPlace');
+    $jobSalary = filter_input(INPUT_POST, 'jobSalary');
+    $jobAddress = filter_input(INPUT_POST, 'jobAddress');
+    //echo $empID;
+    $employer = $_SESSION['employer'];
+    
+    add_job($empID, $jobName,$jobPlace, $jobSalary, $jobAddress);
+
     $my_jobs = get_jobs_by_empID($empID);
     $job_count = count($my_jobs);
+
     include('employer_my_jobs.php'); 
 }
+
+
+
+
 else if ($action == 'view_listing'){
-    //
-    //
-    //
-    //
-    //send to view listing page
-    //these here so myjobs page can be refreshed
-    $employer = $_SESSION['employer'];
-    $empID = $employer['empID'];
-    $my_jobs = get_jobs_by_empID($empID);
-    $job_count = count($my_jobs);
-    include('employer_my_jobs.php'); 
+    $job_ID = filter_input(INPUT_POST, 'jobID');
+    $job = get_job_by_jobID($job_ID);
+    //go to job listing page
+    include('../jobs/jobs_view_listing.php'); 
 }
 else if ($action == 'logout') {
     //if customer logs out

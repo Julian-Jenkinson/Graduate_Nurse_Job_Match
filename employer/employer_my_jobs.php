@@ -21,9 +21,11 @@
 <!-- display employers jobs-->
 <?php foreach ($my_jobs as $job) : ?>
     <div><?php echo htmlspecialchars($job['jobName']); ?></div>
-    <div>$<?php echo htmlspecialchars($job['jobSalary']); ?></div>
+    <div>Posted <?php echo date('jS M Y', strtotime($job['jobListingDate'])); ?></div>
     <div><?php echo htmlspecialchars($job['jobPlace']); ?></div>
-    <div><?php echo htmlspecialchars($job['jobAddress']); ?></div>
+    <div><?php echo htmlspecialchars($job['jobCity'] . ', ' . $job['jobState']); ?></div>
+    <div>$<?php echo htmlspecialchars($job['jobSalary']); ?></div>
+    
     <form action="." method="post">
         <input type="submit" value="View Listing"/>
         <input type="hidden" name="action" value="view_listing">
