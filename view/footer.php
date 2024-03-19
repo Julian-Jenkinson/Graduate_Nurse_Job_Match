@@ -1,10 +1,60 @@
+<div class="footer-svg">
+    <footer class="site-footer">
+        <div class="footer-left">
+         <div class="social-icons">
+          <a href="http://facebook.com" class="social-icon">
+            <img src="./Images/facebook.png" alt="Facebook" />
+          </a>
+          <a href="http://twitter.com" class="social-icon">
+            <img src="./Images/twitter.png" alt="Twitter" />
+          </a>
+          <a href="http://instagram.com" class="social-icon">
+            <img src="./Images/instagram.png" alt="Instagram" />
+          </a>
+          <a href="http://youtube.com" class="social-icon">
+            <img src="./Images/youtube.png" alt="Youtube" />
+          </a>
+         </div>
+          <p class="copyright-text">© All Copyright received 2024</p>
+          <div class="footer-buttons">
+            <button>Privacy Policy</button>
+            <button>Terms of Use</button>
+            <button>Refer a friend</button>
+            <button>T&Cs</button>
+          </div>
+        </div>
+        <div class="footer-center">
+          <div class="footer-logo">
+            <img src="./Images/LOGO.png" alt="Logo" class="logo">
+            <div class="logo-text">
+                <span class="graduate">GR<span class="highlight-logo">A</span>DU<span class="highlight-logo">A</span>TE</span>
+                <span class="job-match">Nurse/Midwife Job Match</span>   
+            </div>
+          </div>
+        </div>
+        <div class="footer-right">
+          <div class="footer-links">
+            <a href="#" class="footer-link">About us</a>
+            <a href="#" class="footer-link">Contact us</a>
+            <a href="#" class="footer-link">Online Chat</a>
+            <a href="#" class="footer-link">Account</a>
+            <a href="#" class="footer-link">Gallery</a>
+          </div>
+        </div>
+    </footer>  
+    </div>  
+</body>
+</html>
+
+<!--
 <footer>
     <hr>
     <p class="footer">
-        &copy; <?php echo date("Y"); ?> Footer
+    &copy; <?php echo date("Y"); ?> Footer
     </p>
 </footer>
 
 
 </body>
 </html>
+-->
