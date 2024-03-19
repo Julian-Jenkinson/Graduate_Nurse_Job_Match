@@ -5,9 +5,9 @@
         <div class="mySlides fade">
           <img src="./Images/ruralnursing.jpg" style="width:100%">
         </div>
-        <div class="mySlides fade">
-          <img src="./Images/Nursing1.jpg" style="width:100%">
-        </div>
+        <!--<div class="mySlides fade">
+          <img src="map working.php" style="width:100%">
+        </div> sorry map working.php is obselete-->
         <div class="mySlides fade">
           <img src="./Images/Nursing2.jpg" style="width:100%">
         </div>
