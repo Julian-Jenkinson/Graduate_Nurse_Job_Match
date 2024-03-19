@@ -18,14 +18,14 @@
         </div>
         <nav class="header-nav">
             <ul>
-                <li><a href="home">Home</a></li>
-                <li><a href="jobs">Jobs</a></li>
+                <li><a href="/CSC3600-T1-2024_TheITCrew/home.php">Home</a></li>
+                <li><a href="/CSC3600-T1-2024_TheITCrew/jobs">Jobs</a></li>
                 <li><a href="#profile">Profile</a></li>
             </ul>
         </nav>
         <div class="header-access">
-            <a href="user" class="signin-btn signin-btn::after">Sign In</a>
-            <a href="employer" class="employer-site-btn">Employer Site</a>
+            <a href="/CSC3600-T1-2024_TheITCrew/user" class="signin-btn signin-btn::after">Sign In</a>
+            <a href="/CSC3600-T1-2024_TheITCrew/employer" class="employer-site-btn">Employer Site</a>
         </div>
     </header>
 <body>
