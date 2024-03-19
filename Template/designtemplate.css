@@ -1,0 +1,247 @@
+/* Fonts in CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=AndikaNewBasic&display=swaphttps://fonts.googleapis.com/css?family=Andika New Basic');
+
+/* Style sheet for Graduate Nursing/Midwife Job Match Template*/
+.header-logo{
+  display: flex;
+  align-items: center;
+}
+  
+.logo {
+  width: auto; 
+  height: 70px;
+  float: left; 
+  margin-left: 50px;
+}
+  
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.highlight-logo {
+  color: #8B4513; 
+}  
+
+.graduate {
+  font-family: 'Alegreya SC', serif; 
+  font-size: 24px; 
+  font-weight: 700;
+  color: #000000;
+}  
+  
+.job-match {
+  font-family: 'ABeeZee', sans-serif; 
+  font-size: 16px; 
+  font-style: italic;
+  color: #000000;
+}
+  
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Anek Devanagari', sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 85px;
+  background-color: #FFFDF7;
+  border-bottom: 1px solid #D9D9D9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box; 
+  position: relative;
+  z-index: 2; 
+  }
+
+.header-nav ul {
+  list-style: none;
+  padding: 20;
+  margin: 0;
+  display: flex;
+  gap: 45px;
+}
+
+.header-nav li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.header-access .signin-btn {
+  color: #8B4513;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.header-access .signin-btn::after {
+  content: "";
+  display: inline-block;
+  height: 20px; 
+  width: 1px;
+  background-color: #000;
+  margin-left: 10px; 
+  margin-right: 10px; 
+  vertical-align: middle;
+}
+
+.header-access .employer-site-btn {
+  color: #000;
+  text-decoration: none;
+  margin-right: 50px
+}
+
+.wave-background {
+  width: 100%;
+  height: 830px;
+  background-image: 
+    url('data:image/svg+xml;charset=UTF-8,<svg width="1920" height="450" viewBox="0 0 1920 450" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="mask0_376_3167" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="450"><rect width="1920" height="450" fill="white"/></mask><g mask="url(%23mask0_376_3167)"><path d="M1157 273.094C820.863 464.981 219 391.125 -47.5 347.625L-64 508.781H2040.5V30.375C1798 14.9062 1628 4.2187 1157 273.094Z" fill="%23E2725B"/><path d="M680 376.031C304.8 305.381 -80 397.031 -225.5 451.687L-214 547.594H1968V0C1878.5 110.437 1632.6 310.331 1365 226.406C1030.5 121.5 1149 464.344 680 376.031Z" fill="%23FFFDF7"/><path d="M680 383.344C304.8 312.694 -80 404.344 -225.5 459L-214 554.906H1968V7.3125C1878.5 117.75 1632.6 317.644 1365 233.719C1030.5 128.812 1149 471.656 680 383.344Z" fill="%23556B2F"/></g></svg>'),
+    linear-gradient(#FFFDF7, #FFFDF7);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 1;
+  }
+
+.endwave-svg {
+  margin-top: 0%;
+  width: 100%;
+  height: 1812px;
+  background-image: url('data:image/svg+xml,<svg width="1921" height="1601" viewBox="0 0 1921 1601" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="1920" height="423" transform="translate(0 1178)" fill="%23FFFDF7"/><mask id="mask0_341_3082" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="1" y="1178" width="1919" height="398"><rect x="1920" y="1576" width="1919" height="398" transform="rotate(180 1920 1576)" fill="white"/></mask><g mask="url(%23mask0_341_3082)"><path d="M719.87 1259.32C1055.77 1155.66 1657.2 1195.56 1923.51 1219.06L1940 1132H-163V1390.44C79.3271 1398.8 249.206 1404.57 719.87 1259.32Z" fill="%23E2725B"/><path d="M1240.12 1194.7C1615.06 1237.41 1999.6 1182.01 2145 1148.97L2133.51 1091H-47V1422C42.4387 1355.24 288.171 1234.42 555.588 1285.15C889.859 1348.56 771.44 1141.32 1240.12 1194.7Z" fill="white"/><path d="M1244.12 1189.88C1619.06 1231.43 2003.6 1177.53 2149 1145.4L2137.51 1089H-43V1411C46.4387 1346.06 292.171 1228.52 559.588 1277.87C893.859 1339.55 775.44 1137.95 1244.12 1189.88Z" fill="%23556B2F"/></g><rect width="1920" height="1180" transform="translate(1)" fill="%23556B2F"/></svg>');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer-svg {
+  margin-top: 0%;
+  width: 100%;
+  height: 512px;
+  background-image: url('data:image/svg+xml,<svg width="1920" height="521" viewBox="0 0 1920 521" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="1920" height="521" fill="%23E2725B"/><rect width="1920" height="450" transform="translate(0 36)" fill="%23FFFDF7"/></svg>');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  margin-top: 9%;
+  position: relative; 
+  z-index: 2; 
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-left: -480%;
+}
+
+.social-icon img {
+  margin-right: 5px; 
+  height: auto;
+  width: 41px;
+}
+
+.copyright-text {
+  color: #8B4513;
+  font-family: 'Anek Devanagari', sans-serif;
+  font-size: 12px;
+  margin-top: 17px;
+  margin-left: -490%;
+}
+
+.footer-buttons {
+  margin-left: -442%;
+  margin-top: 5px;
+}
+
+.footer-buttons button {
+  background-color: transparent;
+  border: none;
+  color: #8B4513; /* Font color as specified */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer-buttons button:hover {
+  text-decoration: underline;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-left: -220%;
+  margin-top: -3%;
+}
+
+.footer-logo .logo {
+  margin-right: 10px; /* Adjust as needed */
+  width: auto; 
+  height: 150px;
+  float: left; 
+}
+  
+.footer-logo .logo-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.footer-logo .graduate {
+  font-family: 'Alegreya SC', serif; 
+  font-size: 55px; 
+  font-weight: 700;
+  color: #000000;
+}  
+  
+.footer-logo .job-match {
+  font-family: 'ABeeZee', sans-serif; 
+  font-size: 25px; 
+  font-style: italic;
+  color: #000000;
+}
+
+.footer-links a {
+  margin-right: 20px; /* Adjust as needed */
+  color: #292929; /* Adjust as needed */
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -10px;
+  margin-left: -250%;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
