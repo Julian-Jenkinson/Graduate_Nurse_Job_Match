@@ -4,8 +4,8 @@
 session_start();
 
 //get error messages
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 require('../model/database.php');
 require('../model/employers_db.php');
@@ -132,40 +132,81 @@ else if ($action == 'edit_listing'){
     include('employer_edit_listing.php'); 
 }
 else if ($action == 'save_changes'){
-    //should work
-    $job_ID = filter_input(INPUT_POST, 'jobID');
-    $jobName = filter_input(INPUT_POST, 'jobName');
-    $jobSalary = filter_input(INPUT_POST, 'jobSalary');
-    $jobAddress = filter_input(INPUT_POST, 'jobAddress');
+    $job_ID = filter_input(INPUT_POST, 'jobID');//need this?
+
+    $job = get_job_by_jobID($job_ID);//need this?
+   //get form data
+   $employer = $_SESSION['employer'];//need this?
+
+   $jobID = filter_input(INPUT_POST, 'jobID');
+   $empID = filter_input(INPUT_POST, 'empID');
+   $jobName = filter_input(INPUT_POST, 'jobName');
+   $jobPlace = filter_input(INPUT_POST, 'jobPlace');
+   $jobDescription = filter_input(INPUT_POST, 'jobDescription');
+   $jobAboutUs = filter_input(INPUT_POST, 'jobAboutUs');
+   $jobSalary = filter_input(INPUT_POST, 'jobSalary');
+   $jobContractType = filter_input(INPUT_POST, 'jobContractType');
    
-    update_job($job_ID, $jobName, $jobAddress, $jobSalary);
-    
-    $employer = $_SESSION['employer'];
-    $empID = $employer['empID'];
-    $my_jobs = get_jobs_by_empID($empID);
-    $job_count = count($my_jobs);
-    include('employer_my_jobs.php'); 
+   $jobAddress = filter_input(INPUT_POST, 'jobAddress');
+   $jobCity = filter_input(INPUT_POST, 'jobCity');
+   $jobState = filter_input(INPUT_POST, 'jobState');
+
+   $jobMonashRating = filter_input(INPUT_POST, 'jobMonashRating');
+   $jobListingDate = filter_input(INPUT_POST, 'jobListingDate');
+   
+   $jobContactEmail = filter_input(INPUT_POST, 'jobContactEmail');
+   $jobLink = filter_input(INPUT_POST, 'jobLink');
+
+   //echo $empID;
+   $employer = $_SESSION['employer'];
+   $empID = isset($employer['empID']) ? $employer['empID'] : null;
+
+   update_job($empID, $jobName, $jobPlace, $jobDescription, $jobAboutUs, $jobSalary, 
+             $jobContractType, $jobAddress, $jobCity, $jobState, $jobMonashRating, 
+             $jobListingDate, $jobContactEmail, $jobLink);
+
+   $my_jobs = get_jobs_by_empID($empID);
+   $job_count = count($my_jobs);
+
+   include('employer_my_jobs.php'); 
 }
 
 
 
 else if ($action == 'create_job'){
     //should be good
-    $employer = $_SESSION['employer'];
+    $employer = $_SESSION['employer'];//need this?
     include('employer_create_listing.php'); 
 }
 else if ($action == 'add_job'){
     //get form data
-    
+    $employer = $_SESSION['employer'];
+
     $empID = filter_input(INPUT_POST, 'empID');
     $jobName = filter_input(INPUT_POST, 'jobName');
     $jobPlace = filter_input(INPUT_POST, 'jobPlace');
+    $jobDescription = filter_input(INPUT_POST, 'jobDescription');
+    $jobAboutUs = filter_input(INPUT_POST, 'jobAboutUs');
     $jobSalary = filter_input(INPUT_POST, 'jobSalary');
+    $jobContractType = filter_input(INPUT_POST, 'jobContractType');
+    
     $jobAddress = filter_input(INPUT_POST, 'jobAddress');
+    $jobCity = filter_input(INPUT_POST, 'jobCity');
+    $jobState = filter_input(INPUT_POST, 'jobState');
+
+    $jobMonashRating = filter_input(INPUT_POST, 'jobMonashRating');
+    $jobListingDate = filter_input(INPUT_POST, 'jobListingDate');
+    
+    $jobContactEmail = filter_input(INPUT_POST, 'jobContactEmail');
+    $jobLink = filter_input(INPUT_POST, 'jobLink');
+
     //echo $empID;
     $employer = $_SESSION['employer'];
-    
-    add_job($empID, $jobName,$jobPlace, $jobSalary, $jobAddress);
+    $empID = isset($employer['empID']) ? $employer['empID'] : null;
+
+    add_job($empID, $jobName, $jobPlace, $jobDescription, $jobAboutUs, $jobSalary, 
+        $jobContractType, $jobAddress, $jobCity, $jobState, $jobMonashRating, 
+        $jobListingDate, $jobContactEmail, $jobLink);
 
     $my_jobs = get_jobs_by_empID($empID);
     $job_count = count($my_jobs);

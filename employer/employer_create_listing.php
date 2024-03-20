@@ -57,11 +57,10 @@
     <label>Company link:</label><br>
     <input type="text" name="jobLink">
     <br><br>
-    
 
-    <input type="hidden" name="jobCity" value="">
-    <input type="hidden" name="jobState" value="">
-    <input type="hidden" name="jobListingDate" value="">
+    <input type="hidden" name="jobCity" id="jobCity" value="">
+    <input type="hidden" name="jobState" id="jobState"value="">
+    <input type="hidden" name="jobListingDate" value="<?php echo date('Y-m-d'); ?>">
     
     <input type="submit" value="Post Job">
     <input type="hidden" name="action" value="add_job">
