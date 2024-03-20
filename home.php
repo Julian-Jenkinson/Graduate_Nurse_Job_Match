@@ -5,9 +5,6 @@
         <div class="mySlides fade">
           <img src="./Images/ruralnursing.jpg" style="width:100%">
         </div>
-        <!--<div class="mySlides fade">
-          <img src="map working.php" style="width:100%">
-        </div> sorry map working.php is obselete-->
         <div class="mySlides fade">
           <img src="./Images/Nursing2.jpg" style="width:100%">
         </div>
@@ -24,7 +21,6 @@
           <span class="dot"></span> 
           <span class="dot"></span> 
           <span class="dot"></span> 
-          <span class="dot"></span> 
         </div>
     </div> 
     <div class="wave-background">
@@ -34,8 +30,11 @@
                 aligned with your skills, and step into a new era of healthcare employment. Your dream job awaits, let’s get started!</p>
                 <div class="rectangle-container">
                     <div class="buttons-wrapper">
-                        <button class="sign-in-button">Sign In</button>
-                        <a href="your-link.html" class="button-link">Register</a>
+                        <!--<button class="sign-in-button">Sign In</button> -->
+                        <!-- i like the button but you might need to style the sign in link to look like a buton
+                      because i couldnt get the button to redirect to the sign in page very well..-->
+                        <a href="/CSC3600-T1-2024_TheITCrew/user/user_login.php" class="button-link">Sign In</a>
+                        <a href="/CSC3600-T1-2024_TheITCrew/user/user_signup.php" class="button-link">Register</a>
                     </div>
                     <p class="text">Create an account to unlock personalised job opportunities tailored for nursing and midwifery graduates.</p>
                 </div>                
@@ -69,6 +68,8 @@
         <div class="job">Job 5 details...</div>
         <div class="job">Job 6 details...</div>
     </div>
+    
+    <!-- 
     <div class="endwave-svg">
         <div class="info-boxes">
             <h2>Why Choose Us?</h2>
@@ -87,17 +88,12 @@
               <h3>Travel Time Consideration</h3>
               <p>Prioritize convenience with our platform's travel time considerations, ensuring you find healthcare positions that align with your preferences and reduce commuting stress.</p>
             </div>
-             <h4>GIS Map</h4>
+
+            <h4>GIS Map</h4>
+            i tried but had trouble displaying a map here.. - julian
+        
         </div>
-    </div>
+    </div> 
+-->
 
 <?php include 'view/footer.php'; ?>    
-
-<!--    
-    <h2>Job Match Prototype</h2>  
-      <ul>
-        <li><a href="user">Log in</a></li>
-        <li><a href="jobs">Show Jobs</a></li>
-        <li><a href="employer">Employer site</a></li>
-      </ul>           
--->

@@ -4,8 +4,8 @@
 session_start();
 
 //get error messages
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 
 require('../model/database.php');
 require('../model/users_db.php');
@@ -152,8 +152,9 @@ else if ($action == 'logout') {
     unset($_SESSION['user']);
     unset($_SESSION['userEmail']);
     unset($_SESSION['userPassword']);
-    //destroy session - not required
-    //session_destroy();
-    include('user_login.php');
+    
+    // Redirect to home page
+    header('Location: ../home.php');
+    exit(); // Stop further execution
 }
 ?>

@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <?php session_start(); // Start the session ?>
     <header>
         <div class="header-logo">
             <img src="/CSC3600-T1-2024_TheITCrew/Images/LOGO.png" alt="Graduate Nursing/Midwife Job Match Logo" class="logo"/>
@@ -24,12 +25,27 @@
         <nav class="header-nav">
             <ul>
                 <li><a href="/CSC3600-T1-2024_TheITCrew/home.php">Home</a></li>
+                <li><a href="/CSC3600-T1-2024_TheITCrew/home.php">About us</a></li>
                 <li><a href="/CSC3600-T1-2024_TheITCrew/jobs">Jobs</a></li>
-                <li><a href="/CSC3600-T1-2024_TheITCrew/user">Profile</a></li>
+                <?php 
+                if (isset($_SESSION['user'])) { 
+                    // User is logged in, display the view profile button
+                    echo '<li><a href="/CSC3600-T1-2024_TheITCrew/user">Profile</a></li>';
+                } 
+                ?>
+                
             </ul>
         </nav>
         <div class="header-access">
-            <a href="/CSC3600-T1-2024_TheITCrew/user" class="signin-btn signin-btn::after">Sign In</a>
+            <?php 
+            if (isset($_SESSION['user'])) { 
+                // User is logged in, display the log-out link
+                echo '<a href="/CSC3600-T1-2024_TheITCrew/user/user_logout.php" class="signin-btn signin-btn::after">Log out</a>';
+            } else {
+                // User is not logged in, display the sign-in link
+                echo '<a href="/CSC3600-T1-2024_TheITCrew/user/user_login.php" class="signin-btn signin-btn::after">Sign In</a>';
+            }
+            ?>
             <a href="/CSC3600-T1-2024_TheITCrew/employer" class="employer-site-btn">Employer Site</a>
         </div>
     </header>

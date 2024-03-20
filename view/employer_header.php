@@ -13,24 +13,43 @@
 </head>
 
 <body>
-    <header>
+<?php session_start(); // Start the session ?>
+    <header id="employer_header">
         <div class="header-logo">
             <img src="/CSC3600-T1-2024_TheITCrew/Images/LOGO.png" alt="Graduate Nursing/Midwife Job Match Logo" class="logo"/>
             <div class="logo-text">
-                <span class="graduate">GR<span class="highlight-logo">A</span>DU<span class="highlight-logo">A</span>TE</span>
+                <span class="graduate">GR<span class="highlight-logo">A</span>DU<span class="highlight-logo">A</span>TE | employer</span>
                 <span class="job-match">Nurse/Midwife Job Match</span>   
             </div>         
         </div>
         <nav class="header-nav">
-            <ul>
+            <ul><!--
                 <li><a href="/CSC3600-T1-2024_TheITCrew/home.php">Home</a></li>
-                <li><a href="/CSC3600-T1-2024_TheITCrew/jobs">Jobs</a></li>
-                <li><a href="/CSC3600-T1-2024_TheITCrew/user">Profile</a></li>
-            </ul>
+                <li><a href="/CSC3600-T1-2024_TheITCrew/home.php">About Us</a></li>
+                <li><a href="/CSC3600-T1-2024_TheITCrew/jobs">Jobs</a></li> -->
+                
+                <?php 
+                if (isset($_SESSION['employer'])) { 
+                    // User is logged in, display the view profile button
+                    echo '<li><a href="/CSC3600-T1-2024_TheITCrew/employer">Dashboard</a></li>
+                         <li><a href="/CSC3600-T1-2024_TheITCrew/employer/employer_create_listing.php">Create Listing</a></li>';
+                } 
+                ?>
+                
+                </ul>
         </nav>
         <div class="header-access">
-            <a href="/CSC3600-T1-2024_TheITCrew/user" class="signin-btn signin-btn::after">Sign In</a>
-            <a href="/CSC3600-T1-2024_TheITCrew/employer" class="employer-site-btn">Employer Site</a>
+            <?php 
+            if (isset($_SESSION['employer'])) { 
+                // User is logged in, display the log-out link
+                echo '<a href="/CSC3600-T1-2024_TheITCrew/employer/employer_logout.php" class="signin-btn signin-btn::after">Log out</a>';
+            } else {
+                // User is not logged in, display the sign-in link
+                echo '<a href="/CSC3600-T1-2024_TheITCrew/employer/employer_login.php" class="signin-btn signin-btn::after">Sign In</a>';
+            }
+            ?>
+            
+            <a href="/CSC3600-T1-2024_TheITCrew/home.php" class="employer-site-btn">Graduate Site</a>
         </div>
     </header>
 <body>

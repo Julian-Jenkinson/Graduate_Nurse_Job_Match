@@ -61,6 +61,10 @@ header {
   z-index: 2; 
   }
 
+#employer_header {
+  background-color: lightblue;
+}
+
 .header-nav ul {
   list-style: none;
   padding: 20;
