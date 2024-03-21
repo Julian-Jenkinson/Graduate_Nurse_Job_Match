@@ -3,11 +3,12 @@
 <h3>Employer Dashboard</h3>
 
 <div>you are logged in as <?php echo $employer['empEmail']; ?></div>
+<!-- log out now in header
 <form action="." method="post">
     <input type="submit" value="Logout"/>
     <input type="hidden" name="action" value="logout">
 </form><br>
-
+-->
 
 <h4>Post a job</h4>
 <form action="." method="post">
@@ -46,10 +47,10 @@
 <br><br>
 <?php endforeach; ?>
 
-
+<!-- logout now in header
 <form action="." method="post">
     <input type="submit" value="Logout"/>
     <input type="hidden" name="action" value="logout">
 </form>
-
+-->
 <?php include '../view/footer.php'; ?>

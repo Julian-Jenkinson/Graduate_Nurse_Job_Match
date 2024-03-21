@@ -77,7 +77,7 @@ function get_jobs_by_empID($empID){
 }
 
 //fill in more values of job
-function update_job($empID, $jobName, $jobPlace, $jobDescription, $jobAboutUs, $jobSalary, 
+function update_job($jobID, $empID, $jobName, $jobPlace, $jobDescription, $jobAboutUs, $jobSalary, 
                     $jobContractType, $jobAddress, $jobCity, $jobState, $jobMonashRating, 
                     $jobListingDate, $jobContactEmail, $jobLink){
     global $db;

@@ -4,8 +4,8 @@
 session_start();
 
 //get error messages
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 
 require('../model/database.php');
 require('../model/employers_db.php');
@@ -161,7 +161,7 @@ else if ($action == 'save_changes'){
    $employer = $_SESSION['employer'];
    $empID = isset($employer['empID']) ? $employer['empID'] : null;
 
-   update_job($empID, $jobName, $jobPlace, $jobDescription, $jobAboutUs, $jobSalary, 
+   update_job($jobID, $empID, $jobName, $jobPlace, $jobDescription, $jobAboutUs, $jobSalary, 
              $jobContractType, $jobAddress, $jobCity, $jobState, $jobMonashRating, 
              $jobListingDate, $jobContactEmail, $jobLink);
 
@@ -223,6 +223,8 @@ else if ($action == 'view_listing'){
     //go to job listing page
     include('../jobs/jobs_view_listing.php'); 
 }
+
+//this logout not using???
 else if ($action == 'logout') {
     //if customer logs out
     //remove session variables

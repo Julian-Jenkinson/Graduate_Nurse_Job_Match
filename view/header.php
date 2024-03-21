@@ -25,7 +25,7 @@
         <nav class="header-nav">
             <ul>
                 <li><a href="/CSC3600-T1-2024_TheITCrew/home.php">Home</a></li>
-                <li><a href="/CSC3600-T1-2024_TheITCrew/home.php">About us</a></li>
+                <li><a href="/CSC3600-T1-2024_TheITCrew/about_us.php">About us</a></li>
                 <li><a href="/CSC3600-T1-2024_TheITCrew/jobs">Jobs</a></li>
                 <?php 
                 if (isset($_SESSION['user'])) { 

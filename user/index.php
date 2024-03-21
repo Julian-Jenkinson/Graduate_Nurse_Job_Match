@@ -145,7 +145,7 @@ else if ($action == 'save_profile') {
 
 
 
-
+//this logout not using???
 else if ($action == 'logout') {
     //if user logs out
     //remove session variables

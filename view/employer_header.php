@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<?php session_start(); // Start the session ?>
+    <?php session_start(); // Start the session ?>
     <header id="employer_header">
         <div class="header-logo">
             <img src="/CSC3600-T1-2024_TheITCrew/Images/LOGO.png" alt="Graduate Nursing/Midwife Job Match Logo" class="logo"/>
@@ -23,8 +23,9 @@
             </div>         
         </div>
         <nav class="header-nav">
-            <ul><!--
+            <ul>
                 <li><a href="/CSC3600-T1-2024_TheITCrew/home.php">Home</a></li>
+                <!--
                 <li><a href="/CSC3600-T1-2024_TheITCrew/home.php">About Us</a></li>
                 <li><a href="/CSC3600-T1-2024_TheITCrew/jobs">Jobs</a></li> -->
                 

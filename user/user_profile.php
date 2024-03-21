@@ -2,6 +2,7 @@
 
 <br>
 <div>You are logged in as <?php echo $_SESSION['user']['userEmail']; ?></div> 
+<!-- logout now in header 
 <span> Not you? </span>
 <span>
     <form action="." method="post">
@@ -9,7 +10,7 @@
         <input type="hidden" name="action" value="logout">
     </form>
 </span><br>
-
+-->
 <h3>User Dashboard</h3>
 
 <!-- create profile button -->
@@ -89,10 +90,10 @@
 
 
 
-<!-- logout button -->
+<!-- logout button now in header
 <form action="." method="post">
     <input type="submit" value="Logout"/>
     <input type="hidden" name="action" value="logout">
 </form>
-
+    -->
 <?php include '../view/footer.php'; ?>

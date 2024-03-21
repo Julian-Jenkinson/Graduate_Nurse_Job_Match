@@ -9,8 +9,12 @@
     <input type="text" name="jobName">
     <br><br>
     
-    <label>Place:</label><br>
+    <label>Health Care Facility:</label><br>
     <input type="text" name="jobPlace">
+    <br><br>
+
+    <label>Address:</label><br>
+    <input type="text" name="jobAddress" id="autocomplete" onfocus="initAutocomplete()" placeholder="Enter your address">
     <br><br>
     
     <label>Salary:</label><br>
@@ -26,20 +30,16 @@
         <option value="Contract">Contract</option>
         <option value="Temporary">Temporary</option> 
     </select> <br><br>
-    
-    <label>Address:</label><br>
-    <input type="text" name="jobAddress" id="autocomplete" onfocus="initAutocomplete()" placeholder="Enter your address">
-    <br><br>
 
     <label for="jobMonashRating">Rural rating (Modified Monash Model):</label><br>
     <select name="jobMonashRating">
-        <option value="1">Metropolitatan area</option>
-        <option value="2">Regional centre</option>
-        <option value="3">Large rural town</option>
-        <option value="4">Medium rural town</option>
-        <option value="5">Small rural town</option>
-        <option value="6">Remote communitie</option>
-        <option value="7">Very remote communitie</option>
+        <option value="Metropolitan area">Metropolitan area</option>
+        <option value="Regional centre">Regional centre</option>
+        <option value="Large rural town">Large rural town</option>
+        <option value="Medium rural town">Medium rural town</option>
+        <option value="Small rural town">Small rural town</option>
+        <option value="Remote community">Remote community</option>
+        <option value="Very remote community">Very remote community</option>
     </select><br><br>
     
     <label>Job description:</label><br>
