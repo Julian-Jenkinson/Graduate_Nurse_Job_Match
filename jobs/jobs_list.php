@@ -7,7 +7,6 @@
     <tr>
         <td>Keyword</td>
         <td>Location</td>
-        
     </tr>
     <tr>
         <td><input type="text" placeholder="Registered Nurse"></td>

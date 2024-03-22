@@ -78,18 +78,28 @@ CREATE TABLE jobs (
         --hospital
         --local health service
         --?
-    -- sectorServiced - <tick boxes>
-        --?
-        --?
+    -- sectorsServiced - <select>
+        --public?
+        --private?
+        -- public and private
     --numberBeds
+
     --medical practitioners utilised
+    
     --allied health care professionals
+    
     --visiting health care facilities
+    
     --investigations services <tickboxes>
         --Pathology
-        --Xray
-        --Scanning
-        --etc
+        --X-ray
+        --CT Scans
+        --MRI
+        --ultrasound
+        --Nuclear Medicine
+        --Immunology
+        --Neurological Testing
+        --Laborotory Testing
     
 --Clinical areas of health care
     --acute care

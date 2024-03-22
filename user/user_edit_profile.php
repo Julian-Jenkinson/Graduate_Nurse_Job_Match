@@ -7,7 +7,7 @@
 
 
 
-<form action="." method="post" id="aligned">
+<form action="." method="post">
 
     <label>First Name:</label><br>
     <input type="text" name="userFName", value="<?php echo isset($user['userFName']) ? htmlspecialchars($user['userFName']) : ''; ?> ">

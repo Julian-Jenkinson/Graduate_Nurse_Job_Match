@@ -3,7 +3,7 @@
 <h3>User log in</h3>
 <br>
 
-<form action="." method="post" id="aligned">
+<form action="." method="post">
     <label>Email:</label><br>
     <input type="text", name="email" >
     <br><br>
