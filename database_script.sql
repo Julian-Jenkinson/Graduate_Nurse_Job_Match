@@ -60,7 +60,7 @@ CREATE TABLE jobs (
     jobID int NOT NULL AUTO_INCREMENT,
     empID int NOT NULL,
     jobName varchar(20) NOT NULL,
-    jobPlace varchar(40),
+    jobPlace varchar(60),
     jobDescription text,
     jobAboutUs text,
     jobSalary varchar(10),
@@ -73,7 +73,42 @@ CREATE TABLE jobs (
     jobMonashRating varchar(25),
 
     jobListingDate DATE,
+
+    -- facilityType <select>
+        --hospital
+        --local health service
+        --?
+    -- sectorServiced - <tick boxes>
+        --?
+        --?
+    --numberBeds
+    --medical practitioners utilised
+    --allied health care professionals
+    --visiting health care facilities
+    --investigations services <tickboxes>
+        --Pathology
+        --Xray
+        --Scanning
+        --etc
     
+--Clinical areas of health care
+    --acute care
+        --ED
+        --perioperative
+        --ICU
+        --Surgical
+    --chronic care
+        --Medical
+        --Rehabilitation
+        --Aged Care
+
+    --Accomodation availability
+
+--Township Information
+
+
+--
+
     jobContactEmail varchar(50),
     jobLink text,
     PRIMARY KEY (jobID)
