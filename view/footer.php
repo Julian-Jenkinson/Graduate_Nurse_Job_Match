@@ -17,10 +17,9 @@
          </div>
           <p class="copyright-text">© All Copyright received 2024</p>
           <div class="footer-buttons">
-            <button>Privacy Policy</button>
-            <button>Terms of Use</button>
-            <button>Refer a friend</button>
-            <button>T&Cs</button>
+            <a href="/CSC3600-T1-2024_TheITCrew/privacy policy/privacypolicy.php" class="button-link"><button>Privacy Policy</button></a>
+            <a href="/CSC3600-T1-2024_TheITCrew/terms of use/termsofuse.php" class="button-link"><button>Terms of Use</button></a>
+            <a href="/CSC3600-T1-2024_TheITCrew/t and c/tandc.php" class="button-link"><button>T&Cs</button></a>
           </div>
         </div>
         <div class="footer-center">
@@ -36,9 +35,7 @@
           <div class="footer-links">
             <a href="#" class="footer-link">About us</a>
             <a href="#" class="footer-link">Contact us</a>
-            <a href="#" class="footer-link">Online Chat</a>
             <a href="#" class="footer-link">Account</a>
-            <a href="#" class="footer-link">Gallery</a>
           </div>
         </div>
     </footer>  
