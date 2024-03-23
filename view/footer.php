@@ -33,8 +33,8 @@
         </div>
         <div class="footer-right">
           <div class="footer-links">
-            <a href="#" class="footer-link">About us</a>
-            <a href="#" class="footer-link">Contact us</a>
+            <a href="/CSC3600-T1-2024_TheITCrew/about us/aboutus.php" class="footer-link">About us</a>
+            <a href="/CSC3600-T1-2024_TheITCrew/contact us/contactus.php" class="footer-link">Contact us</a>
             <a href="#" class="footer-link">Account</a>
           </div>
         </div>
