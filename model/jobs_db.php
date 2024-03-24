@@ -157,7 +157,15 @@ function get_jobs_by_empID($empID){
 //fill in more values of job
 function update_job($jobID, $empID, $jobName, $jobPlace, $jobDescription, $jobAboutUs, $jobSalary, 
                     $jobContractType, $jobAddress, $jobCity, $jobState, $jobMonashRating, 
-                    $jobListingDate, $jobContactEmail, $jobLink){
+                    $jobListingDate, $jobContactEmail, $jobLink, $jobFacilityType, $jobSectorsServices, 
+                    $jobBeds, $jobMedicalPracs, $jobAlliedHealth, $jobVisitingFacilities, 
+                    $jobServPathology, $jobServXray, $jobServCT, $jobServMRI, $jobServUltra, $jobServNuclear, 
+                    $jobServImmunology, $jobServNeurological, $jobServLab, $jobED, $jobPeriop, $jobICU, 
+                    $jobSurgical, $jobMedical, $jobRehab, $jobAgedCare, $jobAccoms, $jobChildCare, 
+                    $jobPrimarySchool, $jobHighSchool, $jobUniversity, $jobCinema, $jobLiveMusic, 
+                    $jobSportsClub, $jobTheatre, $jobCraftClub, $jobGym, $jobLibrary,$jobSupermarket, 
+                    $jobFarmMarket, $jobMechanic, $jobRetail, $jobRestaurants, $jobPubs, $jobInternet,
+                    $jobMobileCov, $jobBus, $jobTrain, $jobAirport, $jobTaxi, $jobEV){
     global $db;
     $query = 'UPDATE jobs
               SET empID = :empID, 
@@ -173,7 +181,56 @@ function update_job($jobID, $empID, $jobName, $jobPlace, $jobDescription, $jobAb
                   jobMonashRating = :jobMonashRating, 
                   jobListingDate = :jobListingDate, 
                   jobContactEmail = :jobContactEmail, 
-                  jobLink = :jobLink
+                  jobLink = :jobLink,
+                  
+                  jobFacilityType = :jobFacilityType,
+                  jobSectorsServices = :jobSectorsServices,
+                  jobBeds = :jobBeds,
+                  jobMedicalPracs = :jobMedicalPracs,
+                  jobAlliedHealth = :jobAlliedHealth,
+                  jobVisitingFacilities = :jobVisitingFacilities,
+                  jobServPathology = :jobServPathology, 
+                  jobServXray = :jobServXray, 
+                  jobServCT = :jobServCT, 
+                  jobServMRI = :jobServMRI, 
+                  jobServUltra = :jobServUltra, 
+                  jobServNuclear = :jobServNuclear,
+                  jobServImmunology = :jobServImmunology, 
+                  jobServNeurological = :jobServNeurological, 
+                  jobServLab = :jobServLab, 
+                  jobED = :jobED, 
+                  jobPeriop = :jobPeriop, 
+                  jobICU = :jobICU, 
+                  jobSurgical = :jobSurgical, 
+                  jobMedical = :jobMedical, 
+                  jobRehab = :jobRehab, 
+                  jobAgedCare = :jobAgedCare, 
+                  jobAccoms = :jobAccoms, 
+                  jobChildCare = :jobChildCare, 
+                  jobPrimarySchool = :jobPrimarySchool, 
+                  jobHighSchool = :jobHighSchool, 
+                  jobUniversity = :jobUniversity, 
+                  jobCinema = :jobCinema, 
+                  jobLiveMusic = :jobLiveMusic, 
+                  jobSportsClub = :jobSportsClub, 
+                  jobTheatre = :jobTheatre, 
+                  jobCraftClub = :jobCraftClub, 
+                  jobGym = :jobGym, 
+                  jobLibrary = :jobLibrary,
+                  jobSupermarket = :jobSupermarket, 
+                  jobFarmMarket = :jobFarmMarket, 
+                  jobMechanic = :jobMechanic, 
+                  jobRetail = :jobRetail, 
+                  jobRestaurants = :jobRestaurants, 
+                  jobPubs = :jobPubs, 
+                  jobInternet = :jobInternet,
+                  jobMobileCov = :jobMobileCov, 
+                  jobBus = :jobBus, 
+                  jobTrain = :jobTrain, 
+                  jobAirport = :jobAirport, 
+                  jobTaxi = :jobTaxi, 
+                  jobEV = :jobEV
+
               WHERE jobID = :jobID';
               $statement = $db->prepare($query);
               $statement->bindValue(':empID', $empID);
@@ -190,6 +247,53 @@ function update_job($jobID, $empID, $jobName, $jobPlace, $jobDescription, $jobAb
               $statement->bindValue(':jobListingDate', $jobListingDate);
               $statement->bindValue(':jobContactEmail', $jobContactEmail);
               $statement->bindValue(':jobLink', $jobLink);
+              $statement->bindValue(':jobFacilityType', $jobFacilityType);
+              $statement->bindValue(':jobSectorsServices', $jobSectorsServices);
+              $statement->bindValue(':jobBeds', $jobBeds);
+              $statement->bindValue(':jobMedicalPracs', $jobMedicalPracs);
+              $statement->bindValue(':jobAlliedHealth', $jobAlliedHealth);
+              $statement->bindValue(':jobVisitingFacilities', $jobVisitingFacilities);
+              $statement->bindValue(':jobServPathology', $jobServPathology);
+              $statement->bindValue(':jobServXray', $jobServXray);
+              $statement->bindValue(':jobServCT', $jobServCT);
+              $statement->bindValue(':jobServMRI', $jobServMRI);
+              $statement->bindValue(':jobServUltra', $jobServUltra);
+              $statement->bindValue(':jobServNuclear', $jobServNuclear);
+              $statement->bindValue(':jobServImmunology', $jobServImmunology);
+              $statement->bindValue(':jobServNeurological', $jobServNeurological);
+              $statement->bindValue(':jobServLab', $jobServLab);
+              $statement->bindValue(':jobED', $jobED);
+              $statement->bindValue(':jobPeriop', $jobPeriop);
+              $statement->bindValue(':jobICU', $jobICU);
+              $statement->bindValue(':jobSurgical', $jobSurgical);
+              $statement->bindValue(':jobMedical', $jobMedical);
+              $statement->bindValue(':jobRehab', $jobRehab);
+              $statement->bindValue(':jobAgedCare', $jobAgedCare);
+              $statement->bindValue(':jobAccoms', $jobAccoms);
+              $statement->bindValue(':jobChildCare', $jobChildCare);
+              $statement->bindValue(':jobPrimarySchool', $jobPrimarySchool);
+              $statement->bindValue(':jobHighSchool', $jobHighSchool);
+              $statement->bindValue(':jobUniversity', $jobUniversity);
+              $statement->bindValue(':jobCinema', $jobCinema);
+              $statement->bindValue(':jobLiveMusic', $jobLiveMusic);
+              $statement->bindValue(':jobSportsClub', $jobSportsClub);
+              $statement->bindValue(':jobTheatre', $jobTheatre);
+              $statement->bindValue(':jobCraftClub', $jobCraftClub);
+              $statement->bindValue(':jobGym', $jobGym);
+              $statement->bindValue(':jobLibrary', $jobLibrary);
+              $statement->bindValue(':jobSupermarket', $jobSupermarket);
+              $statement->bindValue(':jobFarmMarket', $jobFarmMarket);
+              $statement->bindValue(':jobMechanic', $jobMechanic);
+              $statement->bindValue(':jobRetail', $jobRetail);
+              $statement->bindValue(':jobRestaurants', $jobRestaurants);
+              $statement->bindValue(':jobPubs', $jobPubs);
+              $statement->bindValue(':jobInternet', $jobInternet);
+              $statement->bindValue(':jobMobileCov', $jobMobileCov);
+              $statement->bindValue(':jobBus', $jobBus);
+              $statement->bindValue(':jobTrain', $jobTrain);
+              $statement->bindValue(':jobAirport', $jobAirport);
+              $statement->bindValue(':jobTaxi', $jobTaxi);
+              $statement->bindValue(':jobEV', $jobEV);
               $statement->bindValue(':jobID', $jobID);
               $statement->execute();
               $statement->closeCursor();

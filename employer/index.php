@@ -136,85 +136,71 @@ else if ($action == 'save_changes'){
 
     $job = get_job_by_jobID($job_ID);//need this?
    //get form data
-   $employer = $_SESSION['employer'];//need this?
+    $employer = $_SESSION['employer'];//need this?
 
-   $jobID = filter_input(INPUT_POST, 'jobID');
-   $empID = filter_input(INPUT_POST, 'empID');
-   $jobName = filter_input(INPUT_POST, 'jobName');
-   $jobPlace = filter_input(INPUT_POST, 'jobPlace');
-   $jobDescription = filter_input(INPUT_POST, 'jobDescription');
-   $jobAboutUs = filter_input(INPUT_POST, 'jobAboutUs');
-   $jobSalary = filter_input(INPUT_POST, 'jobSalary');
-   $jobContractType = filter_input(INPUT_POST, 'jobContractType');
-   
-   $jobAddress = filter_input(INPUT_POST, 'jobAddress');
-   $jobCity = filter_input(INPUT_POST, 'jobCity');
-   $jobState = filter_input(INPUT_POST, 'jobState');
+    $jobID = filter_input(INPUT_POST, 'jobID');
+    $empID = filter_input(INPUT_POST, 'empID');
+    $jobName = filter_input(INPUT_POST, 'jobName');
+    $jobPlace = filter_input(INPUT_POST, 'jobPlace');
+    $jobDescription = filter_input(INPUT_POST, 'jobDescription');
+    $jobAboutUs = filter_input(INPUT_POST, 'jobAboutUs');
+    $jobSalary = filter_input(INPUT_POST, 'jobSalary');
+    $jobContractType = filter_input(INPUT_POST, 'jobContractType');
+    $jobAddress = filter_input(INPUT_POST, 'jobAddress');
+    $jobCity = filter_input(INPUT_POST, 'jobCity');
+    $jobState = filter_input(INPUT_POST, 'jobState');
+    $jobMonashRating = filter_input(INPUT_POST, 'jobMonashRating');
+    $jobListingDate = filter_input(INPUT_POST, 'jobListingDate');
+    $jobContactEmail = filter_input(INPUT_POST, 'jobContactEmail');
+    $jobLink = filter_input(INPUT_POST, 'jobLink');
 
-   $jobMonashRating = filter_input(INPUT_POST, 'jobMonashRating');
-   $jobListingDate = filter_input(INPUT_POST, 'jobListingDate');
-   
-   $jobContactEmail = filter_input(INPUT_POST, 'jobContactEmail');
-   $jobLink = filter_input(INPUT_POST, 'jobLink');
-
-
-
-   $jobFacilityType = filter_input(INPUT_POST, 'jobFacilityType');
-   $jobSectorsServices = filter_input(INPUT_POST, 'jobSectorsServiced');
-   $jobBeds = filter_input(INPUT_POST, 'jobBeds');
-   $jobMedicalPracs = filter_input(INPUT_POST, 'jobMedicalPracs');
-   $jobAlliedHealth = filter_input(INPUT_POST, 'jobAlliedHealth');
-   $jobVisitingFacilities = filter_input(INPUT_POST, 'jobVisitingFacilities');
-    
-   $jobServPathology = filter_input(INPUT_POST, 'jobServPathology');
-   $jobServXray = filter_input(INPUT_POST, 'jobServXray');
-   $jobServCT = filter_input(INPUT_POST, 'jobServCT');
-   $jobServMRI = filter_input(INPUT_POST, 'jobServMRI');
-   $jobServUltra = filter_input(INPUT_POST, 'jobServUltra');
-   $jobServNuclear = filter_input(INPUT_POST, 'jobServNuclear');
-   $jobServImmunology = filter_input(INPUT_POST, 'jobServImmunology');
-   $jobServNeurological = filter_input(INPUT_POST, 'jobServeNeurological');
-   $jobServLab = filter_input(INPUT_POST, 'jobServLab'); 
-
-   $jobED = filter_input(INPUT_POST, 'jobED');
-   $jobPeriop = filter_input(INPUT_POST, 'jobPeriop');
-   $jobICU = filter_input(INPUT_POST, 'jobICU');
-   $jobSurgical = filter_input(INPUT_POST, 'jobSurgical');
-
-   $jobMedical = filter_input(INPUT_POST, 'jobMedical');
-   $jobRehab = filter_input(INPUT_POST, 'jobRehab');
-   $jobAgedCare = filter_input(INPUT_POST, 'jobAgedCare');
-
-   $jobAccoms = filter_input(INPUT_POST, 'jobAccoms');
-
-   $jobChildCare = filter_input(INPUT_POST, 'jobChildCare');
-   $jobPrimarySchool = filter_input(INPUT_POST, 'jobPrimarySchool');
-   $jobHighSchool = filter_input(INPUT_POST, 'jobHighSchool');
-   $jobUniversity = filter_input(INPUT_POST, 'jobUniversity');
-
-   $jobCinema = filter_input(INPUT_POST, 'jobCinema');
-   $jobLiveMusic = filter_input(INPUT_POST, 'jobLiveMusic');
-   $jobSportsClub = filter_input(INPUT_POST, 'jobSportsClub');
-   $jobTheatre = filter_input(INPUT_POST, 'jobTheatre');
-   $jobCraftClub = filter_input(INPUT_POST, 'jobCraftClub');
-   $jobGym = filter_input(INPUT_POST, 'jobGym');
-   $jobLibrary = filter_input(INPUT_POST, 'jobLibrary');
-
-   $jobSupermarket = filter_input(INPUT_POST, 'jobSupermarket');
-   $jobFarmMarket = filter_input(INPUT_POST, 'jobFarmMarket');
-   $jobMechanic = filter_input(INPUT_POST, 'jobMechanic');
-   $jobRetail = filter_input(INPUT_POST, 'jobRetail');
-   $jobRestaurants = filter_input(INPUT_POST, 'jobRestaurants');
-   $jobPubs = filter_input(INPUT_POST, 'jobPubs');
-
-   $jobInternet = filter_input(INPUT_POST, 'JobInternet');
-   $jobMobileCov = filter_input(INPUT_POST, 'jobMobileCov');
-
-   $jobBus = filter_input(INPUT_POST, 'jobBus');
-   $jobTrain = filter_input(INPUT_POST, 'jobTrain');
-   $jobAirport = filter_input(INPUT_POST, 'jobAirport');
-   $jobTaxi = filter_input(INPUT_POST, 'jobTaxi');
-   $jobEV = filter_input(INPUT_POST, 'jobEV');
+    $jobFacilityType = filter_input(INPUT_POST, 'jobFacilityType');
+    $jobSectorsServices = filter_input(INPUT_POST, 'jobSectorsServices');
+    $jobBeds = filter_input(INPUT_POST, 'jobBeds');
+    $jobMedicalPracs = filter_input(INPUT_POST, 'jobMedicalPracs');
+    $jobAlliedHealth = filter_input(INPUT_POST, 'jobAlliedHealth');
+    $jobVisitingFacilities = filter_input(INPUT_POST, 'jobVisitingFacilities');
+    $jobServPathology = filter_input(INPUT_POST, 'jobServPathology');
+    $jobServXray = filter_input(INPUT_POST, 'jobServXray');
+    $jobServCT = filter_input(INPUT_POST, 'jobServCT');
+    $jobServMRI = filter_input(INPUT_POST, 'jobServMRI');
+    $jobServUltra = filter_input(INPUT_POST, 'jobServUltra');
+    $jobServNuclear = filter_input(INPUT_POST, 'jobServNuclear');
+    $jobServImmunology = filter_input(INPUT_POST, 'jobServImmunology');
+    $jobServNeurological = filter_input(INPUT_POST, 'jobServNeurological');
+    $jobServLab = filter_input(INPUT_POST, 'jobServLab'); 
+    $jobED = filter_input(INPUT_POST, 'jobED');
+    $jobPeriop = filter_input(INPUT_POST, 'jobPeriop');
+    $jobICU = filter_input(INPUT_POST, 'jobICU');
+    $jobSurgical = filter_input(INPUT_POST, 'jobSurgical');
+    $jobMedical = filter_input(INPUT_POST, 'jobMedical');
+    $jobRehab = filter_input(INPUT_POST, 'jobRehab');
+    $jobAgedCare = filter_input(INPUT_POST, 'jobAgedCare');
+    $jobAccoms = filter_input(INPUT_POST, 'jobAccoms');
+    $jobChildCare = filter_input(INPUT_POST, 'jobChildCare');
+    $jobPrimarySchool = filter_input(INPUT_POST, 'jobPrimarySchool');
+    $jobHighSchool = filter_input(INPUT_POST, 'jobHighSchool');
+    $jobUniversity = filter_input(INPUT_POST, 'jobUniversity');
+    $jobCinema = filter_input(INPUT_POST, 'jobCinema');
+    $jobLiveMusic = filter_input(INPUT_POST, 'jobLiveMusic');
+    $jobSportsClub = filter_input(INPUT_POST, 'jobSportsClub');
+    $jobTheatre = filter_input(INPUT_POST, 'jobTheatre');
+    $jobCraftClub = filter_input(INPUT_POST, 'jobCraftClub');
+    $jobGym = filter_input(INPUT_POST, 'jobGym');
+    $jobLibrary = filter_input(INPUT_POST, 'jobLibrary');
+    $jobSupermarket = filter_input(INPUT_POST, 'jobSupermarket');
+    $jobFarmMarket = filter_input(INPUT_POST, 'jobFarmMarket');
+    $jobMechanic = filter_input(INPUT_POST, 'jobMechanic');
+    $jobRetail = filter_input(INPUT_POST, 'jobRetail');
+    $jobRestaurants = filter_input(INPUT_POST, 'jobRestaurants');
+    $jobPubs = filter_input(INPUT_POST, 'jobPubs');
+    $jobInternet = filter_input(INPUT_POST, 'jobInternet');
+    $jobMobileCov = filter_input(INPUT_POST, 'jobMobileCov');
+    $jobBus = filter_input(INPUT_POST, 'jobBus');
+    $jobTrain = filter_input(INPUT_POST, 'jobTrain');
+    $jobAirport = filter_input(INPUT_POST, 'jobAirport');
+    $jobTaxi = filter_input(INPUT_POST, 'jobTaxi');
+    $jobEV = filter_input(INPUT_POST, 'jobEV');
 
    //echo $empID;
    $employer = $_SESSION['employer'];
@@ -228,7 +214,7 @@ else if ($action == 'save_changes'){
              $jobServImmunology, $jobServNeurological, $jobServLab, $jobED, $jobPeriop, $jobICU, 
              $jobSurgical, $jobMedical, $jobRehab, $jobAgedCare, $jobAccoms, $jobChildCare, 
              $jobPrimarySchool, $jobHighSchool, $jobUniversity, $jobCinema, $jobLiveMusic, 
-             $jobSportsClub, $jobTheatre, $jobCraftClub, $jobGym, $jobLibrary,$jobSupermarket, 
+             $jobSportsClub, $jobTheatre, $jobCraftClub, $jobGym, $jobLibrary, $jobSupermarket, 
              $jobFarmMarket, $jobMechanic, $jobRetail, $jobRestaurants, $jobPubs, $jobInternet,
              $jobMobileCov, $jobBus, $jobTrain, $jobAirport, $jobTaxi, $jobEV);
 
@@ -237,8 +223,6 @@ else if ($action == 'save_changes'){
 
    include('employer_my_jobs.php'); 
 }
-
-
 
 else if ($action == 'create_job'){
     //should be good
@@ -256,14 +240,11 @@ else if ($action == 'add_job'){
     $jobAboutUs = filter_input(INPUT_POST, 'jobAboutUs');
     $jobSalary = filter_input(INPUT_POST, 'jobSalary');
     $jobContractType = filter_input(INPUT_POST, 'jobContractType');
-    
     $jobAddress = filter_input(INPUT_POST, 'jobAddress');
     $jobCity = filter_input(INPUT_POST, 'jobCity');
     $jobState = filter_input(INPUT_POST, 'jobState');
-
     $jobMonashRating = filter_input(INPUT_POST, 'jobMonashRating');
     $jobListingDate = filter_input(INPUT_POST, 'jobListingDate');
-    
     $jobContactEmail = filter_input(INPUT_POST, 'jobContactEmail');
     $jobLink = filter_input(INPUT_POST, 'jobLink');
 
@@ -273,7 +254,6 @@ else if ($action == 'add_job'){
     $jobMedicalPracs = filter_input(INPUT_POST, 'jobMedicalPracs');
     $jobAlliedHealth = filter_input(INPUT_POST, 'jobAlliedHealth');
     $jobVisitingFacilities = filter_input(INPUT_POST, 'jobVisitingFacilities');
-    
     $jobServPathology = filter_input(INPUT_POST, 'jobServPathology');
     $jobServXray = filter_input(INPUT_POST, 'jobServXray');
     $jobServCT = filter_input(INPUT_POST, 'jobServCT');
@@ -283,23 +263,18 @@ else if ($action == 'add_job'){
     $jobServImmunology = filter_input(INPUT_POST, 'jobServImmunology');
     $jobServNeurological = filter_input(INPUT_POST, 'jobServNeurological');
     $jobServLab = filter_input(INPUT_POST, 'jobServLab'); 
-
     $jobED = filter_input(INPUT_POST, 'jobED');
     $jobPeriop = filter_input(INPUT_POST, 'jobPeriop');
     $jobICU = filter_input(INPUT_POST, 'jobICU');
     $jobSurgical = filter_input(INPUT_POST, 'jobSurgical');
-
     $jobMedical = filter_input(INPUT_POST, 'jobMedical');
     $jobRehab = filter_input(INPUT_POST, 'jobRehab');
     $jobAgedCare = filter_input(INPUT_POST, 'jobAgedCare');
-
     $jobAccoms = filter_input(INPUT_POST, 'jobAccoms');
-
     $jobChildCare = filter_input(INPUT_POST, 'jobChildCare');
     $jobPrimarySchool = filter_input(INPUT_POST, 'jobPrimarySchool');
     $jobHighSchool = filter_input(INPUT_POST, 'jobHighSchool');
     $jobUniversity = filter_input(INPUT_POST, 'jobUniversity');
-
     $jobCinema = filter_input(INPUT_POST, 'jobCinema');
     $jobLiveMusic = filter_input(INPUT_POST, 'jobLiveMusic');
     $jobSportsClub = filter_input(INPUT_POST, 'jobSportsClub');
@@ -307,17 +282,14 @@ else if ($action == 'add_job'){
     $jobCraftClub = filter_input(INPUT_POST, 'jobCraftClub');
     $jobGym = filter_input(INPUT_POST, 'jobGym');
     $jobLibrary = filter_input(INPUT_POST, 'jobLibrary');
-
     $jobSupermarket = filter_input(INPUT_POST, 'jobSupermarket');
     $jobFarmMarket = filter_input(INPUT_POST, 'jobFarmMarket');
     $jobMechanic = filter_input(INPUT_POST, 'jobMechanic');
     $jobRetail = filter_input(INPUT_POST, 'jobRetail');
     $jobRestaurants = filter_input(INPUT_POST, 'jobRestaurants');
     $jobPubs = filter_input(INPUT_POST, 'jobPubs');
-
     $jobInternet = filter_input(INPUT_POST, 'jobInternet');
     $jobMobileCov = filter_input(INPUT_POST, 'jobMobileCov');
-
     $jobBus = filter_input(INPUT_POST, 'jobBus');
     $jobTrain = filter_input(INPUT_POST, 'jobTrain');
     $jobAirport = filter_input(INPUT_POST, 'jobAirport');
