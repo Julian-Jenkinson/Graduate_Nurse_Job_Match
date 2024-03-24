@@ -50,8 +50,6 @@
     <textarea name="jobAboutUs" rows="10" cols="50" placeholder="Please provide some information about your organisation"><?php echo isset($job['jobAboutUs']) ? htmlspecialchars($job['jobAboutUs']) : ''; ?></textarea>
     <br><br>
 
-    <!-- not in db yet-->
-
     <label for="jobFacilityType">Type of health care facility:</label><br>
     <select name="jobFacilityType">
         <option value="" disabled selected>Select a facility type</option>
@@ -96,23 +94,23 @@
 
     <label>Investigative Services:</label><br>
     <label for="jobServPathology">Pathology:</label>
-    <input type="checkbox" name="jobServePathology" value="Y"><br>
+    <input type="checkbox" name="jobServPathology" value="Y"><br>
     <label for="jobServXray">X-ray:</label>
-    <input type="checkbox" name="jobServeXray" value="Y"><br>
+    <input type="checkbox" name="jobServXray" value="Y"><br>
     <label for="jobServCT">CT:</label>
-    <input type="checkbox" name="jobServeCT" value="Y"><br>
+    <input type="checkbox" name="jobServCT" value="Y"><br>
     <label for="jobServMRI">MRI:</label>
-    <input type="checkbox" name="jobServeMRI" value="Y"><br>
+    <input type="checkbox" name="jobServMRI" value="Y"><br>
     <label for="jobServUltra">Ultrasound:</label>
-    <input type="checkbox" name="jobServeUltra" value="Y"><br>
+    <input type="checkbox" name="jobServUltra" value="Y"><br>
     <label for="jobServNuclear">Nuclear Medicine:</label>
-    <input type="checkbox" name="jobServeNuclear" value="Y"><br>
+    <input type="checkbox" name="jobServNuclear" value="Y"><br>
     <label for="jobServImmunology">Immunology:</label>
-    <input type="checkbox" name="jobServeImmunology" value="Y"><br>
+    <input type="checkbox" name="jobServImmunology" value="Y"><br>
     <label for="jobServNeurological">Neurology:</label>
-    <input type="checkbox" name="jobServeNeurological" value="Y"><br>
+    <input type="checkbox" name="jobServNeurological" value="Y"><br>
     <label for="jobServLab">Laboratory:</label>
-    <input type="checkbox" name="jobServeLab" value="Y"><br><br>
+    <input type="checkbox" name="jobServLab" value="Y"><br><br>
     
     <label>Clinical areas of Health care:</label><br>
     <label>Acute care:</label><br>
@@ -123,7 +121,7 @@
     <label for="jobICU":>Intensive care unit</label>
     <input type="checkbox" name="jobICU" value="Y"><br>
     <label for="jobSurgical":>Surgical:</label>
-    <input type="checkbox" name="job" value="Y"><br><br>
+    <input type="checkbox" name="jobSurgical" value="Y"><br><br>
     
     <label>Chronic care:</label><br>
     <label for="jobMedical":>Medical</label>
@@ -140,17 +138,11 @@
         <option value="No">No</option>    
     </select><br><br>
 
-    
-
     <h4>Locality Information:</h4>
 
     <label for="jobMonashRating">Locality rural rating (Modified Monash Model):</label><br>
     <select name="jobMonashRating">
-        <?php if(isset($job['jobMonashRating'])): ?>
-        <option value="<?php echo htmlspecialchars($job['jobMonashRating']); ?>"><?php echo htmlspecialchars($job['jobMonashRating']); ?></option>
-        <?php else: ?>
         <option value="" disabled selected>Select a rural rating</option>
-        <?php endif; ?>
         <option value="Metropolitan area">Metropolitan area</option>
         <option value="Regional centre">Regional centre</option>
         <option value="Large rural town">Large rural town</option>
@@ -175,8 +167,8 @@
     <input type="checkbox" name="jobCinema" value="Y"><br>
     <label for="jobLiveMusic":>Live music:</label>
     <input type="checkbox" name="jobLiveMusic" value="Y"><br>
-    <label for="jobSportClub":>Sporting clubs:</label>
-    <input type="checkbox" name="jobSportClub" value="Y"><br>
+    <label for="jobSportsClub":>Sporting clubs:</label>
+    <input type="checkbox" name="jobSportsClub" value="Y"><br>
     <label for="jobTheatre":>Live theatre:</label>
     <input type="checkbox" name="jobTheatre" value="Y"><br>
     <label for="jobCraftClub":>Craft clubs:</label>
@@ -229,7 +221,7 @@
     
     <input type="hidden" name="jobCity" id="jobCity" value="<?php echo isset($job['jobCity']) ? htmlspecialchars($job['jobCity']) : ''; ?>">
     <input type="hidden" name="jobState" id="jobState" value="<?php echo isset($job['jobState']) ? htmlspecialchars($job['jobState']) : ''; ?>">
-    <!--<input type="hidden" name="jobListingDate" value="<?php echo date('Y-m-d'); ?>">-->
+    <input type="hidden" name="jobListingDate" value="<?php echo htmlspecialchars($job['jobListingDate']); ?>">
     
     <input type="submit" value="Save Changes">
     <input type="hidden" name="action" value="save_changes">
