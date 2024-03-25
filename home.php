@@ -31,8 +31,6 @@
                 <div class="rectangle-container">
                     <div class="buttons-wrapper">
                         <!--<button class="sign-in-button">Sign In</button> -->
-                        <!-- i like the button but you might need to style the sign in link to look like a buton
-                      because i couldnt get the button to redirect to the sign in page very well..-->
                         <a href="/CSC3600-T1-2024_TheITCrew/user/user_login.php" class="button-link">Sign In</a>
                         <a href="/CSC3600-T1-2024_TheITCrew/user/user_signup.php" class="button-link">Register</a>
                     </div>
@@ -40,6 +38,7 @@
                 </div>                
         </div>
     </div>    
+    
     <div class="search-container">
         <div class="input-search-wrapper">
         <div class="input-location-wrapper">
@@ -68,7 +67,7 @@
         <div class="job">Job 5 details...</div>
         <div class="job">Job 6 details...</div>
     </div>
-    
+
     
 
     <!-- 

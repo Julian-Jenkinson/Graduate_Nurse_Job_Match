@@ -144,6 +144,7 @@ header {
   color: #FFB448; 
 }
 
+
 .wave-background {
   width: 100%;
   height: 750px;
@@ -159,13 +160,15 @@ header {
   z-index: 1;
   }
 
-.text-content {
+
+  .text-content {
   position: absolute;
   top: 173%;
   left: 37%;
   transform: translate(-50%, -50%);
   text-align: left;
 }
+
 
 h1 {
   font-size: 2.5em;

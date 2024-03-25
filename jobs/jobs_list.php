@@ -72,7 +72,7 @@
        <div>job 2 here</div>
        <div>job 3 here</div>';
     } 
-    ?>
+?>
 
 
 <!-- list jobs -->
