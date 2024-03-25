@@ -63,10 +63,21 @@
 </script>
 
 <div id="map"></div> <br><br>
-<?php echo $job_count . ' jobs' ; ?>
+
+<?php 
+    if (isset($_SESSION['user'])) {
+    // if user is logged in, display job matches
+       echo '<h4>Recommendations</h4> 
+       <div>job 1 here</div>
+       <div>job 2 here</div>
+       <div>job 3 here</div>';
+    } 
+    ?>
+
 
 <!-- list jobs -->
-
+<h4>Listings</h4>
+<?php echo $job_count . ' jobs' ; ?>
     <?php foreach ($jobs as $job) : ?>
         <h5><?php echo htmlspecialchars($job['jobName']); ?></h5>
         <div>Posted <?php echo date('jS M Y', strtotime($job['jobListingDate'])); ?></div>
