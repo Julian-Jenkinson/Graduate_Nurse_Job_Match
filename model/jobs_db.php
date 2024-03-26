@@ -298,7 +298,7 @@ function update_job($jobID, $empID, $jobName, $jobPlace, $jobDescription, $jobAb
               $statement->execute();
               $statement->closeCursor();
 }
-function count_jobs(){
+function search_jobs($by_keyword, $by_location, $by_contract_type, $by_rural_type){
     
 }
 

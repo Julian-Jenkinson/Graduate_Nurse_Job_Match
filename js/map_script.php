@@ -21,6 +21,7 @@ async function initMap() {
     geocoder = new google.maps.Geocoder();
 
     //access job databse with php and save to JS
+    //const DBjobs = <?php echo json_encode($jobs); ?>;
     const DBjobs = <?php echo json_encode(get_jobs()); ?>;
     //console.log(DBjobs);
 

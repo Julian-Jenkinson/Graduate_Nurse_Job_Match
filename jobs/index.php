@@ -26,5 +26,20 @@ else if ($action == 'view_listing') {
     //go to job listing page
     include('jobs_view_listing.php');
 }
+else if ($action == 'search_jobs') {
+    //get search box data
+    $by_keyword = filter_input(INPUT_POST, 'by_keyword');
+    $by_location = filter_input(INPUT_POST, 'by_location');
+    $by_contract_type = filter_input(INPUT_POST, 'by_contract_type');
+    $by_rural_type = filter_input(INPUT_POST, 'by_rural_type');
+
+    //search jobs function - returns search results
+    $jobs = search_jobs($by_keyword, $by_location, $by_contract_type, $by_rural_type);
+    //get job count of search results
+    //$job_count = count($jobs);
+
+    // Display the jobs list
+    include('jobs_list.php');
+}
 
 ?>
