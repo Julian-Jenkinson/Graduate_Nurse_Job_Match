@@ -21,7 +21,7 @@
             <td>
                 <select name="by_contract_type">
                     <option value="" selected>Any contract type</option>
-                    <option value="Full-time"value="full_time" <?php if(isset($_POST['by_contract_type']) && $_POST['by_contract_type'] == 'Full-time') echo 'selected'; ?>>Full-time</option>
+                    <option value="Full-time" <?php if(isset($_POST['by_contract_type']) && $_POST['by_contract_type'] == 'Full-time') echo 'selected'; ?>>Full-time</option>
                     <option value="Part-time" <?php if(isset($_POST['by_contract_type']) && $_POST['by_contract_type'] == 'Part-time') echo 'selected'; ?>>Part-time</option>
                     <option value="Casual" <?php if(isset($_POST['by_contract_type']) && $_POST['by_contract_type'] == 'Casual') echo 'selected'; ?>>Casual</option>
                     <option value="Contract" <?php if(isset($_POST['by_contract_type']) && $_POST['by_contract_type'] == 'Contract') echo 'selected'; ?>>Contract</option>
@@ -43,7 +43,8 @@
         </tr>
     </table><br><br>
     <input type="hidden" name="action" value="search_jobs">
-</form>    
+</form>
+    
 
 <!-- display a map -->
 <script>
