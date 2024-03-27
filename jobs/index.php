@@ -32,12 +32,10 @@ else if ($action == 'search_jobs') {
     $by_location = filter_input(INPUT_POST, 'by_location');
     $by_contract_type = filter_input(INPUT_POST, 'by_contract_type');
     $by_rural_type = filter_input(INPUT_POST, 'by_rural_type');
-
     //search jobs function - returns search results
     $jobs = search_jobs($by_keyword, $by_location, $by_contract_type, $by_rural_type);
     //get job count of search results
-    //$job_count = count($jobs);
-
+    $job_count = count($jobs);
     // Display the jobs list
     include('jobs_list.php');
 }

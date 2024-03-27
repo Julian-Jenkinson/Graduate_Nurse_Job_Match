@@ -4,47 +4,46 @@
 
 <h3>Jobs Search</h3>
 
-<form action="." method="get">    
+<form action="." method="post">    
     <table>
         <tr>
             <td>Keyword</td>
             <td>Location</td>
         </tr>
         <tr>
-            <td><input type="text" name="by_keyword" placeholder="Registered Nurse"></td>
-            <td><input type="text" name="by_location" placeholder="Brisbane"></td>
+            <td><input type="text" name="by_keyword" placeholder="Registered Nurse" value="<?php echo isset($_POST['by_keyword']) ? htmlspecialchars($_POST['by_keyword']) : ''; ?>"></td>
+            <td><input type="text" name="by_location" placeholder="Brisbane" value="<?php echo isset($_POST['by_location']) ? htmlspecialchars($_POST['by_location']) : ''; ?>"></td>
             <td><input type="submit" value="Search jobs"></td>
-            <td><input type="hidden" name="action" value="search_jobs"></td>
         </tr>
     </table>
     <table>
         <tr>
             <td>
                 <select name="by_contract_type">
-                    <option value="any_job_type">Any contract type</option>
-                    <option value="full_time">Full-time</option>
-                    <option value="part_time">Part-time</option>
-                    <option value="casual">Casual</option>
-                    <option value="contract">Contract</option>
+                    <option value="" selected>Any contract type</option>
+                    <option value="Full-time"value="full_time" <?php if(isset($_POST['by_contract_type']) && $_POST['by_contract_type'] == 'Full-time') echo 'selected'; ?>>Full-time</option>
+                    <option value="Part-time" <?php if(isset($_POST['by_contract_type']) && $_POST['by_contract_type'] == 'Part-time') echo 'selected'; ?>>Part-time</option>
+                    <option value="Casual" <?php if(isset($_POST['by_contract_type']) && $_POST['by_contract_type'] == 'Casual') echo 'selected'; ?>>Casual</option>
+                    <option value="Contract" <?php if(isset($_POST['by_contract_type']) && $_POST['by_contract_type'] == 'Contract') echo 'selected'; ?>>Contract</option>
+                    <option value="Temporary" <?php if(isset($_POST['by_contract_type']) && $_POST['by_contract_type'] == 'Temporary') echo 'selected'; ?>>Temporary</option>
                 </select>
             </td>
             <td>
                 <select name="by_rural_type">
-                <option value="Any rural rating">Any rural rating</option>
-                <option value="Metropolitan area">Metropolitan area</option>
-                <option value="Regional centre">Regional centre</option>
-                <option value="Large rural town">Large rural town</option>
-                <option value="Medium rural town">Medium rural town</option>
-                <option value="Small rural town">Small rural town</option>
-                <option value="Remote community">Remote community</option>
-                <option value="Very remote community">Very remote community</option>
+                    <option value="" selected>Any rural type</option>
+                    <option value="Metropolitan area" <?php if(isset($_POST['by_rural_type']) && $_POST['by_rural_type'] == 'Metropolitan area') echo 'selected'; ?>>Metropolitan area</option>
+                    <option value="Regional centre" <?php if(isset($_POST['by_rural_type']) && $_POST['by_rural_type'] == 'Regional centre') echo 'selected'; ?>>Regional centre</option>
+                    <option value="Large rural town" <?php if(isset($_POST['by_rural_type']) && $_POST['by_rural_type'] == 'Large rural town') echo 'selected'; ?>>Large rural town</option>
+                    <option value="Medium rural town" <?php if(isset($_POST['by_rural_type']) && $_POST['by_rural_type'] == 'Medium rural town') echo 'selected'; ?>>Medium rural town</option>
+                    <option value="Small rural town" <?php if(isset($_POST['by_rural_type']) && $_POST['by_rural_type'] == 'Small rural town') echo 'selected'; ?>>Small rural town</option>
+                    <option value="Remote community" <?php if(isset($_POST['by_rural_type']) && $_POST['by_rural_type'] == 'Remote community') echo 'selected'; ?>>Remote community</option>
+                    <option value="Very remote community" <?php if(isset($_POST['by_rural_type']) && $_POST['by_rural_type'] == 'Very remote community') echo 'selected'; ?>>Very remote community</option>
                 </select>
             </td>
         </tr>
     </table><br><br>
+    <input type="hidden" name="action" value="search_jobs">
 </form>    
-
-
 
 <!-- display a map -->
 <script>
@@ -62,7 +61,6 @@
        <div>job 3 here</div>';
     } 
 ?>
-
 
 <!-- list jobs. this displays either a full list of jobs by default
 or a filtered list form search bar -->
@@ -85,10 +83,5 @@ or a filtered list form search bar -->
         </form>
 
     <?php endforeach; ?>
-    
-
-
-
-
 
 <?php include '../view/footer.php'; ?>

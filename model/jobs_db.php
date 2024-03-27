@@ -298,8 +298,42 @@ function update_job($jobID, $empID, $jobName, $jobPlace, $jobDescription, $jobAb
               $statement->execute();
               $statement->closeCursor();
 }
-function search_jobs($by_keyword, $by_location, $by_contract_type, $by_rural_type){
-    
+
+function search_jobs($by_keyword, $by_location, $by_contract_type, $by_rural_type) {
+    global $db;
+    $query = 'SELECT * FROM jobs WHERE 1=1'; // this allows the ability to add AND clauses
+
+    $params = array();
+
+    if (!empty($by_keyword)) {
+        $query .= ' AND jobName LIKE :keyword';
+        $params[':keyword'] = '%' . $by_keyword . '%';
+    }
+
+    if (!empty($by_location)) {
+        $query .= ' AND (jobCity = :location OR jobState = :location)';
+        $params[':location'] = $by_location;
+    }
+
+    if (!empty($by_contract_type)) {
+        $query .= ' AND jobContractType = :contract_type';
+        $params[':contract_type'] = $by_contract_type;
+    }
+
+    if (!empty($by_rural_type)) {
+        $query .= ' AND jobMonashRating = :rural_type';
+        $params[':rural_type'] = $by_rural_type;
+    }
+
+    $statement = $db->prepare($query);
+    $statement->execute($params);
+    $jobs = $statement->fetchAll();
+    $statement->closeCursor();
+
+    return $jobs;
 }
+
+
+
 
 ?>
