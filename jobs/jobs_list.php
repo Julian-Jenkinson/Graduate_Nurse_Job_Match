@@ -1,5 +1,4 @@
 <?php include '../view/header.php'; ?>
-
 <?php include('../js/map_script.php');?>
 
 <h3>Jobs Search</h3>
@@ -45,9 +44,18 @@
     <input type="hidden" name="action" value="search_jobs">
 </form>
     
+<?php 
+//retrieve data from home page search bar
+    if (isset($_SESSION['jobs'])) {
+        $jobs = $_SESSION['jobs'];
+        $job_count = $_SESSION['job_count'];
+        //clear session data to avoid unintentional reuse
+        unset($_SESSION['jobs']);
+        unset($_SESSION['job_count']);
+    } 
+?>
 
 <!-- display a map -->
-
 <script>
     DBjobs = <?php echo json_encode($jobs); ?>;
     initMap(DBjobs);

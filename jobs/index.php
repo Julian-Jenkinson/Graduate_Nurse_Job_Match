@@ -37,6 +37,7 @@ else if ($action == 'search_jobs') {
     //get job count of search results
     $job_count = count($jobs);
     // Display the jobs list
+    
     include('jobs_list.php');
 }
 
