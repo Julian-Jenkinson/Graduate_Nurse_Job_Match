@@ -3,7 +3,7 @@
 let map;
 
 //could get this to take argument of job list for reuse
-async function initMap() {
+async function initMap(DBjobs) {
     //initialse map
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
@@ -22,7 +22,7 @@ async function initMap() {
 
     //access job databse with php and save to JS
     //const DBjobs = <?php echo json_encode($jobs); ?>;
-    const DBjobs = <?php echo json_encode(get_jobs()); ?>;
+    //const DBjobs = <?php echo json_encode(get_jobs()); ?>;
     //console.log(DBjobs);
 
     // loop to access each job in table

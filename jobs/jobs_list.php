@@ -47,8 +47,10 @@
     
 
 <!-- display a map -->
+
 <script>
-    initMap();
+    DBjobs = <?php echo json_encode($jobs); ?>;
+    initMap(DBjobs);
 </script>
 
 <div id="map"></div> <br><br>
