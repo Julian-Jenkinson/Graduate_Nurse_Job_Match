@@ -7,40 +7,25 @@ async function initMap(DBjobs) {
     //initialse map
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
-
     map = new Map(document.getElementById("map"), {
         mapId: "f02651243c002702",
+        //sets the centre of the map on load
         center: { lat: -28.397, lng: 131.644 },
-        disableDefaultUI: true, // a way to quickly hide all controls
-        zoomControl: true,
+        mapTypeControl: false,
+        fullscreenControl: false,
         zoom: 3.4
     });
     //initialise geocoder
     let geocoder;
     let gc;
     geocoder = new google.maps.Geocoder();
-
-    //access job databse with php and save to JS
-    //const DBjobs = <?php echo json_encode($jobs); ?>;
-    //const DBjobs = <?php echo json_encode(get_jobs()); ?>;
-    //console.log(DBjobs);
-
     // loop to access each job in table
     for (const job of DBjobs) {
         //geocoder - takes address from db and return lat and long
-      
-        //works well. goes to city if address not complete
-        //geocoder.geocode({ address: job.jobAddressNumber + " " + job.jobStreet + " " + job.jobStPrefix + " " + job.jobCity + " " + job.jobState}, function(results, status) {          
-      
-        // these both work well but depends on what type of form - works best even with address not great
         geocoder.geocode({ address: job.jobAddress }, function(results, status) {
             if (status === 'OK') {
                 var gc = results[0];
-                //console.log(gc);
                 var location = gc.geometry.location;
-                //console.log(location.lat());
-                //console.log(location.lng());
-
                 //create map marker for each job listing
                 const AdvancedMarkerElement = new google.maps.marker.AdvancedMarkerElement({
                   map,
@@ -69,21 +54,17 @@ function toggleHighlight(markerView, job) {
 //function to build content for marker
 function buildContent(job) {
     const content = document.createElement("div");
-
     content.classList.add("job");
     content.innerHTML = `
         <div class="details">
             <div class="price">${job.jobName}</div>
             <div class="price">${job.jobPlace}</div>
-            <div class="price">$${job.jobSalary}</div>
-            <div class="address">${job.jobCity}, ${job.jobState}</div>
-       
+            <div class="address">${job.jobCity}, ${job.jobState}</div> 
             <form action="." method="post">
-                <input type="submit" value="View Listing">
+                <input id='listButton' type="submit" value="View details">
                 <input type="hidden" name="action" value="view_listing">
                 <input type="hidden" name="jobID" value="${job.jobID}"> 
             </form>
-        
         </div>
         `;
     return content;
@@ -92,7 +73,7 @@ function buildContent(job) {
 
 
 <style>
-/* i put this map style here becasue in the main.css page it wasnt loading into the maps */    
+/* the map style is here becasue in the style.css page it was not loading into the maps */    
 /* job styles in unhighlighted state. */
 .job {
     align-items: center;
@@ -102,14 +83,14 @@ function buildContent(job) {
     display: flex;
     font-size: 12px;
     gap: 15px;
-    height: 17px;
-    width: 17px;
+    height: 14px;
+    width: 14px;
     justify-content: center;
     padding: 4px;
     position: relative;
-    position: relative;
     transition: all 0.3s ease-out; 
 }
+
 .job::after {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
@@ -130,8 +111,24 @@ function buildContent(job) {
     flex: 1;
 }
 .job .address {
-    color: #9E9E9E;
+    color: grey;
     font-size: 10px;
+    padding-top: 2px;
+}
+#listButton {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 2px 0px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
+#listButton:hover {
+  background-color: none;
+  color: grey;
 }
 
 /* job styles in highlighted state */

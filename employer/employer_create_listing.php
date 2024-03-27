@@ -15,11 +15,11 @@
     <br><br>
 
     <label>Address:</label><br>
-    <input type="text" name="jobAddress" id="autocomplete" onfocus="initAutocomplete()" placeholder="Enter your address">
+    <input type="text" name="jobAddress" id="autocomplete" onfocus="initAutocomplete()" placeholder="Start typing your address">
     <br><br>
     
-    <label>Salary:</label><br>
-    <input type="text" name="jobSalary" >
+    <label>Remuneration:</label><br>
+    <input type="text" name="jobSalary" value="$" >
     <br><br>
 
     <label for="jobContractType">Contract type:</label><br>
@@ -208,7 +208,7 @@
     <input type="text" name="jobContactEmail">
     <br><br>
     <label>Company link:</label><br>
-    <input type="text" name="jobLink">
+    <input type="text" name="jobLink" placeholder="eg. https://www.">
     <br><br>
 
     <input type="hidden" name="jobCity" id="jobCity" value="">

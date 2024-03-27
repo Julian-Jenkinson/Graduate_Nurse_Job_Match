@@ -17,10 +17,10 @@
     <br><br>
 
     <label>Address:</label><br>
-    <input type="text" name="jobAddress" id="autocomplete" onfocus="initAutocomplete()" placeholder="Enter your address" value="<?php echo isset($job['jobAddress']) ? htmlspecialchars($job['jobAddress']) : ''; ?> ">
+    <input type="text" name="jobAddress" id="autocomplete" onfocus="initAutocomplete()" placeholder="Start typing your address" value="<?php echo isset($job['jobAddress']) ? htmlspecialchars($job['jobAddress']) : ''; ?> ">
     <br><br>
     
-    <label>Salary:</label><br>
+    <label>Remuneration:</label><br>
     <input type="text" name="jobSalary" value="<?php echo isset($job['jobSalary']) ? htmlspecialchars($job['jobSalary']) : ''; ?>">
     <br><br>
 
@@ -216,7 +216,7 @@
     <br><br>
     
     <label>Company link:</label><br>
-    <input type="text" name="jobLink" value="<?php echo isset($job['jobLink']) ? htmlspecialchars($job['jobLink']) : ''; ?>">
+    <input type="text" name="jobLink" placeholder="eg. https://www." value="<?php echo isset($job['jobLink']) ? htmlspecialchars($job['jobLink']) : ''; ?>">
     <br><br>
     
     <input type="hidden" name="jobCity" id="jobCity" value="<?php echo isset($job['jobCity']) ? htmlspecialchars($job['jobCity']) : ''; ?>">
