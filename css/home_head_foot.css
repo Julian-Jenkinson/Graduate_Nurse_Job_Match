@@ -253,17 +253,6 @@ p {
   margin-right: -40%;
 }
 
-h1:after {
-  content: ''; 
-  position: absolute; 
-  right: 31%; 
-  top: -40%;
-  bottom: 0; 
-  width: 2px; 
-  background-color: #8B4513;
-  height: 525px;
-}
-
 .search-container {
   display: flex;
   align-items: center;
