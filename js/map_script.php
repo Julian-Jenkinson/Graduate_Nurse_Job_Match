@@ -79,6 +79,7 @@ function buildContent(job) {
     align-items: center;
     background-color: red;
     border-radius: 50%;
+    border-color: red;
     color: #263238;
     display: flex;
     font-size: 12px;
@@ -95,6 +96,7 @@ function buildContent(job) {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid red;
+    border-color: none;
     content: "";
     height: 0;
     left: 50%;
@@ -109,6 +111,7 @@ function buildContent(job) {
     display: none;
     flex-direction: column;
     flex: 1;
+    border-color: none;
 }
 .job .address {
     color: grey;

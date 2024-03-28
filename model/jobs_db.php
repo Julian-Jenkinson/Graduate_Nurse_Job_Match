@@ -333,6 +333,25 @@ function search_jobs($by_keyword, $by_location, $by_contract_type, $by_rural_typ
     return $jobs;
 }
 
+function job_match($job_keyword) {
+    global $db;
+    $query = 'SELECT * FROM jobs WHERE 1=1'; // this allows the ability to add AND clauses
+    //limit 3 matches
+    //order by ??
+
+    //search jobs by keyword eg. 'midwife'
+    if (!empty($by_keyword)) {
+        $query .= ' AND jobName LIKE :job_keyword';
+        $params[':job_keyword'] = '%' . $job_keyword . '%';
+    }
+
+    $statement = $db->prepare($query);
+    $statement->execute($params);
+    $jobMatches = $statement->fetchAll();
+    $statement->closeCursor();
+
+    return $jobMatches;
+}
 
 
 

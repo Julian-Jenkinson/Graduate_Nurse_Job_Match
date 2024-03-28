@@ -1,4 +1,7 @@
 <?php
+//start session
+session_start();
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -17,8 +20,22 @@ if ($action == 'list_jobs') {
     // Get jobs data
     $jobs = get_jobs();
     $job_count = count($jobs);
+    
+    
+    //job recommendations
+    if (isset($_SESSION['user'])) {
+        // if user is logged in, display job matches
+           $job_keyword = $_SESSION['user']['userQualifications'];
+           echo $job_keyword;
+        }
+    
+    
+    
+    
+    
     // Display the jobs list
     include('jobs_list.php');
+
 }
 else if ($action == 'view_listing') {
     $job_ID = filter_input(INPUT_POST, 'jobID');
@@ -37,7 +54,7 @@ else if ($action == 'search_jobs') {
     //get job count of search results
     $job_count = count($jobs);
     // Display the jobs list
-    
+
     include('jobs_list.php');
 }
 
