@@ -111,7 +111,7 @@ function buildContent(job) {
     display: none;
     flex-direction: column;
     flex: 1;
-    border-color: none;
+    
 }
 .job .address {
     color: grey;
