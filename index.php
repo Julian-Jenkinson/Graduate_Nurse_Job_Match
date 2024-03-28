@@ -33,6 +33,16 @@ else if ($action == 'search_jobs') {
     //store jobs array in session
     $_SESSION['jobs'] = $jobs;
     $_SESSION['job_count'] = count($jobs);
+
+
+    if (isset($_SESSION['user'])) {
+        include('./jobs/job_match_function.php');
+        $job_matches = job_match();
+        $_SESSION['job_matches'] = $job_matches;
+    }
+
+
+    
     //redirect to jobs_list.php
     header("Location: ./jobs/jobs_list.php");
     exit;

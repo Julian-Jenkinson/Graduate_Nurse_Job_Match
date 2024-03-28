@@ -49,11 +49,17 @@
     if (isset($_SESSION['jobs'])) {
         $jobs = $_SESSION['jobs'];
         $job_count = $_SESSION['job_count'];
-        //clear session data to avoid unintentional reuse
-        unset($_SESSION['jobs']);
-        unset($_SESSION['job_count']);
-    } 
+        //clear session data to avoid unintentional reuse 
+        //CHECK THIS IF ODD THINGS HAPPEN
+        //unset($_SESSION['jobs']);
+        //unset($_SESSION['job_count']);
+    }
+    if (isset($_SESSION['job_matches'])) {
+        $job_matches = $_SESSION['job_matches'];
+        //unset($_SESSION['job_matches']);
+    }
 ?>
+
 
 <!-- display a map -->
 <script>
@@ -64,18 +70,35 @@
 <div id="map"></div> <br><br>
 
 <?php 
-    if (isset($_SESSION['user'])) {
-    // if user is logged in, display job matches
-       echo '<h4>Recommendations</h4> 
-       <div>job 1 here</div>
-       <div>job 2 here</div>
-       <div>job 3 here</div>';
+    //check if user is logged in and job match array is not empty
+    if (isset($_SESSION['user']) ) {
+        echo '<h4>Job Matches:</h4>';
+        foreach ($job_matches as $job) :
+?>
+        <h5><?php echo htmlspecialchars($job['jobName']); ?></h5>
+        <div>Posted <?php echo date('jS M Y', strtotime($job['jobListingDate'])); ?></div>
+
+        <div><?php echo htmlspecialchars($job['jobPlace']); ?></div>
+        <div><?php echo htmlspecialchars($job['jobCity'] . ', ' . $job['jobState']); ?></div>
+        <div><?php echo htmlspecialchars($job['jobDescription']); ?></div>
+        
+
+        <form action="." method="post">
+            <input type="submit" value="View Listing">
+            <input type="hidden" name="action" value="view_listing">
+            <input type="hidden" name="jobID" value="<?php echo htmlspecialchars($job['jobID']); ?>"> 
+        </form>
+
+<?php 
+        endforeach;
     } 
 ?>
 
+
 <!-- list jobs. this displays either a full list of jobs by default
 or a filtered list form search bar -->
-<h4>Listings</h4>
+<br><br>
+<h4>Job Listings</h4>
 
 <?php echo $job_count . ' jobs' ; ?>
     <?php foreach ($jobs as $job) : ?>

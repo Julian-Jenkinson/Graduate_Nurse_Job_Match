@@ -79,7 +79,7 @@ function buildContent(job) {
     align-items: center;
     background-color: red;
     border-radius: 50%;
-    border-color: red;
+    border-color: transparent;
     color: #263238;
     display: flex;
     font-size: 12px;
@@ -96,7 +96,6 @@ function buildContent(job) {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid red;
-    border-color: none;
     content: "";
     height: 0;
     left: 50%;

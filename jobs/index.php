@@ -21,17 +21,12 @@ if ($action == 'list_jobs') {
     $jobs = get_jobs();
     $job_count = count($jobs);
     
-    
     //job recommendations
+    // if user is logged in, display job matches
     if (isset($_SESSION['user'])) {
-        // if user is logged in, display job matches
-           $job_keyword = $_SESSION['user']['userQualifications'];
-           //echo $job_keyword;
-        }
-    
-    
-    
-    
+        include('./job_match_function.php');
+        $job_matches = job_match();
+    }
     
     // Display the jobs list
     include('jobs_list.php');
@@ -53,6 +48,15 @@ else if ($action == 'search_jobs') {
     $jobs = search_jobs($by_keyword, $by_location, $by_contract_type, $by_rural_type);
     //get job count of search results
     $job_count = count($jobs);
+    
+    
+    //job recommendations
+    // if user is logged in, display job matches
+    if (isset($_SESSION['user'])) {
+        include('./job_match_function.php');
+        $job_matches = job_match();  
+    }
+    
     // Display the jobs list
 
     include('jobs_list.php');
