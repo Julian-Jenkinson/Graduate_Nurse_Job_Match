@@ -26,7 +26,7 @@ if ($action == 'list_jobs') {
     if (isset($_SESSION['user'])) {
         // if user is logged in, display job matches
            $job_keyword = $_SESSION['user']['userQualifications'];
-           echo $job_keyword;
+           //echo $job_keyword;
         }
     
     
