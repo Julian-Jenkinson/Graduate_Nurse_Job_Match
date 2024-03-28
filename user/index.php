@@ -136,6 +136,7 @@ else if ($action == 'save_profile') {
     //return to user profile page with updated user data
     $email = filter_input(INPUT_POST, 'email');
     $user = get_user_by_email($_SESSION['user']['userEmail']);
+    $_SESSION['user'] = $user; 
     include('user_profile.php');
 }
 
