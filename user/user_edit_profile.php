@@ -1,5 +1,5 @@
 <?php include '../view/header.php'; ?>
-<?php include('../js/script.php'); ?>
+
 
 
 
@@ -9,19 +9,20 @@
 
 <form action="." method="post">
 
+<p class='form_message'></p>
+
     <label>First Name:</label><br>
-    <input type="text" name="userFName", value="<?php echo isset($user['userFName']) ? htmlspecialchars($user['userFName']) : ''; ?> ">
+    <input type="text" class="validate" name="userFName", value="<?php echo isset($user['userFName']) ? htmlspecialchars($user['userFName']) : ''; ?>">
     <br><br>
     <label>Last Name:</label><br>
-    <input type="text", name="userLName", value="<?php echo isset($user['userLName']) ? htmlspecialchars($user['userLName']) : ''; ?> ">
+    <input type="text" class="validate" name="userLName", value="<?php echo isset($user['userLName']) ? htmlspecialchars($user['userLName']) : ''; ?>">
     <br><br>
     <label>Phone:</label><br>
-    <input type="text", name="userPhone", value="<?php echo isset($user['userPhone']) ? htmlspecialchars($user['userPhone']) : ''; ?> ">
+    <input type="text", name="userPhone", value="<?php echo isset($user['userPhone']) ? htmlspecialchars($user['userPhone']) : ''; ?>">
     <br><br>
     <label>Address:</label><br>
-    <input type="text", name="userAddress", id="autocomplete", onfocus="initAutocomplete()", placeholder="Enter your address", value="<?php echo isset($user['userAddress']) ? htmlspecialchars($user['userAddress']) : ''; ?> " >
+    <input type="text", name="userAddress", id="autocomplete", onfocus="initAutocomplete()", placeholder="Enter your address", value="<?php echo isset($user['userAddress']) ? htmlspecialchars($user['userAddress']) : ''; ?>" >
     <br><br>
-
 
     <label for="userQualifications">Qualifications:</label><br>
     <select name="userQualifications">
@@ -40,15 +41,15 @@
 
     
     <label>Experience:</label><br>
-    <textarea type="text", name="userExperience", rows="4", cols="50", placeholder="Tell us about you professional experiences"><?php echo isset($user['userExperience']) ? htmlspecialchars($user['userExperience']) : ''; ?></textarea>
+    <textarea type="text", name="userExperience", rows="4", cols="50", placeholder="Tell us about you professional experiences"><?php echo isset($user['userExperience']) ? htmlspecialchars($user['userExperience']) : '';?></textarea>
     <br><br>
     
     <label>Skills:</label><br>
-    <textarea type="text", name="userSkills", rows="4", cols="50", placeholder="Tell us about you proffessional skills"><?php echo isset($user['userSkills']) ? htmlspecialchars($user['userSkills']) : ''; ?></textarea>
+    <textarea type="text", name="userSkills", rows="4", cols="50", placeholder="Tell us about you proffessional skills"><?php echo isset($user['userSkills']) ? htmlspecialchars($user['userSkills']) : '';?></textarea>
     <br><br>
     
     <label>Interests:</label><br>
-    <textarea type="text", name="userInterests", rows="4", cols="50", placeholder="Tell us about you professional interest areas"><?php echo isset($user['userInterests']) ? htmlspecialchars($user['userInterests']) : ''; ?></textarea>
+    <textarea type="text", name="userInterests", rows="4", cols="50", placeholder="Tell us about you professional interest areas"><?php echo isset($user['userInterests']) ? htmlspecialchars($user['userInterests']) : '';?></textarea>
     <br><br>
     
     <label>Location Preferences:</label><br>
@@ -75,11 +76,12 @@
     <input type="checkbox" name="mm7" value="Y" <?php echo $user['userMM7'] == 'Y' ? 'checked' : ''; ?>><br>
 
     <br>
-    <input type="submit" value="Save Profile">
+    <input type="submit" class="submitForm" value="Save Profile">
     <input type="hidden" name="action" value="save_profile">
     <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($user['userID']); ?>">
     <input type="hidden" name="email" value="<?php echo htmlspecialchars($user['userEmail']); ?>">
     <br><br>
 </form>
 
+<?php include('../js/script.php'); ?>
 <?php include '../view/footer.php'; ?>

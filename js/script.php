@@ -38,8 +38,57 @@
     }
   }
 
-//window.initAutocomplete = initAutocomplete;
+// Add event listener to validate fields
+var validateFields = document.getElementsByClassName('validate');
+for (var i = 0; i < validateFields.length; i++) {
+    validateFields[i].addEventListener("blur", function() {
+        validateField(this);
+    });
+}
+// Validate field function
+function validateField(field) {
+  if (field.value == '') {
+    field.style.borderColor = 'red';
+    field.nextElementSibling.innerHTML = 'Please enter a value for this field';
+  } else {
+    field.style.borderColor = ''; // Reset border color if field is not empty
+    field.nextElementSibling.innerHTML = ''; // Clear error message if field is not empty
+  }
+  // Show error message if any field is empty
+  var formMessage = document.getElementsByClassName('form_message')[0];
+  var anyEmpty = Array.from(validateFields).some(function (field) {
+    return field.value === '';
+  });
+  if (anyEmpty) {
+    formMessage.innerHTML = 'Please correct these fields before submitting';
+    //get form my by id and prevent submit if any fields are empty
+  } else {
+    formMessage.innerHTML = ''; // Clear error message if no fields are empty
+  }
+}
 
+//validate form function to prevent from from submitting if any fields are empty
+function validateForm() {
+  var validateFields = document.getElementsByClassName('validate');
+  var anyEmpty = Array.from(validateFields).some(function (field) {
+    return field.value === '';
+  });
+
+  if (anyEmpty) {
+    var formMessage = document.getElementsByClassName('form_message')[0];
+    formMessage.innerHTML = 'Please correct these fields before submitting';
+    return false; // Prevent form submission
+  }
+
+  return true; // Allow form submission
+}
+//check if any fields are empty before submitting form
+var submitButton = document.getElementsByClassName('submitForm')[0];
+submitButton.addEventListener('click', function(event) {
+  if (!validateForm()) {
+    event.preventDefault(); // Prevent form submission if any fields are empty
+  }
+});
 
 
 </script>
