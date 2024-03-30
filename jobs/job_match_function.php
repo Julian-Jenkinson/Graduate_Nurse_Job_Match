@@ -1,6 +1,10 @@
 <?php
 //this function is the job match algorithm to give reccomendations to users
 function job_match(){
+    //maybe initialise job_keyword to null or something??
+    $job_keyword = '';
+
+
     $user_quals = $_SESSION['user']['userQualifications'];
     //if user has a Bachelor of midwifery, search for job titles with 'Midwife'
     if ($user_quals == 'Bachelor of Midwifery'){

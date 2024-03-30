@@ -51,11 +51,12 @@
         $job_count = $_SESSION['job_count'];
         //clear session data to avoid unintentional reuse 
         //CHECK THIS IF ODD THINGS HAPPEN
-        //unset($_SESSION['jobs']);
+        unset($_SESSION['jobs']);
         //unset($_SESSION['job_count']);
     }
     if (isset($_SESSION['job_matches'])) {
         $job_matches = $_SESSION['job_matches'];
+        //uncommented - search function works
         //unset($_SESSION['job_matches']);
     }
 ?>
@@ -71,7 +72,7 @@
 
 <?php 
     //check if user is logged in and job match array is not empty
-    if (isset($_SESSION['user']) ) {
+    if (isset($_SESSION['user']['userQualifications']) ) {
         echo '<h4>Job Matches:</h4>';
         foreach ($job_matches as $job) :
 ?>

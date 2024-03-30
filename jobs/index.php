@@ -23,7 +23,7 @@ if ($action == 'list_jobs') {
     
     //job recommendations
     // if user is logged in, display job matches
-    if (isset($_SESSION['user'])) {
+    if (isset($_SESSION['user']['userQualifications'])) {
         include('./job_match_function.php');
         $job_matches = job_match();
     }
@@ -52,7 +52,7 @@ else if ($action == 'search_jobs') {
     
     //job recommendations
     // if user is logged in, display job matches
-    if (isset($_SESSION['user'])) {
+    if (isset($_SESSION['user']['userQualifications'])) {
         include('./job_match_function.php');
         $job_matches = job_match();  
     }

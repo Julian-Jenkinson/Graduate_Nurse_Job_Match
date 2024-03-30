@@ -34,8 +34,8 @@ else if ($action == 'search_jobs') {
     $_SESSION['jobs'] = $jobs;
     $_SESSION['job_count'] = count($jobs);
 
-
-    if (isset($_SESSION['user'])) {
+    //mayne change to userquals is sset?? to avoid it running unneccesarily
+    if (isset($_SESSION['user']['userQualifications'])) {
         include('./jobs/job_match_function.php');
         $job_matches = job_match();
         $_SESSION['job_matches'] = $job_matches;
