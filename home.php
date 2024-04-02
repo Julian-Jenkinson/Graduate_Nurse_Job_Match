@@ -1,4 +1,4 @@
-<?php include 'view/header.php'; ?>
+<?php include 'view/home_header.php'; ?>
 
 <div class="slideshow-container">
         <!-- Slides -->
@@ -141,4 +141,4 @@
     </div> 
 -->
 
-<?php include 'view/footer.php'; ?>    
+<?php include 'view/home_footer.php'; ?>    

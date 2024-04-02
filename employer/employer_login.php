@@ -25,6 +25,6 @@
 
 
 
-<?php include '../view/footer.php'; ?>
+<?php include '../view/employer_footer.php'; ?>
 
 

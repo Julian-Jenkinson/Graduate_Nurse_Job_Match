@@ -61,7 +61,7 @@ header {
   z-index: 2; 
   }
 
-#employer_header {/* please change this colour to whatever you think is best!! */
+#employer_header {
   background-color: #4682B4;
 }
 
@@ -151,7 +151,7 @@ header {
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-  margin-left: -480%;
+  margin-left: -725%;
 }
 
 .social-icon img {
@@ -165,12 +165,12 @@ header {
   font-family: 'Anek Devanagari', sans-serif;
   font-size: 12px;
   margin-top: 17px;
-  margin-left: -454%;
+  margin-left: -744%;
 }
 
 .footer-buttons {
-  margin-left: -452%;
-  margin-top: -1%;
+  margin-left: -711%;
+  margin-top: 1%;
 }
 
 .footer-buttons button {
