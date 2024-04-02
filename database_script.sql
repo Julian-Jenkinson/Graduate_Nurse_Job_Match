@@ -59,7 +59,7 @@ INSERT INTO employers VALUES
 CREATE TABLE jobs (
     jobID int NOT NULL AUTO_INCREMENT,
     empID int NOT NULL,
-    jobName varchar(20) NOT NULL,
+    jobName varchar(50) NOT NULL,
     jobPlace varchar(60),
     jobDescription text,
     jobAboutUs text,
@@ -78,7 +78,7 @@ CREATE TABLE jobs (
 
     jobFacilityType varchar(25),
     jobSectorsServices varchar(25),
-    jobBeds int,
+    jobBeds varchar(10),
     jobMedicalPracs varchar(3),
     jobAlliedHealth varchar(3),
     jobVisitingFacilities varchar(3),

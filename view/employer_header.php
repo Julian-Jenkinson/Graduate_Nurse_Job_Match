@@ -24,19 +24,14 @@
         <nav class="header-nav">
             <ul>
                 <li><a href="/CSC3600-T1-2024_TheITCrew/home.php">Home</a></li>
-                <!--
-                <li><a href="/CSC3600-T1-2024_TheITCrew/home.php">About Us</a></li>
-                <li><a href="/CSC3600-T1-2024_TheITCrew/jobs">Jobs</a></li> -->
-                
                 <?php 
                 if (isset($_SESSION['employer'])) { 
                     // User is logged in, display the view profile button
                     echo '<li><a href="/CSC3600-T1-2024_TheITCrew/employer">Dashboard</a></li>
                          <li><a href="/CSC3600-T1-2024_TheITCrew/employer/employer_create_listing.php">Create Listing</a></li>';
                 } 
-                ?>
-                
-                </ul>
+                ?>    
+            </ul>
         </nav>
         <div class="header-access">
             <?php 

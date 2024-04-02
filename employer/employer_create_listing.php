@@ -1,29 +1,29 @@
 <?php include '../view/employer_header.php'; ?>
-<?php include('../js/script.php'); ?>
+
 
 <h3>Create a New Job Listing</h3>
 <h4>Position Information:</h4>
 
 <form action="." method="post">
-
+    <p class='form_message'></p>
     <label>Job Title:</label><br>
-    <input type="text" name="jobName">
+    <input type="text" name="jobName" class="validate">
     <br><br>
     
     <label>Health Care Facility:</label><br>
-    <input type="text" name="jobPlace">
+    <input type="text" name="jobPlace" class="validate">
     <br><br>
 
     <label>Address:</label><br>
-    <input type="text" name="jobAddress" id="autocomplete" onfocus="initAutocomplete()" placeholder="Start typing your address">
+    <input type="text" name="jobAddress" id="autocomplete" onfocus="initAutocomplete()" placeholder="Start typing your address" class="validate">
     <br><br>
     
     <label>Remuneration:</label><br>
-    <input type="text" name="jobSalary" value="$" >
+    <input type="text" name="jobSalary" placeholder="eg. $37 - $42 per hour" class="validate">
     <br><br>
 
     <label for="jobContractType">Contract type:</label><br>
-    <select name="jobContractType">
+    <select name="jobContractType" class="validate">
         <option value="" disabled selected>Select a contract type</option>
         <option value="Full-time">Full-time</option>
         <option value="Part-time">Part-time</option>
@@ -33,17 +33,17 @@
     </select> <br><br>
     
     <label>Job description:</label><br>
-    <textarea name="jobDescription" rows="10" cols="50" placeholder="Please provide a description of the job opportunity"></textarea>
+    <textarea name="jobDescription" rows="10" cols="50" placeholder="Please provide a description of the job opportunity" class="validate"></textarea>
     <br><br>
     
     <h4>Organisation Information:</h4>
     
     <label>About us:</label><br>
-    <textarea name="jobAboutUs" rows="10" cols="50" placeholder="Please provide some information about your organisation"></textarea>
+    <textarea name="jobAboutUs" rows="10" cols="50" placeholder="Please provide some information about your organisation" class="validate"></textarea>
     <br><br>
 
     <label for="jobFacilityType">Type of health care facility:</label><br>
-    <select name="jobFacilityType">
+    <select name="jobFacilityType" class="validate">
         <option value="" disabled selected>Select a facility type</option>
         <option value="Hospital">Hospital</option>
         <option value="Medical centre">Medical centre</option>
@@ -52,7 +52,7 @@
     </select><br><br>
 
     <label for="jobSectorsServices">Sectors serviced</label><br>
-    <select name="jobSectorsServices">
+    <select name="jobSectorsServices" class="validate">
         <option value="" disabled selected>Select a sector type</option>
         <option value="Public">Public</option>
         <option value="Private">Private</option>
@@ -60,25 +60,25 @@
     </select><br><br>
 
     <label for="jobBeds">Number of beds:</label><br>
-    <input type="text" name="jobBeds" placeholder="Enter the number of beds">
+    <input type="text" name="jobBeds" placeholder="Enter the number of beds" class="validate">
     <br><br>
 
     <label for="jobMedicalPracs">Medical practitioners utilised:</label><br>
-    <select name="jobMedicalPracs">
+    <select name="jobMedicalPracs" class="validate">
         <option value="" disabled selected>Select</option>
         <option value="Yes">Yes</option>
         <option value="No">No</option>    
     </select><br><br>
     
     <label for="jobAlliedHealth">Allied health care professionals:</label><br>
-    <select name="jobAlliedHealth">
+    <select name="jobAlliedHealth" class="validate">
         <option value="" disabled selected>Select</option>
         <option value="Yes">Yes</option>
         <option value="No">No</option>    
     </select><br><br>
 
     <label for="jobVisitingFacilities">Visiting health care facilities:</label><br>
-    <select name="jobVisitingFacilities">
+    <select name="jobVisitingFacilities" class="validate">
         <option value="" disabled selected>Select</option>
         <option value="Yes">Yes</option>
         <option value="No">No</option>    
@@ -124,7 +124,7 @@
     <input type="checkbox" name="jobAgedCare" value="Y"><br><br>
     
     <label for="jobAccoms">Employee Accommodation Available:</label><br>
-    <select name="jobAccoms">
+    <select name="jobAccoms" class="validate">
         <option value="" disabled selected>Select</option>
         <option value="Yes">Yes</option>
         <option value="No">No</option>    
@@ -133,7 +133,7 @@
     <h4>Locality Information:</h4>
 
     <label for="jobMonashRating">Locality rural rating (Modified Monash Model):</label><br>
-    <select name="jobMonashRating">
+    <select name="jobMonashRating" class="validate">
         <option value="" disabled selected>Select a rural rating</option>
         <option value="Metropolitan area">Metropolitan area</option>
         <option value="Regional centre">Regional centre</option>
@@ -205,20 +205,23 @@
     <h4>Contact Details:</h4>
 
     <label>Contact email:</label><br>
-    <input type="text" name="jobContactEmail">
+    <input type="text" name="jobContactEmail" class="validate">
     <br><br>
     <label>Company link:</label><br>
-    <input type="text" name="jobLink" placeholder="eg. https://www.">
+    <input type="text" name="jobLink" placeholder="eg. https://www." class="validate">
     <br><br>
 
     <input type="hidden" name="jobCity" id="jobCity" value="">
     <input type="hidden" name="jobState" id="jobState"value="">
     <input type="hidden" name="jobListingDate" value="<?php echo date('Y-m-d'); ?>">
     
-    <input type="submit" value="Post Job">
+    <p class='form_message'></p>
+
+    <input type="submit" class="submitForm" value="Post Job">
     <input type="hidden" name="action" value="add_job">
     <input type="hidden" name="empID" value="<?php echo htmlspecialchars($employer['empID']); ?>">    
     <br><br>
 </form>
 
+<?php include('../js/script.php'); //script to validate fields and form ?>
 <?php include '../view/footer.php'; ?>

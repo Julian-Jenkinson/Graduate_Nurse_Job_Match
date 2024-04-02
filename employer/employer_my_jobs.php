@@ -25,7 +25,7 @@
     <div>Posted <?php echo date('jS M Y', strtotime($job['jobListingDate'])); ?></div>
     <div><?php echo htmlspecialchars($job['jobPlace']); ?></div>
     <div><?php echo htmlspecialchars($job['jobCity'] . ', ' . $job['jobState']); ?></div>
-    <div>$<?php echo htmlspecialchars($job['jobSalary']); ?></div>
+    <div><?php echo htmlspecialchars($job['jobSalary']); ?></div>
     
     <form action="." method="post">
         <input type="submit" value="View Listing"/>

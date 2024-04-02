@@ -54,29 +54,44 @@ function validateField(field) {
     field.style.borderColor = ''; // Reset border color if field is not empty
     field.nextElementSibling.innerHTML = ''; // Clear error message if field is not empty
   }
+  
   // Show error message if any field is empty
-  var formMessage = document.getElementsByClassName('form_message')[0];
+  var formMessages = document.getElementsByClassName('form_message');
   var anyEmpty = Array.from(validateFields).some(function (field) {
     return field.value === '';
   });
+  
   if (anyEmpty) {
-    formMessage.innerHTML = 'Please correct these fields before submitting';
-    //get form my by id and prevent submit if any fields are empty
+    for (var i = 0; i < formMessages.length; i++) {
+      formMessages[i].innerHTML = 'Please correct the highlighted fields before submitting';
+      formMessages[i].style.color = 'red';
+    }
   } else {
-    formMessage.innerHTML = ''; // Clear error message if no fields are empty
+    for (var i = 0; i < formMessages.length; i++) {
+      formMessages[i].innerHTML = ''; // Clear error message if no fields are empty
+    }
   }
 }
 
 //validate form function to prevent from from submitting if any fields are empty
 function validateForm() {
   var validateFields = document.getElementsByClassName('validate');
+  var formMessages = document.getElementsByClassName('form_message');
   var anyEmpty = Array.from(validateFields).some(function (field) {
     return field.value === '';
   });
 
   if (anyEmpty) {
-    var formMessage = document.getElementsByClassName('form_message')[0];
-    formMessage.innerHTML = 'Please correct these fields before submitting';
+    for (var i = 0; i < formMessages.length; i++) {
+      formMessages[i].innerHTML = 'Please correct the highlighted fields before submitting';
+      formMessages[i].style.color = 'red';
+    }
+    // highlight all empty fields
+    for (var i = 0; i < validateFields.length; i++) {
+      if (validateFields[i].value === '') {
+        validateFields[i].style.borderColor = 'red';
+      }
+    }
     return false; // Prevent form submission
   }
 

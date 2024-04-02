@@ -1,16 +1,7 @@
 <?php include '../view/header.php'; ?>
-
-
-
-
 <h3>User Create/Edit Profile</h3><br>
-
-
-
 <form action="." method="post">
-
-<p class='form_message'></p>
-
+    <p class='form_message'></p>
     <label>First Name:</label><br>
     <input type="text" class="validate" name="userFName", value="<?php echo isset($user['userFName']) ? htmlspecialchars($user['userFName']) : ''; ?>">
     <br><br>
@@ -18,12 +9,11 @@
     <input type="text" class="validate" name="userLName", value="<?php echo isset($user['userLName']) ? htmlspecialchars($user['userLName']) : ''; ?>">
     <br><br>
     <label>Phone:</label><br>
-    <input type="text", name="userPhone", value="<?php echo isset($user['userPhone']) ? htmlspecialchars($user['userPhone']) : ''; ?>">
+    <input type="text" name="userPhone", value="<?php echo isset($user['userPhone']) ? htmlspecialchars($user['userPhone']) : ''; ?>">
     <br><br>
     <label>Address:</label><br>
-    <input type="text", name="userAddress", id="autocomplete", onfocus="initAutocomplete()", placeholder="Enter your address", value="<?php echo isset($user['userAddress']) ? htmlspecialchars($user['userAddress']) : ''; ?>" >
+    <input type="text" class="validate" name="userAddress", id="autocomplete", onfocus="initAutocomplete()", placeholder="Enter your address", value="<?php echo isset($user['userAddress']) ? htmlspecialchars($user['userAddress']) : ''; ?>" >
     <br><br>
-
     <label for="userQualifications">Qualifications:</label><br>
     <select name="userQualifications">
         <option value="" disabled selected>Select your qualification</option>
@@ -36,7 +26,6 @@
         <option value="Graduate Certificate of Nursing" <?php echo isset($user['userQualifications']) && $user['userQualifications'] == 'Graduate Certificate of Nursing' ? 'selected' : ''; ?>>Graduate Certificate of Nursing</option>
         <option value="Graduate Certificate in Clinical Nursing" <?php echo isset($user['userQualifications']) && $user['userQualifications'] == 'Graduate Certificate in Clinical Nursing' ? 'selected' : ''; ?>>Graduate Certificate in Clinical Nursing</option>
         <option value="Graduate Diploma of Mental Health Nursing" <?php echo isset($user['userQualifications']) && $user['userQualifications'] == 'Graduate Diploma of Mental Health Nursing' ? 'selected' : ''; ?>>Graduate Diploma of Mental Health Nursing</option>
-        
     </select> <br><br>
 
     
@@ -76,6 +65,7 @@
     <input type="checkbox" name="mm7" value="Y" <?php echo $user['userMM7'] == 'Y' ? 'checked' : ''; ?>><br>
 
     <br>
+    <p class='form_message'></p>
     <input type="submit" class="submitForm" value="Save Profile">
     <input type="hidden" name="action" value="save_profile">
     <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($user['userID']); ?>">
@@ -83,5 +73,6 @@
     <br><br>
 </form>
 
-<?php include('../js/script.php'); ?>
+
+<?php include('../js/script.php'); ////script to validate fields and form ?>
 <?php include '../view/footer.php'; ?>
