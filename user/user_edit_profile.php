@@ -11,6 +11,7 @@
     <label>Address:</label><br>
     <input type="text" class="validate" name="userAddress", id="autocomplete", onfocus="initAutocomplete()", placeholder="Enter your address", value="<?php echo isset($user['userAddress']) ? htmlspecialchars($user['userAddress']) : ''; ?>" >
     <br><br>
+
     <label for="userQualifications">Qualifications:</label><br>
     <select name="userQualifications" class="validate">
         <option value="" disabled selected>Select your qualification</option>
@@ -24,6 +25,9 @@
         <option value="Graduate Certificate in Clinical Nursing" <?php echo isset($user['userQualifications']) && $user['userQualifications'] == 'Graduate Certificate in Clinical Nursing' ? 'selected' : ''; ?>>Graduate Certificate in Clinical Nursing</option>
         <option value="Graduate Diploma of Mental Health Nursing" <?php echo isset($user['userQualifications']) && $user['userQualifications'] == 'Graduate Diploma of Mental Health Nursing' ? 'selected' : ''; ?>>Graduate Diploma of Mental Health Nursing</option>
     </select> <br><br>
+
+    <label for="jobTitle">What position are you loking for?</label><br>
+    <input type="text" class="validate" name="jobTitle" placeholder="Enter a position title" value="<?php echo isset($job['jobTitle']) ? htmlspecialchars($job['jobTitle']) : ''; ?>">
     
     <h4>Professional Interests:</h4>
 
@@ -31,8 +35,9 @@
 
     <h4>Location Preferences:</h4>
 
-    
-     
+    <p>will you relocate for work?</p>
+    <p>what areas of australia interest you? eg. rural/regional Metropolitan</p>
+    <p>do you require staff accommodation?</p>     
     
     <br>
     <p class='form_message'></p>
@@ -40,6 +45,10 @@
     <input type="hidden" name="action" value="save_profile">
     <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($user['userID']); ?>">
     <input type="hidden" name="email" value="<?php echo htmlspecialchars($user['userEmail']); ?>">
+    
+    <input type="hidden" name="userCity" id="jobCity" value="<?php echo isset($job['userCity']) ? htmlspecialchars($job['userCity']) : ''; ?>">
+    <input type="hidden" name="userState" id="jobState" value="<?php echo isset($job['userState']) ? htmlspecialchars($job['userState']) : ''; ?>">
+
     <br><br>
 </form>
 

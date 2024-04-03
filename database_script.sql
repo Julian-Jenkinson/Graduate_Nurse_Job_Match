@@ -13,8 +13,6 @@ CREATE TABLE users (
     userAddress varchar(150),
     userCity varchar(20),
     userState varchar(3),
-   
-
     userQualifications varchar(50),
    
     

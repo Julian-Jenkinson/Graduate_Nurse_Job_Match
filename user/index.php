@@ -4,8 +4,8 @@
 session_start();
 
 //get error messages
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 require('../model/database.php');
 require('../model/users_db.php');
@@ -113,25 +113,17 @@ else if ($action == 'save_profile') {
     $user_id = filter_input(INPUT_POST, 'user_id');
     $first_name = filter_input(INPUT_POST, 'userFName');
     $last_name = filter_input(INPUT_POST, 'userLName');
-    $phone = filter_input(INPUT_POST, 'userPhone');
+ 
     $address = filter_input(INPUT_POST, 'userAddress');
-    $qualifications = filter_input(INPUT_POST, 'userQualifications');
-    $experience = filter_input(INPUT_POST, 'userExperience');
-    $skills = filter_input(INPUT_POST, 'userSkills');
-    $interests = filter_input(INPUT_POST, 'userInterests');
 
-    $mm1 = filter_input(INPUT_POST, 'mm1');
-    $mm2 = filter_input(INPUT_POST, 'mm2');
-    $mm3 = filter_input(INPUT_POST, 'mm3');
-    $mm4 = filter_input(INPUT_POST, 'mm4');
-    $mm5 = filter_input(INPUT_POST, 'mm5');
-    $mm6 = filter_input(INPUT_POST, 'mm6');
-    $mm7 = filter_input(INPUT_POST, 'mm7');
+    $city = filter_input(INPUT_POST, 'userCity');
+    $state = filter_input(INPUT_POST, 'userState');
+
+    $qualifications = filter_input(INPUT_POST, 'userQualifications');
+ 
     
     //update user function
-    update_user($user_id, $first_name, $last_name, $phone, 
-                $address, $qualifications, $experience, $skills, 
-                $interests, $mm1, $mm2, $mm3, $mm4, $mm5, $mm6, $mm7);
+    update_user($user_id, $first_name, $last_name, $address, $city, $state, $qualifications);
     
     //return to user profile page with updated user data
     $email = filter_input(INPUT_POST, 'email');
