@@ -7,13 +7,70 @@ CREATE TABLE users (
     userID int NOT NULL AUTO_INCREMENT,
     userEmail varchar(50) NOT NULL UNIQUE,
     userPassword varchar(255) NOT NULL,
-
     userFName varchar(20),
     userLName varchar(20),    
     userAddress varchar(150),
     userCity varchar(20),
     userState varchar(3),
     userQualifications varchar(50),
+
+    jobTitle varchar(40),
+    sectorPref varchar(25),
+    
+    userServPathology varchar(1),
+    userServXray varchar(1),
+    userServCT varchar(1),
+    userServMRI varchar(1),
+    userServUltra varchar(1),
+    userServNuclear varchar(1),
+    userServImmunology varchar(1),
+    userServNeurological varchar(1),
+    userServLab varchar(1),
+
+    userED varchar(1),
+    userPeriop varchar(1),
+    userICU varchar(1),
+    userSurgical varchar(1),
+
+    userMedical varchar(1),
+    userRehab varchar(1),
+    userAgedCare varchar(1),
+
+    userRelocate varchar(6),
+    userRuralPrefRemote varchar(1),
+    userRuralPrefRural varchar(1),
+    userRuralPrefRegional varchar(1),
+    userRuralPrefMetro varchar(1),
+    userStaffAccoms varchar(6),
+
+    userCinema varchar(1),
+    userLiveMusic varchar(1),
+    userSportsClub varchar(1),
+    userTheatre varchar(1),
+    userCraftClub varchar(1),
+    userGym varchar(1),
+    userLibrary varchar(1),
+
+    userSupermarket varchar(1),
+    userFarmMarket varchar(1),
+    userMechanic varchar(1),
+    userRetail varchar(1),
+    userRestaurants varchar(1),
+    userPubs varchar(1),
+
+    userChildCare varchar(1),
+    userPrimarySchool varchar(1),
+    userHighSchool varchar(1),
+    userUniversity varchar(1),
+
+    userInternet varchar(1),
+    userMobileCov varchar(1),
+
+    userBus varchar(1),
+    userTrain varchar(1),
+    userAirport varchar(1),
+    userTaxi varchar(1),
+    userEV varchar(1),
    
     
     PRIMARY KEY (userID)

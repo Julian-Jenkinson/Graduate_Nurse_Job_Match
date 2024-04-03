@@ -23,12 +23,13 @@
     <div>Name:</div><div><?php echo $user['userFName'] . ' ' . $user['userLName']; ?></div><br>
     <div>Address:</div><div><?php echo $user['userAddress']; ?></div><br>
     <div>Qualifications:</div><div><?php echo $user['userQualifications']; ?></div><br>
+    <div>Position interested in:</div><div><?php echo $user['jobTitle']; ?></div><br>
     
     <h4>Professional Interests:</h4>
+    <p>in progress</p>
 
-    <h4>Personal Interests:</h4>
-
-    <h4>location Preferences:</h4>
+    <h4>Locality Preferences:</h4>
+    <p>in progress</p>
 
     <form action="." method="post">
         <input type="submit" value="Edit Profile"/>
