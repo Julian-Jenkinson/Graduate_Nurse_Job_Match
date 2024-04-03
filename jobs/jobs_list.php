@@ -92,9 +92,12 @@
 
 <?php 
         endforeach;
+    }
+    else {
+        echo '<h4>Create a profile and get job matches tailored to you.</h4>';
+        echo '<a href="/CSC3600-T1-2024_TheITCrew/user/user_signup.php">Get started here</a>';
     } 
 ?>
-
 
 <!-- list jobs. this displays either a full list of jobs by default
 or a filtered list form search bar -->

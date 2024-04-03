@@ -88,5 +88,12 @@
 <div><a href="<?php echo htmlspecialchars($job['jobLink']); ?>">Link to Website</a></div>
 <br><div>--------------------------</div>
         
+<!-- display a map -->
+<?php include('../js/map_script.php');?>
+<script>
+    DBjob = <?php echo json_encode($job); ?>;
+    initMap(DBjob);
+</script>
+<div id="map"></div> <br><br>
 
 <?php include '../view/footer.php'; ?>

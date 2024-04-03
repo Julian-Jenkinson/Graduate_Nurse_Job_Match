@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    
     <header id="employer_header">
         <div class="header-logo">
             <img src="/CSC3600-T1-2024_TheITCrew/Images/LOGO.png" alt="Graduate Nursing/Midwife Job Match Logo" class="logo"/>

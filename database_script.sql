@@ -3,36 +3,20 @@ DROP DATABASE IF EXISTS job_match;
 CREATE DATABASE job_match;
 USE job_match;
 
-
 CREATE TABLE users (
     userID int NOT NULL AUTO_INCREMENT,
     userEmail varchar(50) NOT NULL UNIQUE,
     userPassword varchar(255) NOT NULL,
 
     userFName varchar(20),
-    userLName varchar(20),
-    userPhone varchar(20),
-    
+    userLName varchar(20),    
     userAddress varchar(150),
-    userAddressNumber varchar(4),
-    userStreet varchar(20),
-    userStPrefix varchar(10),
     userCity varchar(20),
     userState varchar(3),
-    userPostcode varchar(40),
+   
 
     userQualifications varchar(50),
-    userExperience text,
-    userSkills text,
-    userInterests text,
-    
-    userMM1 varchar(1),
-    userMM2 varchar(1),
-    userMM3 varchar(1),
-    userMM4 varchar(1),
-    userMM5 varchar(1),
-    userMM6 varchar(1),
-    userMM7 varchar(1),
+   
     
     PRIMARY KEY (userID)
 );

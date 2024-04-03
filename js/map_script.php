@@ -4,23 +4,27 @@ let map;
 
 //could get this to take argument of job list for reuse
 async function initMap(DBjobs) {
-    //initialse map
-    const { Map } = await google.maps.importLibrary("maps");
-    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
-    map = new Map(document.getElementById("map"), {
-        mapId: "f02651243c002702",
-        //sets the centre of the map on load
-        center: { lat: -28.397, lng: 131.644 },
-        mapTypeControl: false,
-        fullscreenControl: false,
-        zoom: 3.4
-    });
-    //initialise geocoder
-    let geocoder;
-    let gc;
-    geocoder = new google.maps.Geocoder();
-    // loop to access each job in table
-    for (const job of DBjobs) {
+    
+    // Handle the case when DBjobs is not an array
+    if (!Array.isArray(DBjobs)) {
+        job = DBjobs;
+
+        //initialse map
+        const { Map } = await google.maps.importLibrary("maps");
+        const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+        map = new Map(document.getElementById("map"), {
+            mapId: "f02651243c002702",
+            //sets the centre of the map on load
+            center: { lat: -28.397, lng: 131.644 },
+            mapTypeControl: false,
+            fullscreenControl: false,
+            zoom:13
+        });
+        //initialise geocoder
+        let geocoder;
+        let gc;
+        geocoder = new google.maps.Geocoder();
+
         //geocoder - takes address from db and return lat and long
         geocoder.geocode({ address: job.jobAddress }, function(results, status) {
             if (status === 'OK') {
@@ -35,10 +39,53 @@ async function initMap(DBjobs) {
                 AdvancedMarkerElement.addListener("click", () => {
                   toggleHighlight(AdvancedMarkerElement, job);
                 });
+                //centre map on marker
+                map.setCenter({ lat: location.lat(), lng: location.lng() });
             } else {
                 console.log('Geocode was not successful for the following reason: ' + status);
             }
-        });    
+        });
+    }
+    
+    // Handle the case when DBjobs is not an array
+    else if (Array.isArray(DBjobs)) {
+        //initialse map
+        const { Map } = await google.maps.importLibrary("maps");
+        const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+        map = new Map(document.getElementById("map"), {
+            mapId: "f02651243c002702",
+            //sets the centre of the map on load
+            center: { lat: -28.397, lng: 131.644 },
+            mapTypeControl: false,
+            fullscreenControl: false,
+            zoom: 3.4
+        });
+        //initialise geocoder
+        let geocoder;
+        let gc;
+        geocoder = new google.maps.Geocoder();
+        // loop to access each job in table
+
+        for (const job of DBjobs) {
+            //geocoder - takes address from db and return lat and long
+            geocoder.geocode({ address: job.jobAddress }, function(results, status) {
+                if (status === 'OK') {
+                    var gc = results[0];
+                    var location = gc.geometry.location;
+                    //create map marker for each job listing
+                    const AdvancedMarkerElement = new google.maps.marker.AdvancedMarkerElement({
+                    map,
+                    content: buildContent(job),
+                    position:{lat: location.lat(), lng: location.lng(),},
+                    });
+                    AdvancedMarkerElement.addListener("click", () => {
+                    toggleHighlight(AdvancedMarkerElement, job);
+                    });
+                } else {
+                    console.log('Geocode was not successful for the following reason: ' + status);
+                }
+            });    
+        }
     }
 } 
 //function to toggle highlight on marker
