@@ -1,0 +1,60 @@
+ /* Container for the user information and profile sections */
+  .main-container {
+    width: 100%;
+    margin: 0 auto; /* Centers the container */
+    padding: 20px;
+  }
+  
+  /* Style for the notification of logged in user */
+  .logged-in-notice {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Style for the user profile and form sections */
+  h3 {
+    color: #444;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  p {
+    text-align: center;
+    margin-top: 10px; /* Adjust the value as needed for proper spacing */
+  }
+
+  form {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  input[type="submit"] {
+    background-color: #E2725B; /* Example color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #B45B48; /* Darker shade for hover effect */
+  }
+  
+  /* Specific styles for different parts of the profile if displayed */
+  .profile-details {
+    margin-bottom: 20px;
+    text-align: left; /* Aligns the text to the left */
+    width: 50%;
+    margin: 0 auto; /* Centers the details */
+  }
+  
+  .profile-details div {
+    margin-bottom: 10px; /* Spacing between details */
+  }
+  
+
+  
