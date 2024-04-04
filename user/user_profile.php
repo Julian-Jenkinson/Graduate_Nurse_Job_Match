@@ -3,11 +3,11 @@
 
 
 <div class="main-container">
-    <div class="logged-in-notice">
+    <!-- <div class="logged-in-notice">
         You are logged in as <?php echo $_SESSION['user']['userEmail']; ?>
-    </div> 
+    </div> --> 
 
-    <h3>User Profile</h3>
+    <h3>Graduate Profile</h3>
 
     <!-- create profile button -->
     <?php if(!isset($user['userFName'])): ?>

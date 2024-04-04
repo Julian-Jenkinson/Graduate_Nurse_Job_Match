@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="user_login.css" type="text/css"/>
 
 <div class="form-container">
-    <h3>User log in</h3>
+    <h3><br>Graduate log in <br><br></h3>
     <br>
 
     <form action="." method="post">
@@ -19,7 +19,7 @@
         <br><br>
     </form>
 
-    <p>Dont have an account yet? <a href="user_signup.php">Sign up</a></p>
+    <p>Dont have an account yet? <a href="user_signup.php">Sign up</a><br></p>
     <br><br>
 </div>
 

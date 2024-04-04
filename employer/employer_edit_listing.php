@@ -1,11 +1,11 @@
 <?php include '../view/employer_header.php'; ?>
 <link rel="stylesheet" href="employer_edit_listing.css" type="text/css"/>
 
-
 <h3>Edit Job Listing</h3>
-<h4>Position Information:</h4>
+
 <form action="." method="post">
     <p class='form_message'></p>
+    <h4>Position Information:</h4>
     <label>Job Title:</label><br>
     <input type="text" name="jobName" class="validate" value="<?php echo isset($job['jobName']) ? htmlspecialchars($job['jobName']) : ''; ?> ">
     <br><br>

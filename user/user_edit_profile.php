@@ -1,9 +1,10 @@
 <?php include '../view/header.php'; ?>
 <link rel="stylesheet" href="user_edit_profile.css" type="text/css"/>
 
-<h3>User Create/Edit Profile</h3><br>
+<h3>Graduate Edit Profile</h3><br>
 <form action="." method="post">
     <p class='form_message'></p>
+    <h4>Your Details:</h4>
     <label>First Name:</label><br>
     <input type="text" class="validate" name="userFName", value="<?php echo isset($user['userFName']) ? htmlspecialchars($user['userFName']) : ''; ?>">
     <br><br>
@@ -180,7 +181,7 @@
     <input type="checkbox" name="userUniversity" value="Y" <?php echo $user['userUniversity'] == 'Y' ? 'checked' : ''; ?>><br><br>
     
     <br>
-    <p class='form_message'></p>
+    <p class='form_message'></p><br>
     <input type="submit" class="submitForm" value="Save Profile">
     <input type="hidden" name="action" value="save_profile">
     <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($user['userID']); ?>">
