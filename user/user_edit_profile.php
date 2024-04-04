@@ -29,13 +29,8 @@
         <option value="Graduate Diploma of Mental Health Nursing" <?php echo isset($user['userQualifications']) && $user['userQualifications'] == 'Graduate Diploma of Mental Health Nursing' ? 'selected' : ''; ?>>Graduate Diploma of Mental Health Nursing</option>
     </select> <br><br>
 
-
-
-
-
-
     <label for="jobTitle">What position are you looking for?</label><br>
-    <input type="text" class="validate" name="jobTitle" placeholder="eg. Registered Nurse" value="<?php echo isset($job['jobTitle']) ? htmlspecialchars($job['jobTitle']) : ''; ?>">
+    <input type="text" class="validate" name="jobTitle" placeholder="eg. Registered Nurse" value="<?php echo isset($user['jobTitle']) ? htmlspecialchars($user['jobTitle']) : ''; ?>">
     
     <h4>Professional Interests:</h4>
 
@@ -89,7 +84,6 @@
 
     <h4>Locality Preferences:</h4>
 
-    
     <label for="userRelocate">Would you relocate for work?</label><br>
     <select name="userRelocate" class="validate">
         <option value="" disabled selected>Select</option>
@@ -100,27 +94,21 @@
 
     <label>What areas of Australia interest you for work?:</label><br>
     <label for="userRuralPrefMetro":>Metropolitan</label>
-    <input type="checkbox" name="userMedical" value="Y" <?php echo $user['userRuralPrefMetro'] == 'Y' ? 'checked' : ''; ?>><br>
+    <input type="checkbox" name="userRuralPrefMetro" value="Y" <?php echo $user['userRuralPrefMetro'] == 'Y' ? 'checked' : ''; ?>><br>
     <label for="userRuralPrefRegional":>Regional:</label>
-    <input type="checkbox" name="userRehab" value="Y" <?php echo $user['userRuralPrefRegional'] == 'Y' ? 'checked' : ''; ?>><br>
+    <input type="checkbox" name="userRuralPrefRegional" value="Y" <?php echo $user['userRuralPrefRegional'] == 'Y' ? 'checked' : ''; ?>><br>
     <label for="userRuralPrefRural":>Rural:</label>
-    <input type="checkbox" name="userAgedCare" value="Y" <?php echo $user['userRuralPrefRural'] == 'Y' ? 'checked' : ''; ?>><br>
+    <input type="checkbox" name="userRuralPrefRural" value="Y" <?php echo $user['userRuralPrefRural'] == 'Y' ? 'checked' : ''; ?>><br>
     <label for="userRuralPrefRemote":>Remote:</label>
-    <input type="checkbox" name="userAgedCare" value="Y" <?php echo $user['userRuralPrefRemote'] == 'Y' ? 'checked' : ''; ?>><br><br>
-
-    
-
-
+    <input type="checkbox" name="userRuralPrefRemote" value="Y" <?php echo $user['userRuralPrefRemote'] == 'Y' ? 'checked' : ''; ?>><br><br>
 
     <label for="userStaffAccoms">Do you seek staff accommodation?:</label><br>
     <select name="userStaffAccoms" class="validate">
         <option value="" disabled selected>Select</option>
-        <option value="Yes"<?php echo isset($user['jobAccoms']) && $user['jobAccoms'] == 'Yes' ? 'selected' : ''; ?>>Yes</option>
-        <option value="No"<?php echo isset($user['jobAccoms']) && $user['jobAccoms'] == 'No' ? 'selected' : ''; ?>>No</option>    
-        <option value="Unsure"<?php echo isset($user['jobAccoms']) && $user['jobAccoms'] == 'Unsure' ? 'selected' : ''; ?>>Unsure</option>    
+        <option value="Yes"<?php echo isset($user['userStaffAccoms']) && $user['userStaffAccoms'] == 'Yes' ? 'selected' : ''; ?>>Yes</option>
+        <option value="No"<?php echo isset($user['userStaffAccoms']) && $user['userStaffAccoms'] == 'No' ? 'selected' : ''; ?>>No</option>    
+        <option value="Unsure"<?php echo isset($user['userStaffAccoms']) && $user['userStaffAccoms'] == 'Unsure' ? 'selected' : ''; ?>>Unsure</option>    
     </select><br><br>
-
-
     
     <label>Entertainment:</label><br>
     <label for="userCinema":>Cinema:</label>

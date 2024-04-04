@@ -113,17 +113,79 @@ else if ($action == 'save_profile') {
     $user_id = filter_input(INPUT_POST, 'user_id');
     $first_name = filter_input(INPUT_POST, 'userFName');
     $last_name = filter_input(INPUT_POST, 'userLName');
- 
     $address = filter_input(INPUT_POST, 'userAddress');
-
     $city = filter_input(INPUT_POST, 'userCity');
     $state = filter_input(INPUT_POST, 'userState');
-
     $qualifications = filter_input(INPUT_POST, 'userQualifications');
- 
-    
+    $jobTitle = filter_input(INPUT_POST, 'jobTitle');
+
+    $sectorPref = filter_input(INPUT_POST, 'sectorPref');
+    $userServPathology = filter_input(INPUT_POST, 'userServPathology');
+    $userServXray = filter_input(INPUT_POST, 'userServXray');
+    $userServCT = filter_input(INPUT_POST, 'userServCT');
+    $userServMRI = filter_input(INPUT_POST, 'userServMRI');
+    $userServUltra = filter_input(INPUT_POST, 'userServUltra');
+    $userServNuclear = filter_input(INPUT_POST, 'userServNuclear');
+    $userServImmunology = filter_input(INPUT_POST, 'userServImmunology');
+    $userServNeurological = filter_input(INPUT_POST, 'userServNeurological');
+    $userServLab = filter_input(INPUT_POST, 'userServLab');
+
+    $userED = filter_input(INPUT_POST, 'userED');
+    $userPeriop = filter_input(INPUT_POST, 'userPeriop');
+    $userICU = filter_input(INPUT_POST, 'userICU');
+    $userSurgical = filter_input(INPUT_POST, 'userSurgical');
+
+    $userMedical = filter_input(INPUT_POST, 'userMedical');
+    $userRehab = filter_input(INPUT_POST, 'userRehab');
+    $userAgedCare = filter_input(INPUT_POST, 'userAgedCare');
+
+    $userRelocate = filter_input(INPUT_POST, 'userRelocate');
+    $userRuralPrefMetro = filter_input(INPUT_POST, 'userRuralPrefMetro');
+    $userRuralPrefRegional = filter_input(INPUT_POST, 'userRuralPrefRegional');
+    $userRuralPrefRural = filter_input(INPUT_POST, 'userRuralPrefRural');
+    $userRuralPrefRemote = filter_input(INPUT_POST, 'userRuralPrefRemote');
+
+    $userStaffAccoms = filter_input(INPUT_POST, 'userStaffAccoms');
+
+    $userCinema = filter_input(INPUT_POST, 'userCinema');
+    $userLiveMusic = filter_input(INPUT_POST, 'userLiveMusic');
+    $userSportsClub = filter_input(INPUT_POST, 'userSportsClub');
+    $userTheatre = filter_input(INPUT_POST, 'userTheatre');
+    $userCraftClub = filter_input(INPUT_POST, 'userCraftClub');
+    $userGym = filter_input(INPUT_POST, 'userGym');
+    $userLibrary = filter_input(INPUT_POST, 'userLibrary');
+
+    $userSupermarket = filter_input(INPUT_POST, 'userSupermarket');
+    $userFarmMarket = filter_input(INPUT_POST, 'userFarmMarket');
+    $userMechanic = filter_input(INPUT_POST, 'userMechanic');
+    $userRetail = filter_input(INPUT_POST, 'userRetail');
+    $userRestaurants = filter_input(INPUT_POST, 'userRestaurants');
+    $userPubs = filter_input(INPUT_POST, 'userPubs');
+
+    $userInternet = filter_input(INPUT_POST, 'userInternet');
+    $userMobileCov = filter_input(INPUT_POST, 'userMobileCov');
+
+    $userBus = filter_input(INPUT_POST, 'userBus');
+    $userTrain = filter_input(INPUT_POST, 'userTrain');
+    $userAirport = filter_input(INPUT_POST, 'userAirport');
+    $userTaxi = filter_input(INPUT_POST, 'userTaxi');
+    $userEV = filter_input(INPUT_POST, 'userEV');
+
+    $userChildCare = filter_input(INPUT_POST, 'userChildCare');
+    $userPrimarySchool = filter_input(INPUT_POST, 'userPrimarySchool');
+    $userHighSchool = filter_input(INPUT_POST, 'userHighSchool');
+    $userUniversity = filter_input(INPUT_POST, 'userUniversity');
+
     //update user function
-    update_user($user_id, $first_name, $last_name, $address, $city, $state, $qualifications);
+    update_user($user_id, $first_name, $last_name, $address, $city, $state, $qualifications, 
+                $jobTitle, $sectorPref, $userServPathology, $userServXray, $userServCT, $userServMRI,
+                $userServUltra, $userServNuclear, $userServImmunology, $userServNeurological, $userServLab, $userED, $userPeriop,
+                $userICU, $userSurgical, $userMedical, $userRehab, $userAgedCare, $userRelocate, $userRuralPrefMetro,
+                $userRuralPrefRegional, $userRuralPrefRural, $userRuralPrefRemote, $userStaffAccoms, $userCinema,
+                $userLiveMusic, $userSportsClub, $userTheatre, $userCraftClub, $userGym, $userLibrary, $userSupermarket,
+                $userFarmMarket, $userMechanic, $userRetail, $userRestaurants, $userPubs, $userInternet, $userMobileCov,
+                $userBus, $userTrain, $userAirport, $userTaxi, $userEV, $userChildCare, $userPrimarySchool, $userHighSchool,
+                $userUniversity);
     
     //return to user profile page with updated user data
     $email = filter_input(INPUT_POST, 'email');
