@@ -25,7 +25,7 @@
         <br><br>
     </form>
 
-    <p>Allready have an account? <a href="user_login.php">login</a></p>
+    <p>Already have an account? <a href="user_login.php">login</a></p>
     <br><br>
 </div>
 
