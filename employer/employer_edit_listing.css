@@ -1,0 +1,80 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    font-family: 'Arial', sans-serif;
+    background: #f9f9f9;
+  }
+  
+  h3, h4 {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  /* Style the form elements */
+  form {
+    width: 80%;
+    margin: 0 auto; /* Centers the form on the page */
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: inline-block;
+    margin-right: 10px; /* Space between the label and the checkbox */
+    margin-bottom: 5px
+  }
+  
+  input[type="checkbox"] {
+    display: inline-block;
+    vertical-align: middle; /* Aligns the checkbox vertically with the label */
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select,
+  .submitForm {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px; /* Adds space below the input fields */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Style the submit button */
+  .submitForm {
+    background-color: #0056b3;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitForm:hover {
+    background-color: #003d82;
+  }
+  
+  /* Style for checkboxes */
+  [type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  /* Responsive design adjustments */
+  @media (max-width: 768px) {
+    form {
+      width: 95%;
+    }
+  }
+  
+  /* Additional message styling */
+  .form_message {
+    color: red;
+    text-align: center;
+  }
+  
