@@ -1,0 +1,47 @@
+/* This will remove any default margins and paddings that might interfere */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* This ensures that the body takes up at least the viewport height */
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+    min-height: calc(100vh - 500px); 
+    text-align: center; /* Centers the text of direct children */
+  }
+  
+  h3 {
+    margin: 0; /* Removes default margin from the h3 tag */
+    padding-bottom: 10px; /* Adds some space below the heading */
+  }
+  
+  form {
+    display: inline-block; /* Allows the form to shrink-wrap its contents */
+  }
+  
+  input[type=text], input[type=password], input[type=submit] {
+    display: block; /* Makes the input take up the full width of its parent */
+    margin: 1px auto; /* Adds space around the inputs and centers them horizontally */
+    width: calc(100% - 1px); /* Makes the input a bit narrower than its parent to allow for padding */
+  }
+  
+  input[type="submit"] {
+    background-color: #E2725B; 
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #B45B48;
+  }
+
+  p {
+    margin-top: 0; /* Removes default top margin from the paragraph tag */
+  }
+  
