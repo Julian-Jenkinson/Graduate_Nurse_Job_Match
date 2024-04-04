@@ -1,4 +1,5 @@
 <?php include '../view/employer_header.php'; ?>
+<link rel="stylesheet" href="employer_create_listing.css" type="text/css"/>
 
 
 <h3>Create a New Job Listing</h3>
@@ -224,4 +225,4 @@
 </form>
 
 <?php include('../js/script.php'); //script to validate fields and form ?>
-<?php include '../view/footer.php'; ?>
+<?php include '../view/employer_footer.php'; ?>
