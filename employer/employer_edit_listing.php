@@ -1,4 +1,6 @@
 <?php include '../view/employer_header.php'; ?>
+<link rel="stylesheet" href="employer_edit_listing.css" type="text/css"/>
+
 
 <h3>Edit Job Listing</h3>
 <h4>Position Information:</h4>
@@ -226,4 +228,4 @@
 </form>
 
 <?php include('../js/script.php'); //script to validate fields and form ?>
-<?php include '../view/footer.php'; ?>
+<?php include '../view/employer_footer.php'; ?>
