@@ -1,4 +1,6 @@
 <?php include '../view/header.php'; ?>
+<link rel="stylesheet" href="user_edit_profile.css" type="text/css"/>
+
 <h3>User Create/Edit Profile</h3><br>
 <form action="." method="post">
     <p class='form_message'></p>
@@ -31,7 +33,7 @@
 
 
 
-    <label for="jobTitle">What position are you loking for?</label><br>
+    <label for="jobTitle">What position are you looking for?</label><br>
     <input type="text" class="validate" name="jobTitle" placeholder="eg. Registered Nurse" value="<?php echo isset($job['jobTitle']) ? htmlspecialchars($job['jobTitle']) : ''; ?>">
     
     <h4>Professional Interests:</h4>
@@ -43,6 +45,7 @@
         <option value="Private"<?php echo isset($user['sectorPref']) && $user['sectorPref'] == 'Private' ? 'selected' : ''; ?>>Private</option>
         <option value="Public and private"<?php echo isset($user['sectorPref']) && $user['sectorPref'] == 'Public and private' ? 'selected' : ''; ?>>Public and private</option>
     </select><br><br>
+
 
     <label>Investigative Services:</label><br>
     <label for="userServPathology">Pathology:</label>
