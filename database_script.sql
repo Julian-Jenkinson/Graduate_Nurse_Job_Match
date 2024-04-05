@@ -78,6 +78,7 @@ CREATE TABLE users (
 
 INSERT INTO users (userID, userEmail, userPassword)
 VALUES 
+(1001, 'ClientsUSQ', '$2y$10$gCfUgkSZnonu5DfSjC386OBbMTve6muuPOE2quYcjL0G.p7xLpB3q'),
 (1002, 'j@j.com.au', '$2y$10$gCfUgkSZnonu5DfSjC386OBbMTve6muuPOE2quYcjL0G.p7xLpB3q'),
 (1003, 'kev@hotmail.com', '$2y$10$gCfUgkSZnonu5DfSjC386OBbMTve6muuPOE2quYcjL0G.p7xLpB3q'),
 (1004, 'GMJ@gmail.com', '$2y$10$a9vxN/RHUENS0AcmfkafBuzpDZSkeY//kB26biAC/Q9RnvoZIZkaC');

@@ -14,11 +14,32 @@ $action = filter_input(INPUT_POST, 'action');
 if ($action === NULL) {
     $action = filter_input(INPUT_GET, 'action');
     if ($action === NULL) {
-        $action = 'home';
+        $action = 'auth';
     }
 }
-if ($action == 'home') {
-    include('home.php');
+// Check if authentication is already done
+if (isset($_SESSION["auth"]) &&  $_SESSION["auth"]=== true) {
+    $action = 'home';
+}
+//authenticating clients - only here to protect the site during hosting
+if ($action == 'auth') {
+    include('./auth.php');
+}
+else if ($action == 'login') {
+    $email = filter_input(INPUT_POST, 'email');
+    $password = filter_input(INPUT_POST, 'password');
+    
+    //check for correct credentials
+    if ($email == "ClientsUSQ" && $password == "password"){
+        $_SESSION["auth"] = true;
+        include 'home.php';
+    }
+    else {
+    $error = "Incorrect email or password.";
+    
+    include 'auth.php';
+    echo "<div style='text-align: center; color: red;'>$error</div>";
+    }
 }
 else if ($action == 'search_jobs') {
     //get search box data

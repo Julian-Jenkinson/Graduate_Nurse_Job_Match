@@ -25,7 +25,7 @@ function job_match($user){
         
 
         // This function queries the DB
-        $job_matches = get_job_matches_by_location($job_keyword, $city, $state);
+        $job_matches = get_job_matches($job_keyword);
         return $job_matches;
     }
      
