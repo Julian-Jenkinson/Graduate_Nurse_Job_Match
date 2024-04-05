@@ -13,14 +13,18 @@ require('./model/users_db.php');
 $action = filter_input(INPUT_POST, 'action');
 if ($action === NULL) {
     $action = filter_input(INPUT_GET, 'action');
-    if ($action === NULL) {
+    if (isset($_SESSION["auth"]) &&  $_SESSION["auth"]=== true) {
+        $action = 'home';
+    }
+    else if ($action === NULL) {
         $action = 'auth';
     }
 }
 // Check if authentication is already done
-if (isset($_SESSION["auth"]) &&  $_SESSION["auth"]=== true) {
-    $action = 'home';
-}
+//if (isset($_SESSION["auth"]) &&  $_SESSION["auth"]=== true) {
+//    $action = 'home';
+//}
+
 //authenticating clients - only here to protect the site during hosting
 if ($action == 'auth') {
     include('./auth.php');

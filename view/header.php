@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php
+   <?php session_start(); // Start the session ?>
+   <?php
     // Check if authentication is already done
         if (!isset($_SESSION["auth"]) ||  $_SESSION["auth"]=== false) {
             // Redirect to the authentication page
@@ -21,7 +22,6 @@
 </head>
 
 <body>
-<?php session_start(); // Start the session ?>
     <header>
         <div class="header-logo">
             <img src="/CSC3600-T1-2024_TheITCrew/Images/LOGO.png" alt="Graduate Nursing/Midwife Job Match Logo" class="logo"/>
