@@ -1,24 +1,21 @@
 <?php include '../view/header.php'; ?>
 
 <h3><?php echo htmlspecialchars($job['jobName']); ?></h3>
-<div>Date Listed: <?php echo htmlspecialchars($job['jobListingDate']); ?></div>
 
-<h4>Position Details</h4>
+<h4>Details</h4>
+<div>Date Listed: <?php echo htmlspecialchars($job['jobListingDate']); ?></div><br>
 <div>Place: <?php echo htmlspecialchars($job['jobPlace']); ?></div><br>
 <div>Location: <?php echo htmlspecialchars($job['jobCity'] . ', ' . $job['jobState']); ?></div><br>
 <div>Description: <?php echo htmlspecialchars($job['jobDescription']); ?></div><br>
 <div>About Us: <?php echo htmlspecialchars($job['jobAboutUs']); ?></div><br>
 <div>Remuneration: <?php echo htmlspecialchars($job['jobSalary']); ?></div><br>
-<div>Contract Type: <?php echo htmlspecialchars($job['jobContractType']); ?></div><br>
-<br><div>--------------------------</div>
+<div>Contract Type: <?php echo htmlspecialchars($job['jobContractType']); ?></div><br><br>
 
 <h4>Workplace Facilities</h4>
 <div>Facility Type: <?php echo htmlspecialchars($job['jobFacilityType']); ?></div></div><br>
 <div>Sector: <?php echo htmlspecialchars($job['jobSectorsServices']); ?></div><br>
 <div>Beds: <?php echo htmlspecialchars($job['jobBeds']); ?></div><br>
 
-<br>
-<div>Workplace services:</div>
 <?php
 $services = [
     'Pathology' => $job['jobServPathology'],
@@ -59,9 +56,7 @@ if (!empty($selectedServices)) {
     </table>
 <?php } ?>
 
-<br><div>Accommodation Available? <?php echo htmlspecialchars($job['jobAccoms']); ?></div>
-
-<br><div>--------------------------</div>
+<br><div>Accommodation Available? <?php echo htmlspecialchars($job['jobAccoms']); ?></div><br><br>
 
 <h4>Locality Information</h5>
 <div>Monash Rating: <?php echo htmlspecialchars($job['jobMonashRating']); ?></div><br>
@@ -115,12 +110,12 @@ if (!empty($selectedLocalityServices)) {
     </table>
 <?php } ?>
 
-<br><div>--------------------------</div>
+<br><br>
 
 <h4>Contact</h5>
-<div>Apply: <?php echo htmlspecialchars($job['jobContactEmail']); ?></div>
-<div><a href="<?php echo htmlspecialchars($job['jobLink']); ?>">Link to Website</a></div>
-<br><div>--------------------------</div>
+<div>Apply: <?php echo htmlspecialchars($job['jobContactEmail']); ?></div><br>
+<div>Link: <a href="<?php echo htmlspecialchars($job['jobLink']); ?>">Employer website here</a></div>
+<br>
         
 <!-- display a map -->
 <?php include('../js/map_script.php');?>
