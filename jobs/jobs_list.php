@@ -1,5 +1,6 @@
 <?php include '../view/header.php'; ?>
 <?php include('../js/map_script.php');?>
+<link rel="stylesheet" type="text/css" href="jobs_list.css">
 
 <h3>Jobs Search</h3>
 
@@ -94,14 +95,17 @@
         endforeach;
     }
     else {
+        echo '<div class="center-content">';
         echo '<h4>Create a profile and get job matches tailored to you.</h4>';
         echo '<a href="/CSC3600-T1-2024_TheITCrew/user/user_signup.php">Get started here</a>';
+        echo '</div>';
     } 
 ?>
 
 <!-- list jobs. this displays either a full list of jobs by default
 or a filtered list form search bar -->
 <br><br>
+<div class="job-listing">
 <h4>Job Listings</h4>
 
 <?php echo $job_count . ' jobs' ; ?>
@@ -121,5 +125,6 @@ or a filtered list form search bar -->
         </form>
 
     <?php endforeach; ?>
+</div>
 
 <?php include '../view/footer.php'; ?>
