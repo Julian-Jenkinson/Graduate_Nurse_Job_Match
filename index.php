@@ -3,7 +3,6 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-//need this???
 session_start();
 
 require('./model/database.php');
@@ -20,13 +19,12 @@ if ($action === NULL) {
         $action = 'auth';
     }
 }
-// Check if authentication is already done
-//if (isset($_SESSION["auth"]) &&  $_SESSION["auth"]=== true) {
-//    $action = 'home';
-//}
-
+//go to home page
+if ($action == 'home') {
+    include('./home.php');
+}
 //authenticating clients - only here to protect the site during hosting
-if ($action == 'auth') {
+else if ($action == 'auth') {
     include('./auth.php');
 }
 else if ($action == 'login') {
