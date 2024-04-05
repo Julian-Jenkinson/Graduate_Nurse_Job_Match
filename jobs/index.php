@@ -2,11 +2,12 @@
 //start session
 session_start();
 
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 require('../model/database.php');
 require('../model/jobs_db.php');
+require('../model/users_db.php');
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action === NULL) {
@@ -52,7 +53,7 @@ else if ($action == 'search_jobs') {
     
     //job recommendations
     // if user is logged in, display job matches
-    if (isset($_SESSION['user']['userQualifications'])) {
+    if (isset($_SESSION['user']['userEmail'])) {
         include('./job_match_function.php');
         $job_matches = job_match();  
     }
