@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="user_signup.css" type="text/css"/>
 
 <div class="form-container">
-    <h3>User sign up</h3>
+    <h3><br>Graduate sign up <br><br></h3>
 
     <br>
     <form action="." method="post">

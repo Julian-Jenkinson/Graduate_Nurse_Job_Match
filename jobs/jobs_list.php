@@ -72,7 +72,7 @@
 
 <?php 
     //check if user is logged in and job match array is not empty
-    if (isset($_SESSION['user']['userQualifications']) ) {
+    if (isset($_SESSION['user']['jobTitle']) ) {
         echo '<h4>Job Matches:</h4>';
         foreach ($job_matches as $job) :
 ?>

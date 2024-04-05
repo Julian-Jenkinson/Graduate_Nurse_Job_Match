@@ -333,20 +333,69 @@ function search_jobs($by_keyword, $by_location, $by_contract_type, $by_rural_typ
     return $jobs;
 }
 
-function get_job_matches($job_keyword) {
+function get_job_matches($by_keyword) {
     global $db;
     $query = 'SELECT * FROM jobs 
               WHERE 1=1';
 
     $params = array();
 
-    if (!empty($job_keyword)) {
-        $query .= ' AND jobName LIKE :job_keyword';
-        $params[':job_keyword'] = '%' . $job_keyword . '%';
+    if (!empty($by_keyword)) {
+        $query .= ' AND jobName LIKE :keyword';
+        $params[':keyword'] = '%' . $by_keyword . '%';
     }
 
-    $query .= ' ORDER BY jobListingDate DESC
-                LIMIT 3';
+    $query .= ' ORDER BY jobListingDate DESC';
+
+    $statement = $db->prepare($query);
+    $statement->execute($params);
+    $jobMatches = $statement->fetchAll();
+    $statement->closeCursor();
+
+    return $jobMatches;
+}
+function get_job_matches_by_city($by_keyword, $by_city) {
+    global $db;
+    $query = 'SELECT * FROM jobs 
+              WHERE 1=1';
+
+    $params = array();
+
+    if (!empty($by_keyword)) {
+        $query .= ' AND jobName LIKE :keyword';
+        $params[':keyword'] = '%' . $by_keyword . '%';
+    }
+    if (!empty($by_city)) {
+        $query .= ' AND jobCity = :by_city';
+        $params[':by_city'] = $by_city;
+    }
+
+    $query .= ' ORDER BY jobListingDate DESC';
+
+    $statement = $db->prepare($query);
+    $statement->execute($params);
+    $jobMatches = $statement->fetchAll();
+    $statement->closeCursor();
+
+    return $jobMatches;
+}
+function get_job_matches_by_state($by_keyword, $by_state) {
+    global $db;
+    $query = 'SELECT * FROM jobs 
+              WHERE 1=1';
+
+    $params = array();
+
+    if (!empty($by_keyword)) {
+        $query .= ' AND jobName LIKE :keyword';
+        $params[':keyword'] = '%' . $by_keyword . '%';
+    }
+    if (!empty($by_state)) {
+        $query .= ' AND jobState = :by_state';
+        $params[':by_state'] = $by_state;
+    }
+
+    $query .= ' ORDER BY jobListingDate DESC';
 
     $statement = $db->prepare($query);
     $statement->execute($params);
