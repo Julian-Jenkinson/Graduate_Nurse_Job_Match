@@ -1,0 +1,29 @@
+.content-center {
+    text-align: center; /* This will center the text for all child elements */
+    margin: auto; /* This will center the container itself if it has a width */
+    width: 100%; /* Adjust width as needed, 100% width will take full container width */
+    max-width: 800px; /* Set a max-width if you want to limit how wide the content can stretch */
+}
+
+.content-center table {
+    margin-left: auto; /* Center the table horizontally */
+    margin-right: auto;
+    border-collapse: collapse; /* Optional: for styling */
+    width: 100%; /* Adjust the width as needed */
+    max-width: 800px; /* This should match the width of your content-center div */
+}
+
+.content-center td {
+    text-align: center; /* Center the content of the cells */
+    padding: 8px; /* Optional: for styling and spacing */
+    border: 1px solid #ddd; /* Optional: for styling */
+}
+
+/* If your map is also to be centered but retain its size, you might want to add specific styling to it */
+#map {
+    height: 500px; /* Or your desired height */
+    width: 100%; /* This will make the map responsive to the container width */
+    max-width: 800px; /* Match this with the above max-width if necessary */
+    margin: 20px auto; /* This will center the map if it's not already full width */
+    border: 1px solid #ccc; /* For styling, optional */
+}
