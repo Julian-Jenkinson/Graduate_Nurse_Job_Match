@@ -1,13 +1,14 @@
 
 <?php
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 //need this???
 session_start();
 
 require('./model/database.php');
 require('./model/jobs_db.php');
+require('./model/users_db.php');
  
 $action = filter_input(INPUT_POST, 'action');
 if ($action === NULL) {
@@ -35,9 +36,10 @@ else if ($action == 'search_jobs') {
     $_SESSION['job_count'] = count($jobs);
 
     //mayne change to userquals is sset?? to avoid it running unneccesarily
-    if (isset($_SESSION['user']['userQualifications'])) {
+    if (isset($_SESSION['user']['userEmail'])) {
         include('./jobs/job_match_function.php');
-        $job_matches = job_match();
+        $user = get_user_by_email($_SESSION['user']['userEmail']);
+        $job_matches = job_match($user);
         $_SESSION['job_matches'] = $job_matches;
     }
 

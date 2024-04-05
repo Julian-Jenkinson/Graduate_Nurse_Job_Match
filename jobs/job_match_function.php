@@ -1,12 +1,12 @@
 
 <?php
 //this function is the job match algorithm to give reccomendations to users
-function job_match(){
+function job_match($user){
     
     $job_keyword = '';
 
     //get user data
-    $user = get_user_by_email($_SESSION['user']['userEmail']);
+    //$user = get_user_by_email($_SESSION['user']['userEmail']);
 
     //get job title
     $job_keyword = $user['jobTitle'];

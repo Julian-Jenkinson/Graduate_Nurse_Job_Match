@@ -24,9 +24,10 @@ if ($action == 'list_jobs') {
     
     //job recommendations
     // if user is logged in, display job matches
-    if (isset($_SESSION['user']['userQualifications'])) {
+    if (isset($_SESSION['user']['userEmail'])) {
         include('./job_match_function.php');
-        $job_matches = job_match();
+        $user = get_user_by_email($_SESSION['user']['userEmail']);
+        $job_matches = job_match($user);
     }
     
     // Display the jobs list
@@ -55,7 +56,9 @@ else if ($action == 'search_jobs') {
     // if user is logged in, display job matches
     if (isset($_SESSION['user']['userEmail'])) {
         include('./job_match_function.php');
-        $job_matches = job_match();  
+        //get user data
+        $user = get_user_by_email($_SESSION['user']['userEmail']);
+        $job_matches = job_match($user);  
     }
     
     // Display the jobs list
