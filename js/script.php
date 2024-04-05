@@ -27,10 +27,10 @@
 
       switch (componentType) {  
         case "locality":
-          document.querySelector("#jobCity").value = component.long_name;
+          document.querySelector("#City").value = component.long_name;
           break;
         case "administrative_area_level_1": {
-          document.querySelector("#jobState").value = component.short_name;
+          document.querySelector("#State").value = component.short_name;
           break;
         } 
       }

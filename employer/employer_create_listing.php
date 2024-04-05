@@ -211,8 +211,8 @@
     <input type="text" name="jobLink" placeholder="eg. https://www." class="validate">
     <br><br>
 
-    <input type="hidden" name="jobCity" id="jobCity" value="">
-    <input type="hidden" name="jobState" id="jobState"value="">
+    <input type="hidden" name="jobCity" id="City" value="">
+    <input type="hidden" name="jobState" id="State"value="">
     <input type="hidden" name="jobListingDate" value="<?php echo date('Y-m-d'); ?>">
     
     <p class='form_message'></p>

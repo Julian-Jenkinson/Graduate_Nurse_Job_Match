@@ -12,7 +12,7 @@
     <input type="text" class="validate" name="userLName", value="<?php echo isset($user['userLName']) ? htmlspecialchars($user['userLName']) : ''; ?>">
     <br><br>
     <label>Address:</label><br>
-    <input type="text" class="validate" name="userAddress", id="autocomplete", onfocus="initAutocomplete()", placeholder="Enter your address", value="<?php echo isset($user['userAddress']) ? htmlspecialchars($user['userAddress']) : ''; ?>" >
+    <input type="text" class="validate" name="userAddress", id="autocomplete", onfocus="initAutocomplete()", placeholder="Start typing your address", value="<?php echo isset($user['userAddress']) ? htmlspecialchars($user['userAddress']) : ''; ?>" >
     <br><br>
 
     <label for="userQualifications">Qualifications:</label><br>
@@ -175,8 +175,8 @@
     <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($user['userID']); ?>">
     <input type="hidden" name="email" value="<?php echo htmlspecialchars($user['userEmail']); ?>">
     
-    <input type="hidden" name="userCity" id="jobCity" value="<?php echo isset($job['userCity']) ? htmlspecialchars($job['userCity']) : ''; ?>">
-    <input type="hidden" name="userState" id="jobState" value="<?php echo isset($job['userState']) ? htmlspecialchars($job['userState']) : ''; ?>">
+    <input type="hidden" name="userCity" id="City" value="<?php echo isset($user['userCity']) ? htmlspecialchars($user['userCity']) : ''; ?>">
+    <input type="hidden" name="userState" id="State" value="<?php echo isset($user['userState']) ? htmlspecialchars($user['userState']) : ''; ?>">
 
     <br><br>
 </form>

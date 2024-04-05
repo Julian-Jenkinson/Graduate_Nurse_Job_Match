@@ -215,8 +215,8 @@
     <input type="text" name="jobLink" class="validate" placeholder="eg. https://www." value="<?php echo isset($job['jobLink']) ? htmlspecialchars($job['jobLink']) : ''; ?>">
     <br><br>
     
-    <input type="hidden" name="jobCity" id="jobCity" value="<?php echo isset($job['jobCity']) ? htmlspecialchars($job['jobCity']) : ''; ?>">
-    <input type="hidden" name="jobState" id="jobState" value="<?php echo isset($job['jobState']) ? htmlspecialchars($job['jobState']) : ''; ?>">
+    <input type="hidden" name="jobCity" id="City" value="<?php echo isset($job['jobCity']) ? htmlspecialchars($job['jobCity']) : ''; ?>">
+    <input type="hidden" name="jobState" id="State" value="<?php echo isset($job['jobState']) ? htmlspecialchars($job['jobState']) : ''; ?>">
     <input type="hidden" name="jobListingDate" value="<?php echo htmlspecialchars($job['jobListingDate']); ?>">
     
     <p class='form_message'></p>

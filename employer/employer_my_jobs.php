@@ -4,15 +4,12 @@
 <div class="main-container">
     <h3>Employer Dashboard</h3>
 
+    <!--
     <div class="logged-in-notice">
         you are logged in as <?php echo $employer['empEmail']; ?>
     </div>
-    <!-- log out now in header
-    <form action="." method="post">
-        <input type="submit" value="Logout"/>
-        <input type="hidden" name="action" value="logout">
-    </form><br>
     -->
+
 
     <h4>Post a job</h4>
     <form action="." method="post">
@@ -35,22 +32,32 @@
                     <div><?php echo htmlspecialchars($job['jobSalary']); ?></div>
                 </div>
                 
-                <div class="job-actions">
-                    <form action="." method="post">
-                        <input type="submit" value="View Listing"/>
-                        <input type="hidden" name="action" value="view_listing">
-                        <input type="hidden" name="jobID" value="<?php echo htmlspecialchars($job['jobID']); ?>">
-                    </form>
-                    <form action="." method="post">
-                        <input type="submit" value="Edit"/>
-                        <input type="hidden" name="action" value="edit_listing">
-                        <input type="hidden" name="jobID" value="<?php echo htmlspecialchars($job['jobID']); ?>">
-                    </form>
-                    <form action="." method="post">
-                        <input type="submit" value="Delete"/>
-                        <input type="hidden" name="action" value="delete_listing">
-                        <input type="hidden" name="jobID" value="<?php echo htmlspecialchars($job['jobID']); ?>">
-                    </form>
+                <div class="job-actions">        
+                    <table style="text-align: center; margin: 0 auto;">
+                        <tr>
+                            <td>
+                                <form action="." method="post">
+                                    <input type="submit" value="View Listing"/>
+                                    <input type="hidden" name="action" value="view_listing">
+                                    <input type="hidden" name="jobID" value="<?php echo htmlspecialchars($job['jobID']); ?>">
+                                </form>
+                            </td>
+                            <td>
+                                <form action="." method="post">
+                                    <input type="submit" value="Edit"/>
+                                    <input type="hidden" name="action" value="edit_listing">
+                                    <input type="hidden" name="jobID" value="<?php echo htmlspecialchars($job['jobID']); ?>">
+                                </form>
+                            </td>
+                            <td>
+                                <form action="." method="post">
+                                    <input type="submit" value="Delete"/>
+                                    <input type="hidden" name="action" value="delete_listing">
+                                    <input type="hidden" name="jobID" value="<?php echo htmlspecialchars($job['jobID']); ?>">
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         <?php endforeach; ?>
