@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    // Check if authentication is already done
+        if (!isset($_SESSION["auth"]) ||  $_SESSION["auth"]=== false) {
+            // Redirect to the authentication page
+            header("Location: /CSC3600-T1-2024_TheITCrew/auth.php");
+            exit(); // Stop further execution
+        }
+    ?>
     <meta charset="UTF-8">
     <title>Graduate Nurse/Midwife Job Matching</title>
     <link rel="stylesheet" type="text/css" href="/CSC3600-T1-2024_TheITCrew/css/home_head_foot.css">
