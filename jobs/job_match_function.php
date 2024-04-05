@@ -1,37 +1,40 @@
 
 <?php
-//this function is the job match algorithm to give reccomendations to users
+// This function is the job match algorithm to give recommendations to users
 function job_match($user){
     
-    $job_keyword = '';
-
-    //get user data
-    //$user = get_user_by_email($_SESSION['user']['userEmail']);
-
-    //get job title
+    // Get job title from user input
     $job_keyword = $user['jobTitle'];
-
-    //location
     
-    // does the user wish to relocate
-    // if so what regions are they interested in
-    //filter jobs to this area
+    $city = $user['userCity'];
+    $state = $user['userState'];
 
-    //if not relocating
-    //give jobs in the same city or state if cant find 3
+    // Check if the user wishes to relocate
+    if ($user['userRelocate'] === 'Yes' || $user['userRelocate'] === 'Unsure') {
+        //looking for jobs any where
 
-    
+        // This function queries the DB
+        $job_matches = get_job_matches($job_keyword);
+        return $job_matches;
+    } 
+    else if ($user['userRelocate'] === 'No') {
+        //look for jobs in same city
 
-    
-    //this function queries the DB
-    $job_matches = get_job_matches($job_keyword);
-    return $job_matches;    
+
+        // If there are not enough jobs in the same city, then expand the search to the state
+        
+
+        // This function queries the DB
+        $job_matches = get_job_matches_by_location($job_keyword, $city, $state);
+        return $job_matches;
+    }
+     
 }
         
 ?>
 
 
-<?php/*
+<?php/* this works so i
 //this function is the job match algorithm to give reccomendations to users
 function job_match(){
     //maybe initialise job_keyword to null or something??
