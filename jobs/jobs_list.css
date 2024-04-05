@@ -1,0 +1,98 @@
+body {
+    background-color: #f4f4f4; /* Light gray background */
+    background-image: 
+    url('data:image/svg+xml;charset=UTF-8,<svg width="1920" height="450" viewBox="0 0 1920 450" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="mask0_376_3167" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="450"><rect width="1920" height="450" fill="white"/></mask><g mask="url(%23mask0_376_3167)"><path d="M1157 273.094C820.863 464.981 219 391.125 -47.5 347.625L-64 508.781H2040.5V30.375C1798 14.9062 1628 4.2187 1157 273.094Z" fill="%23E2725B"/><path d="M680 376.031C304.8 305.381 -80 397.031 -225.5 451.687L-214 547.594H1968V0C1878.5 110.437 1632.6 310.331 1365 226.406C1030.5 121.5 1149 464.344 680 376.031Z" fill="%23FFFDF7"/><path d="M680 383.344C304.8 312.694 -80 404.344 -225.5 459L-214 554.906H1968V7.3125C1878.5 117.75 1632.6 317.644 1365 233.719C1030.5 128.812 1149 471.656 680 383.344Z" fill="%23556B2F"/></g></svg>'),
+    linear-gradient(#FFFDF7, #FFFDF7);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    margin: 0;
+    padding: 20px;
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    max-width: 800px; /* Adjust this value as needed to control form width */
+    margin: 0 auto; /* This will center the form on the page */
+}
+
+table {
+    width: 100%;
+    table-layout: fixed; /* This helps in controlling the width of table cells */
+}
+
+td {
+    padding: 15px;
+}
+
+input[type="text"],
+select {
+    width: 100%; /* Adjust this if inputs are too wide */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #E2725B; /* Green background */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right; /* Align the button to the right */
+}
+
+input[type="submit"]:hover {
+    background-color: #B45B48;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#map {
+    height: 500px; 
+    width: 50%; 
+    margin: 0 auto; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Updated job listing styles */
+.job-listing {
+    background-color: #fff;
+    border: 5px solid #ddd;
+    padding: 50px;
+    margin: 20px auto; /* Auto margins for centering */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    max-width: 800px; /* Adjust as needed */
+}
+
+h5, div {
+    text-align: left; /* Center the text within the job listings */
+}
+
+h4 {
+    text-align: center; /* Center the text within the job listings */
+}
+
+
+/* Centering the form table */
+form table {
+    margin: 0 auto;
+}
+
+.center-content {
+    text-align: center; /* Centers the text within the container */
+    margin: 0 auto; /* Centers the container if it has a width set */
+}
