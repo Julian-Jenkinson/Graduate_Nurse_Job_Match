@@ -5,7 +5,8 @@
     <h3><?php echo htmlspecialchars($job['jobName']); ?></h3>
 
     <h4>Details</h4>
-    <div>Date Listed: <?php echo htmlspecialchars($job['jobListingDate']); ?></div><br>
+    <div>Posted <?php echo date('jS M Y', strtotime($job['jobListingDate'])); ?></div><br>
+    
     <div>Place: <?php echo htmlspecialchars($job['jobPlace']); ?></div><br>
     <div>Location: <?php echo htmlspecialchars($job['jobCity'] . ', ' . $job['jobState']); ?></div><br>
     <div>Description: <?php echo htmlspecialchars($job['jobDescription']); ?></div><br>
