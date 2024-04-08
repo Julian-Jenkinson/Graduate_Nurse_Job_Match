@@ -32,7 +32,7 @@ else if ($action == 'login') {
     $password = filter_input(INPUT_POST, 'password');
     
     //check for correct credentials
-    if ($email == "ClientsUSQ" && $password == "password"){
+    if ($email == "ClientsUSQ" && $password == "springfield#USQ"){
         $_SESSION["auth"] = true;
         include 'home.php';
     }
