@@ -74,6 +74,7 @@
 <?php 
     //check if user is logged in and job match array is not empty
     if (isset($_SESSION['user']['jobTitle']) ) {
+        echo '<div class="job-listing">';
         echo '<h4>Job Matches:</h4>';
         foreach ($job_matches as $job) :
 ?>
@@ -93,6 +94,7 @@
 
 <?php 
         endforeach;
+        echo '</div>';
     }
     else {
         echo '<div class="center-content">';
