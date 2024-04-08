@@ -1,10 +1,10 @@
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     <df-messenger
-            intent="WELCOME"
-            chat-title="FAQ"
-            agent-id="b07d004b-20f9-4193-83ad-b23028c19c17"
-            language-code="en">   
-    </df-messenger>
+      intent="WELCOME"
+      chat-title="FAQ"
+      agent-id="04afa6ea-51fd-4ff6-8196-ca0b38fcae67"
+      language-code="en"
+    ></df-messenger>
     
 <div class="footer-svg">
     <footer class="site-footer">
