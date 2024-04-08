@@ -58,7 +58,7 @@ async function initMap(DBjobs) {
             center: { lat: -28.397, lng: 131.644 },
             mapTypeControl: false,
             fullscreenControl: false,
-            zoom: 3.4
+            zoom: 4
         });
         //initialise geocoder
         let geocoder;
