@@ -6,3 +6,5 @@ This web application uses the Model View Controller (MVC) architecture.
 
 Accompanied is a database script file to initialise a SQL database.
 
+Please note that the google API authentication key should be updated for the google maps, autocomplete and geocoded to work. Please enable the appropriate google APIs swell. This key can be updated in the view/header files
+
