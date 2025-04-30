@@ -1,19 +1,22 @@
 
 
 # Graduate Nurse Job Match
+
+A Job matching platform matching employment opportunities to nursing and midwifery graduates with a focus on regional and rural Australia 
+
 The Graduate Nurse Job Match was my capstone project in my undergraduate degree. The task was to see the project through from gathering requirments, research and analysis, project planning, development and deployment of a web based prototype.
 
 ## Features 🔥
 - **Dynamic web application** - Dynamic web application featuring PHP and SQL database
-- **Get job matches that suit you** - algorithm.....
-- **GIS integration** - GIS integragtion utilsising Googles API. Services include maps, geocoder and autocomplete 
-- **user authentication** - user login and logout authentication - include password hashing and safe storage
+- **Get job matches that suit you** - Create an account, fill in your job preferences and get matches that suit you.
+- **GIS integration** - GIS integragtion for increased user engagement utilsising Google API's. Services include Maps, Geocoder and Autocomplete .
+- **User authentication** - User signup, login and logout authentication, include password hashing and safe data storage
 - **MVC architecture** - Model View Controller (MVC) architecture
 
 ## Technology 💫
-**Frontend** - some information
+**Frontend** - HTML, CSS, JS
 
-**Backend** - some information
+**Backend** - PHP, SQL, AWS, NGINX 
 
 ## Deployment ✨
 To deploy the prototype, I used an AWS S3 Bucket and an EC2 instance running NGINX for web hosting and SQL Server for database hosting. I have since deallocated these resources but the familiarity I gained from using AWS infastructure was invaluable.
