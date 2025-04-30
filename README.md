@@ -4,7 +4,7 @@
 
 A Job matching platform matching employment opportunities to nursing and midwifery graduates with a focus on regional and rural Australia 
 
-The Graduate Nurse Job Match was my capstone project in my undergraduate degree. The task was to see the project through from gathering requirments, research and analysis, project planning, development and deployment of a web based prototype.
+The Graduate Nurse Job Match was my capstone industry based project in my undergraduate degree. Working with the nursing faculties of USQ and QUT, the task was to see the project though from gathering requirments, research and analysis, project planning, development and deployment of a web based prototype to display the feasability of this project.
 
 ## Features 🔥
 - **Dynamic web application** - Dynamic web application featuring PHP and SQL database
