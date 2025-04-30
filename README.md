@@ -9,6 +9,7 @@ The Graduate Nurse Job Match was my capstone industry based project in my underg
 - **Dynamic web application** - Dynamic web application featuring PHP and SQL database
 - **Get job matches that suit you** - Create an account, fill in your job preferences and get matches that suit you.
 - **GIS integration** - GIS integragtion for increased user engagement utilsising Google API's. Services include Maps, Geocoder and Autocomplete .
+- **Chat bot** - User friendly chat bot to assist users
 - **User authentication** - User signup, login and logout authentication, include password hashing and safe data storage
 - **MVC architecture** - Model View Controller (MVC) architecture
 
