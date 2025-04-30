@@ -1,4 +1,4 @@
-For local development, install XAMPP and phpmyadmin(included in XAMPP installation) to 
+t For local development, install XAMPP and phpmyadmin(included in XAMPP installation) to 
 host and connect the web application.
 https://www.geeksforgeeks.org/how-to-set-php-development-environment-in-windows/
 
@@ -9,7 +9,7 @@ Accompanied is a database script file to initialise a SQL database.
 Please note that the google API authentication key should be updated for the google maps, autocomplete and geocoded to work. Please enable the appropriate google APIs swell. This key can be updated in the view/header files
 
 # Lume Web Design 
-A short description and goal for the project
+A short description and goal for the projects
 
 ## Features 💥
 - **feature 1** - some information
