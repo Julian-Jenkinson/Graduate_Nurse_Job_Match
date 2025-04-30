@@ -1,16 +1,14 @@
 
 
-This web application uses the Model View Controller (MVC) architecture.
-
-
-# Lume Web Design 
-A short description and goal for the projects
+# Graduate Nurse Job Match
+The Graduate Nurse Job Match was my capstone project in my undergraduate degree. The task was to see the project through from gathering requirments, research and analysis, project planning, development and deployment of a web based prototype.
 
 ## Features 🔥
-- **feature 1** - Dynamic web application featuring PHP and SQL database
-- **feature 2** - GIS integragtion utilsising Googles API. Services include maps, geocoder and autocomplete 
-- **feature 3** - user login and logout authentication - include password hashing and safe storage
-- **feature 4** - Model View Controller (MVC) architecture
+- **Dynamic web application** - Dynamic web application featuring PHP and SQL database
+- **Get job matches that suit you** - algorithm.....
+- **GIS integration** - GIS integragtion utilsising Googles API. Services include maps, geocoder and autocomplete 
+- **user authentication** - user login and logout authentication - include password hashing and safe storage
+- **MVC architecture** - Model View Controller (MVC) architecture
 
 ## Technology 💫
 **Frontend** - some information
