@@ -15,7 +15,11 @@ The Graduate Nurse Job Match was my capstone industry based project in my underg
 ## Technology 💫
 **Frontend** - HTML, CSS, JS
 
-**Backend** - PHP, SQL, AWS, NGINX 
+**Backend** - PHP, SQL, AWS, NGINX
+
+**APIs / Integrations** - Google Maps API, ChatBot.????
+
+**Ops** - AWS, NGINX
 
 ## Deployment ✨
 To deploy the prototype, I used an AWS S3 Bucket and an EC2 instance running NGINX for web hosting and SQL Server for database hosting. I have since deallocated these resources but the familiarity I gained from using AWS infastructure was invaluable.
