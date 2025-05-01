@@ -19,7 +19,7 @@ The Graduate Nurse Job Match was my capstone industry based project in my underg
 
 **Backend** - PHP, SQL
 
-**APIs / Integrations** - Google Maps, Geocoder, autocomplete and Dialogflow (chatbot) 
+**APIs / Integrations** - Google Maps, Geocoder, Autocomplete and Dialogflow (chatbot) 
 
 **Ops** - AWS, NGINX
 
