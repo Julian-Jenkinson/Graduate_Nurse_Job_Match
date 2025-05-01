@@ -11,6 +11,7 @@ The Graduate Nurse Job Match was my capstone industry based project in my underg
 - **GIS integration** - GIS integragtion for increased user engagement utilsising Google API's. Services include Maps, Geocoder and Autocomplete .
 - **Chat bot** - User friendly chat bot to assist users powered by Google Dialogflow
 - **User authentication** - User signup, login and logout authentication, including password hashing and cookies
+- **Employers + Graduate site** - The Employers site allows organizations to list employment opportunities, which are directly submitted to the database and then displayed on the GIS map. 
 - **MVC architecture** - A Model View Controller (MVC) architecture to keep things tidy
 
 ## Technology 💫
