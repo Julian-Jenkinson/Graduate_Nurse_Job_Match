@@ -7,8 +7,8 @@ The Graduate Nurse Job Match was my capstone industry based project in my underg
 
 ## Features 🔥
 - **Dynamic web application** - Dynamic web application featuring PHP and SQL database
-- **Get job matches that suit you** - Create an account, fill in your job preferences and get matches that suit you.
-- **GIS integration** - GIS integragtion for increased user engagement utilsising Google API's. Services include Maps, Geocoder and Autocomplete.
+- **Get job matches that suit you** - Create a profile, fill in your job preferences and get matches that suit you.
+- **GIS integration** - GIS map integration lists jobs from the database and displays their location geographically. Users can search for jobs based on loaction - increasing user engagement.
 - **Chat bot** - User friendly chat bot to assist users powered by Google Dialogflow
 - **User authentication** - User signup, login and logout authentication, including password hashing and cookies
 - **Employers + Graduate site** - The Employers site allows organizations to list employment opportunities, which are directly submitted to the database and then displayed on the GIS map. 
