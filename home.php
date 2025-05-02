@@ -31,8 +31,8 @@
                 <div class="rectangle-container">
                     <div class="buttons-wrapper">
                         <!--<button class="sign-in-button">Sign In</button> -->
-                        <a href="/CSC3600-T1-2024_TheITCrew/user/user_login.php" class="button-link">Sign In</a>
-                        <a href="/CSC3600-T1-2024_TheITCrew/user/user_signup.php" class="button-link">Register</a>
+                        <a href="/Graduate_Nurse_Job_Match/user/user_login.php" class="button-link">Sign In</a>
+                        <a href="/Graduate_Nurse_Job_Match/user/user_signup.php" class="button-link">Register</a>
                     </div>
                     <p class="text">Create an account to unlock personalised job opportunities tailored for nursing and midwifery graduates.</p>
                 </div>                

@@ -100,7 +100,7 @@
         echo '<div class="job-listing">';
         echo '<h3>Create a profile and get job matches tailored to you.</h3>';
         echo '<div style="text-align: center; font-size: 18px;">';
-        echo '<a href="/CSC3600-T1-2024_TheITCrew/user/user_signup.php">Get started here</a>';
+        echo '<a href="/Graduate_Nurse_Job_Match/user/user_signup.php">Get started here</a>';
         echo '</div>';
         echo '</div>';
     } 

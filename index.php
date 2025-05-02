@@ -1,47 +1,21 @@
-
 <?php
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 session_start();
-
 require('./model/database.php');
 require('./model/jobs_db.php');
 require('./model/users_db.php');
+require_once 'config.php';
+$apiKey = $_ENV['API_KEY'];
+print_r($_ENV);
  
 $action = filter_input(INPUT_POST, 'action');
 if ($action === NULL) {
-    $action = filter_input(INPUT_GET, 'action');
-    if (isset($_SESSION["auth"]) &&  $_SESSION["auth"]=== true) {
-        $action = 'home';
-    }
-    else if ($action === NULL) {
-        $action = 'auth';
-    }
+    $action = 'home';
 }
 //go to home page
 if ($action == 'home') {
     include('./home.php');
-}
-//authenticating clients - only here to protect the site during hosting
-else if ($action == 'auth') {
-    include('./auth.php');
-}
-else if ($action == 'login') {
-    $email = filter_input(INPUT_POST, 'email');
-    $password = filter_input(INPUT_POST, 'password');
-    
-    //check for correct credentials
-    if ($email == "ClientsUSQ" && $password == "springfield#USQ"){
-        $_SESSION["auth"] = true;
-        include 'home.php';
-    }
-    else {
-    $error = "Incorrect email or password.";
-    
-    include 'auth.php';
-    echo "<div style='text-align: center; color: red;'>$error</div>";
-    }
 }
 else if ($action == 'search_jobs') {
     //get search box data
@@ -53,21 +27,16 @@ else if ($action == 'search_jobs') {
     $jobs = search_jobs($by_keyword, $by_location, $by_contract_type, $by_rural_type);
     //get job count of search results
     $job_count = count($jobs);
-    
     //store jobs array in session
     $_SESSION['jobs'] = $jobs;
     $_SESSION['job_count'] = count($jobs);
-
-    //mayne change to userquals is sset?? to avoid it running unneccesarily
+    //potentially change to userquals is sset?? to avoid it running unneccesarily
     if (isset($_SESSION['user']['userEmail'])) {
         include('./jobs/job_match_function.php');
         $user = get_user_by_email($_SESSION['user']['userEmail']);
         $job_matches = job_match($user);
         $_SESSION['job_matches'] = $job_matches;
     }
-
-
-    
     //redirect to jobs_list.php
     header("Location: ./jobs/jobs_list.php");
     exit;
