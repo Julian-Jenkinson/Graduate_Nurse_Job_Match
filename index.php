@@ -1,13 +1,12 @@
 <?php
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//ini_set('display_errors', 1);
 session_start();
 require('./model/database.php');
 require('./model/jobs_db.php');
 require('./model/users_db.php');
 require_once 'config.php';
-$apiKey = $_ENV['API_KEY'];
-print_r($_ENV);
+
  
 $action = filter_input(INPUT_POST, 'action');
 if ($action === NULL) {
