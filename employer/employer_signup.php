@@ -1,4 +1,4 @@
-<?php include '../view/employer_header.php'; ?>
+<?php include "../view/employer_header.php"; ?>
 <link rel="stylesheet" href="employer_signup.css" type="text/css"/>
 
 <!-- i usedjora employer site for design -->
@@ -31,4 +31,4 @@
     <br><br>
 </div>
 
-<?php include '../view/employer_footer.php'; ?>
+<?php include "../view/employer_footer.php"; ?>

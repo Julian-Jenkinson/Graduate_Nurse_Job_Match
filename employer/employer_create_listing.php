@@ -1,4 +1,4 @@
-<?php include '../view/employer_header.php'; ?>
+<?php include "../view/employer_header.php"; ?>
 <link rel="stylesheet" href="employer_create_listing.css" type="text/css"/>
 
 <h3>Create a New Job Listing</h3>
@@ -213,15 +213,21 @@
 
     <input type="hidden" name="jobCity" id="City" value="">
     <input type="hidden" name="jobState" id="State"value="">
-    <input type="hidden" name="jobListingDate" value="<?php echo date('Y-m-d'); ?>">
+    <input type="hidden" name="jobListingDate" value="<?php echo date(
+        "Y-m-d"
+    ); ?>">
     
     <p class='form_message'></p>
 
     <input type="submit" class="submitForm" value="Post Job">
     <input type="hidden" name="action" value="add_job">
-    <input type="hidden" name="empID" value="<?php echo htmlspecialchars($employer['empID']); ?>">    
+    <input type="hidden" name="empID" value="<?php echo htmlspecialchars(
+        $employer["empID"]
+    ); ?>">    
     <br><br>
 </form>
 
-<?php include('../js/script.php'); //script to validate fields and form ?>
-<?php include '../view/employer_footer.php'; ?>
+<?php include "../js/script.php";
+//script to validate fields and form
+?>
+<?php include "../view/employer_footer.php"; ?>

@@ -22,7 +22,6 @@ function showSlides() {
 window.onload = showSlides;
 
 // JavaScript for the job listings
-
 document.addEventListener('DOMContentLoaded', function() {
   fetch('HomePage.xhtml') // URL to the HTML file with data
       .then(response => response.text())

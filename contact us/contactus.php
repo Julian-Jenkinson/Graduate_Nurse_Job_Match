@@ -1,4 +1,4 @@
-<?php include '../view/header.php'; ?>
+<?php include "../view/header.php"; ?>
 
 <link rel="stylesheet" href="contactus.css" type="text/css"/>
 
@@ -22,4 +22,4 @@
       </section>
   </div>
 
-<?php include '../view/footer.php'; ?>
+<?php include "../view/footer.php"; ?>

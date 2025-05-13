@@ -1,8 +1,7 @@
-<?php require('../model/database.php');?>
-<?php require('../model/users_db.php');?>
+<?php require "../model/database.php"; ?>
+<?php require "../model/users_db.php"; ?>
+<?php include "../view/header.php"; ?>
 
-
-<?php include '../view/header.php'; ?>
 <link rel="stylesheet" href="user_signup.css" type="text/css"/>
 
 <div class="form-container">
@@ -13,9 +12,11 @@
         <label>Email:</label><br>
         <input type="text" name="email">
         <br><br>
+        
         <label>Password:</label><br>
         <input type="password" name="password1">
         <br><br>
+        
         <label>Confirm Password:</label><br>
         <input type="password" name="password2">
         <br><br>
@@ -29,4 +30,4 @@
     <br><br>
 </div>
 
-<?php include '../view/footer.php'; ?>
+<?php include "../view/footer.php"; ?>

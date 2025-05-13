@@ -1,4 +1,4 @@
-<?php include '../view/employer_header.php'; ?>
+<?php include "../view/employer_header.php"; ?>
 <link rel="stylesheet" href="employer_login.css" type="text/css"/>
 
 <div class="form-container">
@@ -23,6 +23,6 @@
     <br><br>
 </div>
 
-<?php include '../view/employer_footer.php'; ?>
+<?php include "../view/employer_footer.php"; ?>
 
 
