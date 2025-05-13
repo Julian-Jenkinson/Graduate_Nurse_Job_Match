@@ -1,8 +1,28 @@
 <?php include "view/home_header.php"; ?>
 
 <div class="slideshow-container">
-        <!-- Slides -->
+    <!-- Slides -->
+    <div class="mySlides fade">
+        <img src="./Images/ruralnursing.jpg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+        <img src="./Images/Nursing2.jpg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+        <img src="./Images/Nursing3.jpg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+        <img src="./Images/ruralnursing2.jpg" style="width:100%">
+    </div>  
+    <!-- Rectangle bar with dots -->
+    <div class="rectangle-bar">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+    </div>
 </div> 
+
 <div class="wave-background">
     <div class="text-content">
         <h1>Matching <span class="highlight-header">Dreams</span>, Crafting Careers: Where <span class="highlight-header">Precision</span> Meets Opportunity in Healthcare.</h1>
