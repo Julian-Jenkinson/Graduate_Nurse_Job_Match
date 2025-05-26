@@ -35,10 +35,28 @@ https://www.geeksforgeeks.org/how-to-set-php-development-environment-in-windows/
 
 Please note that the google API authentication key should be updated for the google maps, autocomplete and geocoded to work. Please enable the appropriate google APIs swell. This key can be updated in the view/header files. I have since deallocated this resources as there are minor fees attached.
 
-## Improvements 
+## Project Reflection / Improvments  
 
-Although functional, for a better UI/UX, an overall CSS overhaul is needed. 
+- **UI/UX Overhaul**
+Although functional, for a better UI/UX, an overall CSS overhaul is needed. A cleaner, more modern style and a heavier focus on job recomendation cards would really bring this app to the next level. 
 
-A cleaner, more modern style and a heavier focus on job recomendation cards would really bring this app to the next level. 
+- **RESTful architecture**
+The App currently uses traditional monolithic, server-rendered PHP with session-based state and form submissions. In retrospect, a modern RESTful architecture would be more suitable, This would include significant refactoriing decoupling the API from the frontend and creating a restful API to handle database requests.
 
+-  **Was PHP the best choice?**
+While PHP served the needs of the application and allowed for rapid development using familiar paradigms, it may not have been the most scalable or modern choice for a dynamic job search platform.
+
+If I were to continue with PHP, adopting a modern framework such as Laravel would be highly beneficial. Laravel offers:
+  - Built in authentication
+  - Cleaner database interactions
+  - improved routing and form validation
+  - better integration with REST APIs
+
+Alternatively, transitioning to a JavaScript-based stack would provide even greater flexibility and scalability. A React frontend coupled with a Node.js/Express backend would be well-suited for this type of application due to:
+  - Clearer seperation between the UI and server logic
+  - Dynamic rendering
+  - Easier integration with 3rd party API's and modern auth methods (eg. OAuth)
+  - A larger ecosystem of support tools (eg Next.js)
+
+Overall, while PHP is capable, a more modern tech stack would better align with industry best practices and user expectations for interactivity, performance, and maintainability.
 
