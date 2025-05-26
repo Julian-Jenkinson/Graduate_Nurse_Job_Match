@@ -35,9 +35,9 @@ https://www.geeksforgeeks.org/how-to-set-php-development-environment-in-windows/
 
 Please note that the google API authentication key should be updated for the google maps, autocomplete and geocoded to work. Please enable the appropriate google APIs swell. This key can be updated in the view/header files. I have since deallocated this resources as there are minor fees attached.
 
-## Project Reflection / Improvments  
+## Project Improvments  
 
-#### **UI/UX Overhaul**
+### **UI/UX Overhaul**
 
 Although functional, for a better UI/UX, an overall CSS overhaul is needed. A cleaner, more modern style and a heavier focus on job recomendation cards would really bring this app to the next level. 
 
