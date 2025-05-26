@@ -37,15 +37,15 @@ Please note that the google API authentication key should be updated for the goo
 
 ## Project Reflection / Improvments  
 
-**UI/UX Overhaul**
+####**UI/UX Overhaul**
 
 Although functional, for a better UI/UX, an overall CSS overhaul is needed. A cleaner, more modern style and a heavier focus on job recomendation cards would really bring this app to the next level. 
 
-**RESTful architecture**
+####**RESTful architecture**
 
 The App currently uses traditional monolithic, server-rendered PHP with session-based state and form submissions. In retrospect, a modern RESTful architecture would be more suitable, This would include significant refactoriing decoupling the API from the frontend and creating a restful API to handle database requests.
 
-**Was PHP the best choice?**
+####**Was PHP the best choice?**
 
 While PHP served the needs of the application and allowed for rapid development using familiar paradigms, it may not have been the most scalable or modern choice for a dynamic job search platform.
 
